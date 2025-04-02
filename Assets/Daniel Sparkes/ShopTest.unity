@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 155260876}
   - component: {fileID: 155260875}
   m_Layer: 5
-  m_Name: Number
+  m_Name: GoldNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 205108606}
   - component: {fileID: 205108605}
   - component: {fileID: 205108604}
+  - component: {fileID: 205108607}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -683,6 +684,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205108602}
   m_CullTransparentMesh: 1
+--- !u!114 &205108607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205108602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92598a9d10ed3f748a5dd663802f0f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 2
+  Label: {fileID: 0}
+  Sprite: {fileID: 0}
 --- !u!1 &222066756
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +753,7 @@ GameObject:
   - component: {fileID: 263715855}
   - component: {fileID: 263715854}
   - component: {fileID: 263715853}
+  - component: {fileID: 263715856}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -846,6 +863,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263715851}
   m_CullTransparentMesh: 1
+--- !u!114 &263715856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263715851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92598a9d10ed3f748a5dd663802f0f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 4
+  Label: {fileID: 0}
+  Sprite: {fileID: 0}
 --- !u!1 &293964416
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +890,7 @@ GameObject:
   - component: {fileID: 293964419}
   - component: {fileID: 293964418}
   m_Layer: 0
-  m_Name: Number
+  m_Name: MysticGemsNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2193,6 +2225,7 @@ GameObject:
   - component: {fileID: 484199475}
   - component: {fileID: 484199474}
   - component: {fileID: 484199473}
+  - component: {fileID: 484199476}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2302,6 +2335,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484199471}
   m_CullTransparentMesh: 1
+--- !u!114 &484199476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484199471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92598a9d10ed3f748a5dd663802f0f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 3
+  Label: {fileID: 0}
+  Sprite: {fileID: 0}
 --- !u!1 &500913489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,6 +2898,7 @@ RectTransform:
   - {fileID: 735174709}
   - {fileID: 999897372}
   - {fileID: 460429767}
+  - {fileID: 1125592507}
   m_Father: {fileID: 1980986767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4314,7 +4363,7 @@ GameObject:
   - component: {fileID: 1057227547}
   - component: {fileID: 1057227546}
   m_Layer: 0
-  m_Name: Number
+  m_Name: DiamondsNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4957,7 +5006,7 @@ RectTransform:
   - {fileID: 117766807}
   - {fileID: 1039184371}
   - {fileID: 333272934}
-  m_Father: {fileID: 1980986767}
+  m_Father: {fileID: 764964990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4976,6 +5025,7 @@ GameObject:
   - component: {fileID: 1179520521}
   - component: {fileID: 1179520520}
   - component: {fileID: 1179520519}
+  - component: {fileID: 1179520522}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5085,6 +5135,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179520517}
   m_CullTransparentMesh: 1
+--- !u!114 &1179520522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179520517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92598a9d10ed3f748a5dd663802f0f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 0
+  Label: {fileID: 0}
+  Sprite: {fileID: 0}
 --- !u!1 &1193645053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6190,6 +6255,7 @@ GameObject:
   - component: {fileID: 1653785789}
   - component: {fileID: 1653785788}
   - component: {fileID: 1653785787}
+  - component: {fileID: 1653785790}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -6299,6 +6365,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653785785}
   m_CullTransparentMesh: 1
+--- !u!114 &1653785790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653785785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92598a9d10ed3f748a5dd663802f0f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 5
+  Label: {fileID: 0}
+  Sprite: {fileID: 0}
 --- !u!1 &1744277850
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,7 +7366,6 @@ RectTransform:
   - {fileID: 1017042344}
   - {fileID: 2086082477}
   - {fileID: 764964990}
-  - {fileID: 1125592507}
   - {fileID: 500913490}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7303,18 +7383,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1980986763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ebd917d74784041855eb9d091f3e08, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fc3129de10eecc4b9aa71637d34b787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinNumber: {fileID: 0}
-  diamondNumber: {fileID: 0}
-  mysticGemAmount: {fileID: 0}
-  label1: {fileID: 0}
-  label2: {fileID: 0}
-  label3: {fileID: 0}
-  label4: {fileID: 0}
-  label5: {fileID: 0}
-  label6: {fileID: 0}
+  GoldNumber: {fileID: 0}
+  DiamondsNumber: {fileID: 0}
+  MysticGemsNumber: {fileID: 0}
 --- !u!1 &1983922584
 GameObject:
   m_ObjectHideFlags: 0
@@ -7905,6 +7979,7 @@ GameObject:
   - component: {fileID: 2115200851}
   - component: {fileID: 2115200850}
   - component: {fileID: 2115200849}
+  - component: {fileID: 2115200852}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -8014,6 +8089,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115200847}
   m_CullTransparentMesh: 1
+--- !u!114 &2115200852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115200847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92598a9d10ed3f748a5dd663802f0f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 1
+  Label: {fileID: 0}
+  Sprite: {fileID: 0}
 --- !u!1 &2115282850
 GameObject:
   m_ObjectHideFlags: 0
