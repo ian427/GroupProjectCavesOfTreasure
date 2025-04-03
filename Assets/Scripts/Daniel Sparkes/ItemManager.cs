@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 public class ItemManager : MonoBehaviour
 {
@@ -24,12 +23,9 @@ public class ItemManager : MonoBehaviour
 
     void Start()
     {
-        //
-        //
-        //
         while (true)
         {
-            timer += Time.deltaTime;
+            /*timer += Time.deltaTime;
             if (timer > 1)
             {
                 timer = 0;
@@ -61,7 +57,7 @@ public class ItemManager : MonoBehaviour
                     itemID[5][0] = random[0];
                     itemID[5][1] = 0;
                 }
-            }
+            }*/
         }
     }
 }

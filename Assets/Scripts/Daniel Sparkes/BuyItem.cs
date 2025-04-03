@@ -16,12 +16,12 @@ public class BuyItem : MonoBehaviour
 
     void Start()
     {
-        while (GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex] == "NULL" || GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex] == "NULL")
-        {
+        //while (GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex] == "NULL" || GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex] == "NULL")
+        //{
             Label.SetText(GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex]);
             //Sprite = GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex];
             itemID = GameObject.Find("Canvas").GetComponent<ItemManager>().itemID[buttonIndex];
-        }
+        //}
         if (buttonIndex < 3)
         {
             goldPrice = 200;

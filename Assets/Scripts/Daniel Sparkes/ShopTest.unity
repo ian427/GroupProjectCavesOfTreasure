@@ -645,7 +645,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205108605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 205108607}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &205108605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,8 +709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 2
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 414391358}
+  Sprite: {fileID: 1376689278}
 --- !u!1 &222066756
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +836,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 263715854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 263715856}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &263715854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,8 +900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 4
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 1909350727}
+  Sprite: {fileID: 446673808}
 --- !u!1 &293964416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,6 +1046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315610302}
   - component: {fileID: 315610303}
+  - component: {fileID: 315610304}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -1100,6 +1125,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &315610304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315610301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: ShopScene
 --- !u!1 &333272933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,7 +2334,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 484199474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484199476}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &484199474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5096,7 +5146,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1179520520}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1179520522}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1179520520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5148,8 +5210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 0
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 349461010}
+  Sprite: {fileID: 1881073193}
 --- !u!1 &1193645053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,6 +5829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470501390}
   - component: {fileID: 1470501391}
+  - component: {fileID: 1470501392}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -5845,6 +5908,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1470501392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470501389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: SettingsScene
 --- !u!1 &1480985982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5855,6 +5931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1480985983}
   - component: {fileID: 1480985984}
+  - component: {fileID: 1480985985}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -5933,6 +6010,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1480985985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480985982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9058b6ae03bb4abad87a2b048653c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1515553056
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,7 +6415,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1653785788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1653785790}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1653785788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6378,8 +6479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 5
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 893253310}
+  Sprite: {fileID: 1113739831}
 --- !u!1 &1744277850
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,6 +7490,23 @@ MonoBehaviour:
   GoldNumber: {fileID: 0}
   DiamondsNumber: {fileID: 0}
   MysticGemsNumber: {fileID: 0}
+  goldAmount: 0
+  diamondsAmount: 0
+  mysticGemsAmount: 0
+  itemName:
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  itemImage:
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
 --- !u!1 &1983922584
 GameObject:
   m_ObjectHideFlags: 0
@@ -7643,6 +7761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047477352}
   - component: {fileID: 2047477353}
+  - component: {fileID: 2047477354}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -7721,6 +7840,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2047477354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047477351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: HomeScene
 --- !u!1 &2066383270
 GameObject:
   m_ObjectHideFlags: 0
@@ -7764,6 +7896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084194528}
   - component: {fileID: 2084194529}
+  - component: {fileID: 2084194530}
   m_Layer: 5
   m_Name: TreasureHunt
   m_TagString: Untagged
@@ -7842,6 +7975,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2084194530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084194527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: TreasureHuntScene
 --- !u!1 &2086082476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8050,7 +8196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115200850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2115200852}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2115200850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8102,8 +8260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 1
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 363990488}
+  Sprite: {fileID: 555068663}
 --- !u!1 &2115282850
 GameObject:
   m_ObjectHideFlags: 0
