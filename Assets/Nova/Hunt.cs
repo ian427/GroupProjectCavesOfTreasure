@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Hunt : MonoBehaviour
 {
@@ -9,12 +10,19 @@ public class Hunt : MonoBehaviour
     public int Scene;
     private Animator MonsterAnimation;
     public float moveInput;
+    
+
+    
     public int Money;
+    
 
     void Start()
     {
         MonsterAnimation = GetComponent<Animator>();
+        
     }
+
+    
 
     // Update is called once per frame
     private void Update()
@@ -47,6 +55,9 @@ public class Hunt : MonoBehaviour
             // If no movement input, stop the walking animation
             MonsterAnimation.SetBool("isWalking", false);
         }
+
+        
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -54,6 +65,7 @@ public class Hunt : MonoBehaviour
         if (other.gameObject.CompareTag("Chest"))
         {
             Money = +Random.Range(1, 11);
+            
         }
 
         if (other.gameObject.CompareTag("Home"))
@@ -63,4 +75,8 @@ public class Hunt : MonoBehaviour
 
         }
     }
+        
+
 }
+
+
