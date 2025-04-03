@@ -9,12 +9,16 @@ public class FurnitureControler : MonoBehaviour
     [SerializeField] private bool CanPlace = true;
     [SerializeField] float ClickTolarence = 0.25f;
     private Vector3 Move;
+    private MonsterGrow monster;
 
     // Start is called before the first frame update
     void Start()
     {
         controler = GameObject.Find("Controller").GetComponent<GameControler>();
+        monster = GameObject.Find("Player").GetComponent<MonsterGrow>();
         CanPlace = true ;
+        monster.UpdateMonsterSize();
+        controler.TotalItems++;
     }
 
     // Update is called once per frame
@@ -43,9 +47,12 @@ public class FurnitureControler : MonoBehaviour
 
         }
     }
-    private void DeleatItem()
+    private void DeleatItem()//removes from gameplay area
     {
-        controler.RemoveItem(this.gameObject);
+       
+        controler.TotalItems--;
+        controler.AddItem(this.gameObject);
+        monster.UpdateMonsterSize();
         Destroy(this.gameObject);
     }
     private void OnMouseExit()

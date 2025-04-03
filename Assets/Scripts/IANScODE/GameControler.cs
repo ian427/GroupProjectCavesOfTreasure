@@ -6,13 +6,17 @@ using UnityEngine;
 public class GameControler : MonoBehaviour
 {
     private FurnitureData furnitureData;
-    [SerializeField] private GameObject[] FurnitureL;//needs to be shop variant
+    [SerializeField] private List<GameObject> FurnitureL;//needs to be shop variant
     [SerializeField] private int[] AmountOfFurnitureL;
+    [SerializeField] public int TotalItems = 0;
+    [SerializeField] private int ScaleFactor = 1;
     // Start is called before the first frame update
     void Start()
     {
+       // DontDestroyOnLoad(this.gameObject);
         furnitureData.Furniture = FurnitureL;
-        furnitureData.AmountOfFurniture =AmountOfFurnitureL;
+        AmountOfFurnitureL =furnitureData.AmountOfFurniture;
+        TotalItems = furnitureData.TotalItiems;
         
     }
     public void UpdateFurniturData()
@@ -20,6 +24,12 @@ public class GameControler : MonoBehaviour
         furnitureData.Furniture = FurnitureL;
         furnitureData.AmountOfFurniture = AmountOfFurnitureL;
 
+    }
+    public int GetMonsterScale()
+    {
+        int answer = TotalItems / ScaleFactor;
+        return answer;
+        
     }
     // Update is called once per frame
     void Update()
@@ -29,7 +39,7 @@ public class GameControler : MonoBehaviour
     private int FindItem(GameObject Item)
     {
         int answer = 0;
-        for (int i = 0; i < FurnitureL.Length; i++)
+        for (int i = 0; i < FurnitureL.Count; i++)
         {
             if (FurnitureL[i] == Item)
             {
