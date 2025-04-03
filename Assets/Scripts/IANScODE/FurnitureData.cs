@@ -26,16 +26,16 @@ public class FurnitureData : ScriptableObject
     {
         
     }
-    public void LoadPrefrences()
+    public static  FurnitureData LoadPrefrences()
     {
-        string s = "{C:\\Users\\Games\\OneDrive - University of Suffolk\\Documents\\GitHub\\GroupProjectCavesOfTreasure\\Assets\\Scripts\\SaveGame.txt}";
-        FurnitureData furniturdata = JsonUtility.FromJson<FurnitureData>(s);
+        string s = "C:\\Users\\Games\\GroupProjectCavesOfTreasure\\Assets\\Scripts\\SaveGame.txt";
+         return  JsonUtility.FromJson<FurnitureData>(s);
     }
     public void SavePrefrences()
     {
         //saves data to player prefs
         string s = JsonUtility.ToJson(this);
-        File.WriteAllText("C:\\Users\\Games\\OneDrive - University of Suffolk\\Documents\\GitHub\\GroupProjectCavesOfTreasure\\Assets\\Scripts\\SaveGame.txt", s);
+        File.WriteAllText("C:\\Users\\Games\\GroupProjectCavesOfTreasure\\Assets\\Scripts\\SaveGame.txt", s);
 
     }
 

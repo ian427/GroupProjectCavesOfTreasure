@@ -10,6 +10,10 @@ public class Hunt : MonoBehaviour
     public int Scene;
     private Animator MonsterAnimation;
     public float moveInput;
+
+    private FurnitureData furnitureData;
+
+    public TMP_Text moneyText;
     
 
     
@@ -18,8 +22,10 @@ public class Hunt : MonoBehaviour
 
     void Start()
     {
+        furnitureData = FurnitureData.LoadPrefrences();
+
         MonsterAnimation = GetComponent<Animator>();
-        
+        Money= furnitureData.Money ;//SETS furnitur date money as money
     }
 
     
@@ -27,6 +33,8 @@ public class Hunt : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        moneyText.text = Money + "";
+
         // Get horizontal input (left and right arrow keys, A/D, etc.)
         float moveInput = Input.GetAxis("Horizontal");
 
@@ -65,13 +73,15 @@ public class Hunt : MonoBehaviour
         if (other.gameObject.CompareTag("Chest"))
         {
             Money = +Random.Range(1, 11);
-            
+            furnitureData.Money = Money;//SETS furnitur date money as money
+
         }
 
         if (other.gameObject.CompareTag("Home"))
         {
-
-            SceneManager.LoadScene(Scene);
+                     
+        
+         SceneManager.LoadScene(Scene);
 
         }
     }
