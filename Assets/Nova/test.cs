@@ -15,6 +15,10 @@ public class test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        furnitureData = FurnitureData.LoadPrefrences();
+
+        
         Money = furnitureData.Money;//SETS furnitur date money as money
     }
 
@@ -22,5 +26,6 @@ public class test : MonoBehaviour
     void Update()
     {
         moneyText.text = Money + "";
+        
     }
 }
