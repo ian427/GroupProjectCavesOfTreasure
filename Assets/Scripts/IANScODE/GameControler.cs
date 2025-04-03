@@ -5,19 +5,26 @@ using UnityEngine;
 
 public class GameControler : MonoBehaviour
 {
-    private FurnitureData furnitureData;
+    [SerializeField] private FurnitureData furnitureData;
     [SerializeField] private List<GameObject> FurnitureL;//needs to be shop variant
     [SerializeField] private int[] AmountOfFurnitureL;
     [SerializeField] public int TotalItems = 0;
     [SerializeField] private int ScaleFactor = 1;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+
+        furnitureData = (FurnitureData)Resources.Load("GameData");//include anywhere you use furniture date
+        string m_Path = Application.dataPath;
+        furnitureData.Path = m_Path;
+        Debug.Log(m_Path);
+        furnitureData.LoadGameData();
        // DontDestroyOnLoad(this.gameObject);
-        furnitureData.Furniture = FurnitureL;
+        FurnitureL = furnitureData.Furniture ;
         AmountOfFurnitureL =furnitureData.AmountOfFurniture;
         TotalItems = furnitureData.TotalItiems;
-        
+       
+
     }
     public void UpdateFurniturData()
     {

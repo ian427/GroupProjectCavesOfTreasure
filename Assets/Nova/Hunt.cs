@@ -22,7 +22,7 @@ public class Hunt : MonoBehaviour
 
     void Start()
     {
-        furnitureData = FurnitureData.LoadPrefrences();
+        furnitureData.LoadGameData();
 
         MonsterAnimation = GetComponent<Animator>();
         Money= furnitureData.Money ;//SETS furnitur date money as money
