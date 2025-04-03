@@ -12,17 +12,17 @@ public class CraftCurrency : MonoBehaviour
     void Start()
     {
         goldAmount = GameObject.Find("Canvas").GetComponent<ItemManager>().goldAmount;
-        diamondsAmount = GameObject.Find("Canvas").GetComponent<ItemManager>().diamonsAmount;
-        mysticsGemsAmount = GameObject.Find("Canvas").GetComponent<ItemManager>().mysticGemsAmount;
+        diamondsAmount = GameObject.Find("Canvas").GetComponent<ItemManager>().diamondsAmount;
+        mysticGemsAmount = GameObject.Find("Canvas").GetComponent<ItemManager>().mysticGemsAmount;
     }
 
-    void Craft()
+    public void Craft()
     {
-        if (GoldAmount >= 1600 && DiamondsNumber >= 850)
+        if (goldAmount >= 1600 && diamondsAmount >= 850)
         {
-            GoldNumber -= 1600;
-            DiamondsNumber -= 850;
-            MysticGemsNumber += 1;
+            goldAmount -= 1600;
+            diamondsAmount -= 850;
+            mysticGemsAmount += 1;
             GameObject.Find("Canvas").GetComponent<ItemManager>().goldAmount = goldAmount;
             GameObject.Find("Canvas").GetComponent<ItemManager>().diamondsAmount = diamondsAmount;
             GameObject.Find("Canvas").GetComponent<ItemManager>().mysticGemsAmount = mysticGemsAmount;
