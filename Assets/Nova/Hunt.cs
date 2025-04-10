@@ -33,7 +33,7 @@ public class Hunt : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        moneyText.text = Money + "";
+        moneyText.text = "Gold " + Money + "";
 
         // Get horizontal input (left and right arrow keys, A/D, etc.)
         float moveInput = Input.GetAxis("Horizontal");
@@ -72,15 +72,17 @@ public class Hunt : MonoBehaviour
         // Check if the other object has the "Collectible" tag
         if (other.gameObject.CompareTag("Chest"))
         {
+            Destroy(other.gameObject);
             Money = +Random.Range(1, 11);
             furnitureData.Money = Money;//SETS furnitur date money as money
+            furnitureData.SavePrefrences();
 
         }
 
         if (other.gameObject.CompareTag("Home"))
         {
                      
-        
+         
          SceneManager.LoadScene(Scene);
 
         }
