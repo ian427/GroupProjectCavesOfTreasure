@@ -47,7 +47,7 @@ public class FurnitureControler : MonoBehaviour
 
         }
     }
-    private void DeleatItem()//removes from gameplay area
+    public void DeleatItem()//removes from gameplay area
     {
        
         controler.TotalItems--;
