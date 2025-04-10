@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dan R's Work.unity
     guid: a7afec6522538d3489197d2046409d15
+  - enabled: 1
+    path: Assets/Scripts/Daniel Sparkes/ShopTest.unity
+    guid: 1905e84f10e11164fba4cc1000535570
   m_configObjects: {}
