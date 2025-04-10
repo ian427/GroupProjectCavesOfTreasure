@@ -1,0 +1,1 @@
+{"Furniture":[{"instanceID":25110}],"AmountOfFurniture":[5],"TotalItiems":0,"Money":5,"Path":"D:/MGP-COT/GroupProjectCavesOfTreasure/Assets"}
