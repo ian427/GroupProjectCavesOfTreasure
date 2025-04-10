@@ -6,22 +6,37 @@ using TMPro;
 
 public class BuyItem : MonoBehaviour
 {
+    ItemManager manager;
+   
     public int buttonIndex;
     public TextMeshProUGUI Label;
     public GameObject Sprite;
     int goldPrice = 0;
     int diamondsPrice = 0;
     int mysticGemsPrice = 0;
-    int[] itemID;
+    int itemID;
+    public GameObject CurrentlyDisplayedItem;
 
     void Start()
     {
-        while (GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex] == "NULL" || GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex] == "NULL")
-        {
+<<<<<<< Updated upstream
+        //while (GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex] == "NULL" || GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex] == "NULL")
+        //{
             Label.SetText(GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex]);
             //Sprite = GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex];
             itemID = GameObject.Find("Canvas").GetComponent<ItemManager>().itemID[buttonIndex];
+        //}
+=======
+        manager = GameObject.Find("Canvas").GetComponent<ItemManager>();
+       
+        for (int i = 0; i < manager.TotalItiems; i++)
+        {
+            if (manager.itemList[buttonIndex] == manager.Furniture[i])
+            {
+                itemID = i;
+            }
         }
+>>>>>>> Stashed changes
         if (buttonIndex < 3)
         {
             goldPrice = 200;
@@ -41,12 +56,13 @@ public class BuyItem : MonoBehaviour
 
     public void Buy()
     {
-        if (GameObject.Find("Canvas").GetComponent<ItemManager>().goldAmount >= goldPrice && GameObject.Find("Canvas").GetComponent<ItemManager>().diamondsAmount >= diamondsPrice && GameObject.Find("Canvas").GetComponent<ItemManager>().mysticGemsAmount >= mysticGemsPrice)
+        if (manager.goldAmount >= goldPrice && manager.diamondsAmount >= diamondsPrice && manager.mysticGemsAmount >= mysticGemsPrice)
         {
-            GameObject.Find("Canvas").GetComponent<ItemManager>().goldAmount -= goldPrice;
-            GameObject.Find("Canvas").GetComponent<ItemManager>().diamondsAmount -= diamondsPrice;
-            GameObject.Find("Canvas").GetComponent<ItemManager>().diamondsAmount -= mysticGemsPrice;
-            GameObject.Find("Canvas").GetComponent<ItemManager>().boughtList[itemID[0]][itemID[1]] += 1;
+            manager.goldAmount -= goldPrice;
+            manager.diamondsAmount -= diamondsPrice;
+            manager.mysticGemsAmount -= mysticGemsPrice;
+            itemID = manager.FindItem(CurrentlyDisplayedItem);
+            manager.AmountOfFurniture[itemID]++;
         }
     }
 }

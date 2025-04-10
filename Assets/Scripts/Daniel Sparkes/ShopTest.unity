@@ -645,7 +645,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205108605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 205108607}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &205108605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,8 +709,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 2
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 414391358}
+  Sprite: {fileID: 1376689278}
+<<<<<<< Updated upstream
+=======
+  CurrentlyDisplayedItem: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &222066756
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +840,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 263715854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 263715856}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &263715854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,8 +904,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 4
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 1909350727}
+  Sprite: {fileID: 446673808}
+<<<<<<< Updated upstream
+=======
+  CurrentlyDisplayedItem: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &293964416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,6 +1054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315610302}
   - component: {fileID: 315610303}
+  - component: {fileID: 315610304}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -1100,6 +1133,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &315610304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315610301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: ShopScene
 --- !u!1 &333272933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,7 +2342,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 484199474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 484199476}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &484199474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2348,8 +2406,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 3
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 475394506}
+  Sprite: {fileID: 1194246561}
+  CurrentlyDisplayedItem: {fileID: 0}
 --- !u!1 &500913489
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,7 +5155,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1179520520}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1179520522}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1179520520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5148,8 +5219,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 0
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 349461010}
+  Sprite: {fileID: 1881073193}
+<<<<<<< Updated upstream
+=======
+  CurrentlyDisplayedItem: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1193645053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,6 +5842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470501390}
   - component: {fileID: 1470501391}
+  - component: {fileID: 1470501392}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -5845,6 +5921,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1470501392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470501389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: SettingsScene
 --- !u!1 &1480985982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5855,6 +5944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1480985983}
   - component: {fileID: 1480985984}
+  - component: {fileID: 1480985985}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -5933,6 +6023,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1480985985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480985982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9058b6ae03bb4abad87a2b048653c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1515553056
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,7 +6428,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1653785788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1653785790}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1653785788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6378,8 +6492,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 5
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 893253310}
+  Sprite: {fileID: 1113739831}
+<<<<<<< Updated upstream
+=======
+  CurrentlyDisplayedItem: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1744277850
 GameObject:
   m_ObjectHideFlags: 0
@@ -7386,9 +7504,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc3129de10eecc4b9aa71637d34b787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   GoldNumber: {fileID: 0}
   DiamondsNumber: {fileID: 0}
   MysticGemsNumber: {fileID: 0}
+  goldAmount: 0
+  diamondsAmount: 0
+  mysticGemsAmount: 0
+  itemName:
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  itemImage:
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+  - NULL
+=======
+  GoldNumber: {fileID: 155260875}
+  DiamondsNumber: {fileID: 1057227546}
+  MysticGemsNumber: {fileID: 293964418}
+  goldAmount: 50000
+  diamondsAmount: 0
+  mysticGemsAmount: 0
+  itemList:
+  - {fileID: 7656377941331280536, guid: 0c9248209a7c1304e975eeba9bd03077, type: 3}
+  - {fileID: 7101130980044022539, guid: b3a9f673cd553d347960b167fda0cb0d, type: 3}
+  - {fileID: 1365597277346621907, guid: 04a11663885e4a3448856d40c8ed60bd, type: 3}
+  - {fileID: 6120456793659273914, guid: eb4630323e0064b4b91bcde1a12dc3e2, type: 3}
+  - {fileID: 3478973896004944579, guid: e907f5cd980629040aa546e80dc943f8, type: 3}
+  - {fileID: 3478973896004944579, guid: e907f5cd980629040aa546e80dc943f8, type: 3}
+  - {fileID: 3478973896004944579, guid: e907f5cd980629040aa546e80dc943f8, type: 3}
+  - {fileID: 3478973896004944579, guid: e907f5cd980629040aa546e80dc943f8, type: 3}
+  - {fileID: 3478973896004944579, guid: e907f5cd980629040aa546e80dc943f8, type: 3}
+  - {fileID: 3478973896004944579, guid: e907f5cd980629040aa546e80dc943f8, type: 3}
+  boughtList: 
+  TotalItiems: 0
+  Furniture:
+  - {fileID: 7656377941331280536, guid: 0c9248209a7c1304e975eeba9bd03077, type: 3}
+  - {fileID: 7101130980044022539, guid: b3a9f673cd553d347960b167fda0cb0d, type: 3}
+  - {fileID: 1365597277346621907, guid: 04a11663885e4a3448856d40c8ed60bd, type: 3}
+  - {fileID: 6120456793659273914, guid: eb4630323e0064b4b91bcde1a12dc3e2, type: 3}
+  - {fileID: 3478973896004944579, guid: e907f5cd980629040aa546e80dc943f8, type: 3}
+  - {fileID: 3050277825896886614, guid: d264ccd4297e15647815b52b26527af0, type: 3}
+  - {fileID: 29430332111245537, guid: cc7cee3d18f9de94796e5bba4dbe7eb0, type: 3}
+  - {fileID: 207712127374828145, guid: f1cecc18c0e49444a9eec599667dea2f, type: 3}
+  - {fileID: 3800483002969526251, guid: 4ce4319d19e118b4f9c915628a1a2a5e, type: 3}
+  - {fileID: 5923519933498645380, guid: d27ee7d70c47e4b429e42759633c05ff, type: 3}
+  - {fileID: 5604868451155534319, guid: 7358270a2d0b9a54189ad5b2dd1e8507, type: 3}
+  - {fileID: 4342066804830434494, guid: ce4503074c9e66640b53ab2862e895e5, type: 3}
+  - {fileID: 2766165241567588311, guid: dcd766f6546addb4fb19eb5c079aca7c, type: 3}
+  - {fileID: 1776494897328435686, guid: 9adc61d2a203bc44c8818452d0ecedb4, type: 3}
+  - {fileID: 2711474998663781494, guid: 2bf140f715939fe429f53d4fec508ee9, type: 3}
+  - {fileID: 3520696965796133885, guid: f8b322a798a475d449ee6c684f39bde8, type: 3}
+  - {fileID: 8213828778259886352, guid: ea35d8e8d026faa40bdd82fe7ba4284a, type: 3}
+  - {fileID: 6248759456927887720, guid: b237412cd85cede46bc76606f55053aa, type: 3}
+  - {fileID: 683394896144142271, guid: 8e03c2e5231caa643a0e4ba2df6378fc, type: 3}
+  - {fileID: 4402971390399389261, guid: f4013fd2b40900948b11ef16e41fc4fa, type: 3}
+  - {fileID: 842716159941873196, guid: 2f0ffafd6160e914896023664ef71cb1, type: 3}
+  - {fileID: 6712670279147972586, guid: a59a39bfe41af114eaef824a65aaa213, type: 3}
+  - {fileID: 3951641012597849367, guid: 0b4bed3cd15b7a84ebaf73601ed0aed5, type: 3}
+  - {fileID: 7090260942896712029, guid: dfd393248d3f1854b805b8e29b7f2363, type: 3}
+  - {fileID: 3212470036556496148, guid: bda8cc788eb7cf849a365097b2086c87, type: 3}
+  - {fileID: 7072346105976644994, guid: 4f87c9244c242404196f35d442ea5e30, type: 3}
+  - {fileID: 1199655332473243976, guid: bd89cc274ee04724c91410fdb1da8fc9, type: 3}
+  - {fileID: 7189500739050818349, guid: 78bd7ef1cdb43c245a7cb87184649716, type: 3}
+  - {fileID: 5857814586363206515, guid: a7bc1767437e0274a86ec8c5016c5ab1, type: 3}
+  - {fileID: 5542551606366949372, guid: 805b58e19f7c03e4da81ff9cc222b8d9, type: 3}
+  AmountOfFurniture: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  ButtonsT1:
+  - {fileID: 1179520517}
+  - {fileID: 2115200847}
+  - {fileID: 205108602}
+  ButtonsT2:
+  - {fileID: 484199471}
+  - {fileID: 263715851}
+  ButtonT3: {fileID: 1653785785}
+>>>>>>> Stashed changes
 --- !u!1 &1983922584
 GameObject:
   m_ObjectHideFlags: 0
@@ -7643,6 +7840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2047477352}
   - component: {fileID: 2047477353}
+  - component: {fileID: 2047477354}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -7721,6 +7919,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2047477354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047477351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: HomeScene
 --- !u!1 &2066383270
 GameObject:
   m_ObjectHideFlags: 0
@@ -7764,6 +7975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084194528}
   - component: {fileID: 2084194529}
+  - component: {fileID: 2084194530}
   m_Layer: 5
   m_Name: TreasureHunt
   m_TagString: Untagged
@@ -7842,6 +8054,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2084194530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084194527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: TreasureHuntScene
 --- !u!1 &2086082476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8050,7 +8275,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115200850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2115200852}
+        m_TargetAssemblyTypeName: BuyItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2115200850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8102,8 +8339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 1
-  Label: {fileID: 0}
-  Sprite: {fileID: 0}
+  Label: {fileID: 363990488}
+  Sprite: {fileID: 555068663}
+<<<<<<< Updated upstream
+=======
+  CurrentlyDisplayedItem: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &2115282850
 GameObject:
   m_ObjectHideFlags: 0

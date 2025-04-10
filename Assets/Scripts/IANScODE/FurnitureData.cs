@@ -10,20 +10,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="GameData",menuName ="newfurniture")]
 public class FurnitureData : ScriptableObject
 {
-    public List<GameObject>  Furniture;//needs to be shop variant
+    public List<GameObject> Furniture;//needs to be shop variant
     public int[] AmountOfFurniture;
-    public int TotalItiems;
-    public int Money;
+    public int TotalItiems = 1;
+    public int TotalShopItiems = 30;
+    public int[] Money = { 800, 800, 3 };
     public string Path;
     
     // Start is called before the first frame update
-    void Start()
-    {
-        //Populate Arrays
-        
-       
-    }
-
+  
     // Update is called once per frame
     void Update()
     {

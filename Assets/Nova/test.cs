@@ -11,7 +11,7 @@ public class test : MonoBehaviour
 
     public TMP_Text moneyText;
 
-    public int Money;
+    public int[] Money;
     // Start is called before the first frame update
     void Start()
     {

@@ -17,7 +17,7 @@ public class Hunt : MonoBehaviour
     
 
     
-    public int Money;
+    public int[] Money;
     
 
     void Start()
