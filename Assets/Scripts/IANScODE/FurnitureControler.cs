@@ -37,7 +37,7 @@ public class FurnitureControler : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        Debug.Log("Over");
+       // Debug.Log("Over");
         if (Input.GetMouseButtonDown(0))
         {
             CanPlace = !CanPlace;
