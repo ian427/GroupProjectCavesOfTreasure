@@ -12,23 +12,15 @@ public class BuyItem : MonoBehaviour
     int goldPrice = 0;
     int diamondsPrice = 0;
     int mysticGemsPrice = 0;
-    int[] itemID;
+    int itemID;
+    public GameObject CurrentlyDisplayedItem;
+    private ItemManager manager;
 
     void Start()
     {
 
-          
-        
         manager = GameObject.Find("Canvas").GetComponent<ItemManager>();
-       
-        for (int i = 0; i < manager.TotalItiems; i++)
-        {
-            if (manager.itemList[buttonIndex] == manager.Furniture[i])
-            {
-                itemID = i;
-            }
-        }
-
+  
         if (buttonIndex < 3)
         {
             goldPrice = 200;
@@ -53,7 +45,8 @@ public class BuyItem : MonoBehaviour
             GameObject.Find("Canvas").GetComponent<ItemManager>().goldAmount -= goldPrice;
             GameObject.Find("Canvas").GetComponent<ItemManager>().diamondsAmount -= diamondsPrice;
             GameObject.Find("Canvas").GetComponent<ItemManager>().diamondsAmount -= mysticGemsPrice;
-            GameObject.Find("Canvas").GetComponent<ItemManager>().boughtList[itemID[0]][itemID[1]] += 1;
+            itemID = manager.FindItem(CurrentlyDisplayedItem);
+            GameObject.Find("Canvas").GetComponent<ItemManager>().AmountOfFurniture[itemID] += 1;
         }
     }
 }
