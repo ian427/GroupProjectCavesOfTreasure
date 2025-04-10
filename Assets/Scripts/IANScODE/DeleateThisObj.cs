@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DeleateThisObj : MonoBehaviour
 {
-    Canvas PopUpMenu;
+    EventSystem PopUpMenu;
     public GameObject ToDestroy;
     private FurnitureControler furniturecontroler;
 
     // Start is called before the first frame update
-
-    public void ThisItem(GameObject item)
+    void Start()
+    {
+        PopUpMenu = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+    }
+        public void ThisItem(GameObject item)
     {
         ToDestroy = item;
     }

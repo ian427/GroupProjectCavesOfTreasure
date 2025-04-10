@@ -5,19 +5,19 @@ using UnityEngine;
 public class PopUpFurniture : MonoBehaviour
 {
     public GameObject popUpMenu;
-
+    public GameObject Currentitem;
     //Double clicking variables
-    private float firstClickTime;
+    public float firstClickTime;
     private float timeInbetweenClicking = 0.5f;
-    private bool isTimeCheckAllowed = true;
-    private int clickNumber = 0;
+    public bool isTimeCheckAllowed = true;
+    public int clickNumber = 0;
 
     //Sets the popUpMenu to be inactive upon the start
     void Start()
     {
         popUpMenu.SetActive(false);
     }
-
+    /*
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -31,15 +31,15 @@ public class PopUpFurniture : MonoBehaviour
             StartCoroutine(DetectDoubleClick());
         }
     }
-
-    private IEnumerator DetectDoubleClick()
+    */
+    public IEnumerator DetectDoubleClick()
     {
         isTimeCheckAllowed = false;
         while(Time.time < firstClickTime + timeInbetweenClicking)
         {
             if(clickNumber == 2)
             {
-                Debug.Log("Double clicked");
+                Debug.Log("PopUp");
                 popUpMenu.SetActive(true); 
                 break;
             }
