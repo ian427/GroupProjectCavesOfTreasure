@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
+using Unity.Mathematics;
 using UnityEditor.Search;
 using UnityEditor.Tilemaps;
 using UnityEngine;
@@ -30,17 +31,18 @@ public class FurnitureData : ScriptableObject
     }
     public void LoadGameData()
     {
-        var fd = (FurnitureData)Resources.Load("GameData");
-        string s = (fd.Path +"\\Scripts\\SaveGame.txt");
+        
+        string s = (Path +"\\Scripts\\SaveGame.txt");
         string data = File.ReadAllText(s);
         JsonUtility.FromJsonOverwrite(data, this);
     }
     public void SaveGameData()
     {
+        Debug.Log(Path);
         var fd = (FurnitureData)Resources.Load("GameData");
         //saves data to player prefs
         string s = JsonUtility.ToJson(this);
-        File.WriteAllText((fd.Path +"\\Scripts\\SaveGame.txt"), s);
+        File.WriteAllText((Path +"\\Scripts\\SaveGame.txt"), s);
     }
 
 }

@@ -16,7 +16,7 @@ public class test : MonoBehaviour
     void Start()
     {
 
-        furnitureData = FurnitureData.LoadPrefrences();
+        //furnitureData = FurnitureData.LoadPrefrences();
 
         
         Money = furnitureData.Money;//SETS furnitur date money as money

@@ -1,1 +1,1 @@
-{"Furniture":[{"instanceID":25110}],"AmountOfFurniture":[5],"TotalItiems":0,"Money":0,"Path":"C:/Users/Games/OneDrive - University of Suffolk/Documents/GitHub/GroupProjectCavesOfTreasure/Assets"}
+{"Furniture":[{"instanceID":25110}],"AmountOfFurniture":[5],"TotalItiems":0,"Money":4,"Path":"D:/MGP-COT/GroupProjectCavesOfTreasure/Assets"}
