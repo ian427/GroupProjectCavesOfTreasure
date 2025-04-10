@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Nova/NovaScene.unity
     guid: 8115520b5b18a0741b168cef164ee3f9
+  - enabled: 1
+    path: Assets/Scenes/Dan R's Work.unity
+    guid: a7afec6522538d3489197d2046409d15
   m_configObjects: {}
