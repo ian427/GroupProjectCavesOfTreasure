@@ -77,7 +77,7 @@ public class Hunt : MonoBehaviour
         if (other.gameObject.CompareTag("Chest"))
         {
             Destroy(other.gameObject);
-            Money = +Random.Range(1, 11);
+            Money[0] = +Random.Range(1, 11);
             furnitureData.Money = Money;//SETS furnitur date money as money
             string m_Path = Application.dataPath;
             furnitureData.Path = m_Path;

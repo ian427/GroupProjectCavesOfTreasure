@@ -19,14 +19,9 @@ public class BuyItem : MonoBehaviour
 
     void Start()
     {
-<<<<<<< Updated upstream
-        //while (GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex] == "NULL" || GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex] == "NULL")
-        //{
-            Label.SetText(GameObject.Find("Canvas").GetComponent<ItemManager>().itemName[buttonIndex]);
-            //Sprite = GameObject.Find("Canvas").GetComponent<ItemManager>().itemImage[buttonIndex];
-            itemID = GameObject.Find("Canvas").GetComponent<ItemManager>().itemID[buttonIndex];
-        //}
-=======
+
+          
+        
         manager = GameObject.Find("Canvas").GetComponent<ItemManager>();
        
         for (int i = 0; i < manager.TotalItiems; i++)
@@ -36,7 +31,7 @@ public class BuyItem : MonoBehaviour
                 itemID = i;
             }
         }
->>>>>>> Stashed changes
+
         if (buttonIndex < 3)
         {
             goldPrice = 200;

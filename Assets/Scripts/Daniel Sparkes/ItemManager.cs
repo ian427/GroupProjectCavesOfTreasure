@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-<<<<<<< Updated upstream
-=======
-using Unity.VisualScripting;
-using UnityEditor;
 using System.Linq;
->>>>>>> Stashed changes
+
 
 public class ItemManager : MonoBehaviour
 {
@@ -55,85 +51,54 @@ public class ItemManager : MonoBehaviour
     }
     void Start()
     {
-<<<<<<< Updated upstream
+
         while (true)
         {
-            /*timer += Time.deltaTime;
+
+
+            data = (FurnitureData)Resources.Load("GameData");
+            goldAmount = data.Money[0];
+            diamondsAmount = data.Money[1];
+            mysticGemsAmount = data.Money[2];
+            for (int i = 0; i < data.Furniture.Count; i++)
+            {
+                itemList.Append(data.Furniture[i]);
+            }
+            Furniture = data.Furniture;
+            AmountOfFurniture = data.AmountOfFurniture;
+            TotalItiems = data.TotalShopItiems;
+        }
+    }
+
+        private void Update()
+        {
+            //Function to update items on sale
+            timer += Time.deltaTime;
             if (timer > 1)
             {
                 timer = 0;
                 days--;
+                //Tier 1
                 for (int i = 0; i < 3; i++)
                 {
-                    random[0] = Random.Range(0, 10);
-                    random[1] = Random.Range(0, 4);
-                    itemName[i] = itemNameIndex[random[0]];
-                    itemImage[i] = itemImageIndex[random[0]][random[1]];
-                    itemID[i][0] = random[0];
-                    itemID[i][1] = random[1];
+                    //Generate random number
+                    random = Random.Range(0, 10);
+                    ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
                 }
-                for (int i = 3; i < 5; i++)
+                //Tier 2
+                for (int i = 0; i < 2; i++)
                 {
-                    random[0] = Random.Range(0, 10);
-                    random[1] = Random.Range(0, 2);
-                    itemName[i] = itemNameIndex[random[0]];
-                    itemImage[i] = itemImageIndex[random[0]][random[1]];
-                    itemID[i][0] = random[0];
-                    itemID[i][1] = random[1];
+                    random = Random.Range(10, 20);
+                    ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
                 }
+                //Tier 3
                 if (days < 0)
                 {
                     days = 6;
-                    random[0] = Random.Range(0, 10);
-                    itemName[5] = itemNameIndex[random[0]];
-                    itemImage[5] = itemImageIndex[random[0]][random[1]];
-                    itemID[5][0] = random[0];
-                    itemID[5][1] = 0;
+                    random = Random.Range(20, 27);
+                    ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
                 }
-            }*/
-=======
-        data = (FurnitureData)Resources.Load("GameData");
-        goldAmount = data.Money[0];
-        diamondsAmount = data.Money[1];
-        mysticGemsAmount = data.Money[2];
-        for (int i = 0; i < data.Furniture.Count; i++)
-        {
-            itemList.Append(data.Furniture[i]);
-        }
-        Furniture = data.Furniture;
-        AmountOfFurniture = data.AmountOfFurniture;
-        TotalItiems = data.TotalShopItiems;
-    }
 
-    private void Update()
-    {
-        //Function to update items on sale
-        timer += Time.deltaTime;
-        if (timer > 1)
-        {
-            timer = 0;
-            days--;
-            //Tier 1
-            for (int i = 0; i < 3; i++)
-            {
-                //Generate random number
-                random = Random.Range(0, 10);
-                ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
             }
-            //Tier 2
-            for (int i = 0; i < 2; i++)
-            {
-                random = Random.Range(10, 20);
-                ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
-            }
-            //Tier 3
-            if (days < 0)
-            {
-                days = 6;
-                random = Random.Range(20, 27);
-                ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
-            }
->>>>>>> Stashed changes
         }
-    }
 }
