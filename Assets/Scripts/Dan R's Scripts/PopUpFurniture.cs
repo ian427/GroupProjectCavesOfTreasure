@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PopUpFurniture : MonoBehaviour
 {
     public GameObject popUpMenu;
     public GameObject Currentitem;
+    public DeleateThisObj button;
     //Double clicking variables
     public float firstClickTime;
     private float timeInbetweenClicking = 0.5f;
@@ -15,23 +17,11 @@ public class PopUpFurniture : MonoBehaviour
     //Sets the popUpMenu to be inactive upon the start
     void Start()
     {
+        button = GameObject.Find("Confirm").GetComponent<DeleateThisObj>();
         popUpMenu.SetActive(false);
     }
-    /*
-    void Update()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            clickNumber += 1;
-        }
-
-        if(clickNumber == 1 && isTimeCheckAllowed)
-        {
-            firstClickTime = Time.time;
-            StartCoroutine(DetectDoubleClick());
-        }
-    }
-    */
+   
+   
     public IEnumerator DetectDoubleClick()
     {
         isTimeCheckAllowed = false;
@@ -40,6 +30,7 @@ public class PopUpFurniture : MonoBehaviour
             if(clickNumber == 2)
             {
                 Debug.Log("PopUp");
+                button.ThisItem(Currentitem);
                 popUpMenu.SetActive(true); 
                 break;
             }

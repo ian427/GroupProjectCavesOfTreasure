@@ -5,16 +5,16 @@ using UnityEngine.EventSystems;
 
 public class DeleateThisObj : MonoBehaviour
 {
-    EventSystem PopUpMenu;
+    PopUpFurniture PopUpMenu;
     public GameObject ToDestroy;
     private FurnitureControler furniturecontroler;
 
     // Start is called before the first frame update
     void Start()
     {
-        PopUpMenu = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        PopUpMenu = GameObject.Find("EventSystem").GetComponent<PopUpFurniture>();
     }
-        public void ThisItem(GameObject item)
+    public void ThisItem(GameObject item)
     {
         ToDestroy = item;
     }
@@ -22,6 +22,8 @@ public class DeleateThisObj : MonoBehaviour
     { 
         furniturecontroler = ToDestroy.GetComponent<FurnitureControler>();
         furniturecontroler.DeleatItem();
+        PopUpMenu.popUpMenu.SetActive(false);
+       
     }
 
 }
