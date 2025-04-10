@@ -29,7 +29,7 @@ public class PopUpFurniture : MonoBehaviour
         {
             if(clickNumber == 2)
             {
-                Debug.Log("PopUp");
+               // Debug.Log("PopUp");
                 button.ThisItem(Currentitem);
                 popUpMenu.SetActive(true); 
                 break;

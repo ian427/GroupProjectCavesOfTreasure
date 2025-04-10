@@ -19,7 +19,8 @@ public class DeleateThisObj : MonoBehaviour
         ToDestroy = item;
     }
     public void OnButtonPress()
-    { 
+    {
+        Debug.Log("yes");
         furniturecontroler = ToDestroy.GetComponent<FurnitureControler>();
         furniturecontroler.DeleatItem();
         PopUpMenu.popUpMenu.SetActive(false);

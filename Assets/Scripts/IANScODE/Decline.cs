@@ -14,7 +14,7 @@ public class Decline : MonoBehaviour
     }
     public void OnButtonPress()
     {
-       
+        Debug.Log("down");
         PopUpMenu.popUpMenu.SetActive(false);
 
     }
