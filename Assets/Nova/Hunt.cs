@@ -89,7 +89,7 @@ public class Hunt : MonoBehaviour
         {
                      
          
-         SceneManager.LoadScene("Dan R's Work");
+         SceneManager.LoadScene("ShopTest");
 
         }
     }

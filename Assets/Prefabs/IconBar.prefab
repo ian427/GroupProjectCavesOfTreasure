@@ -356,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 7162305274381410081}
   - component: {fileID: 9094402809852925048}
   - component: {fileID: 1352937505825627152}
-  - component: {fileID: 2204176037535363859}
+  - component: {fileID: 6042700469069241756}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -639,9 +639,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2204176037535363859}
-        m_TargetAssemblyTypeName: ButtonBasUniversalButtone, Assembly-CSharp
-        m_MethodName: OnButtonPress
+      - m_Target: {fileID: 6042700469069241756}
+        m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -651,7 +651,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2204176037535363859
+--- !u!114 &6042700469069241756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -660,10 +660,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8436114970597369496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ce9058b6ae03bb4abad87a2b048653c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGoTO: 
 --- !u!1 &8856201721494301993
 GameObject:
   m_ObjectHideFlags: 0
