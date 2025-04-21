@@ -1238,13 +1238,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1161750116}
   m_HandleRect: {fileID: 377526970}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0.604
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 772886911}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &772886907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1268,7 @@ GameObject:
   - component: {fileID: 772886910}
   - component: {fileID: 772886909}
   - component: {fileID: 772886908}
+  - component: {fileID: 772886911}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1313,6 +1326,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &772886911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772886907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54645b009c179247ad2492a3b306054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 0216988fcb3752644af9e013c4ab7f36, type: 2}
+  musicSlider: {fileID: 755659143}
 --- !u!1 &855806947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1613,14 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5356243889392068600, guid: 6c4031790f555cc4ab8b71ace06100b3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e31ec65727b243c42b48ebb4158ce04d, type: 3}
+    - target: {fileID: 5356243889392068600, guid: 6c4031790f555cc4ab8b71ace06100b3, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -8498705098015493034, guid: 0216988fcb3752644af9e013c4ab7f36, type: 2}
     - target: {fileID: 5693892665988004155, guid: 6c4031790f555cc4ab8b71ace06100b3, type: 3}
       propertyPath: m_Name
       value: AudioPlayer
