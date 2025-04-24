@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
-    private Vector3 offset = new Vector3(0f, 0f, -10f);
-    private float smoothTime = 0.25f;
-    private Vector3 velocity = Vector3.zero;
-
-    [SerializeField] private Transform player;
+    public float followSpeed = 5f;
+    public float yOffset = 0f;
+    public Transform player;
 
     void Update()
     {
-        Vector3 targetPos = player.position + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
+        Vector3 newpos = new Vector3(player.position.x, player.position.y + yOffset, -10f);
+        transform.position = Vector3.Slerp(transform.position, newpos, followSpeed * Time.deltaTime);
     }
 }
