@@ -277,7 +277,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!224 &159264598
 RectTransform:
@@ -409,9 +409,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287933475}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0019445, y: 0.0013353, z: 123.6}
-  m_LocalScale: {x: 1.0648, y: 1.0648, z: 1.0648}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0019445001, y: 0.0013353, z: 555}
+  m_LocalScale: {x: 1.0648001, y: 1.0648001, z: 1.0648001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 668813031}
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3971df814af7343a97ca31bea59fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxMovementSpeed: 0.01
+  parallaxMovementSpeed: 0.05
 --- !u!1001 &311382538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,15 +1124,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332883976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1163}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 159264598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -765, y: 491}
+  m_AnchorMin: {x: 0.106374994, y: 0.9527038}
+  m_AnchorMax: {x: 0.106374994, y: 0.9527038}
+  m_AnchoredPosition: {x: -10, y: 2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1332883978
@@ -1310,8 +1310,8 @@ Transform:
   m_GameObject: {fileID: 1395471010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.8255, y: -4.49, z: 0}
-  m_LocalScale: {x: 35.439545, y: 1, z: 1}
+  m_LocalPosition: {x: 3.2646, y: -4.49, z: 0}
+  m_LocalScale: {x: 46.560474, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1660,12 +1660,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 683553436}
-  - {fileID: 287933476}
   - {fileID: 1407913347}
   - {fileID: 337198989}
   - {fileID: 1647459442}
   - {fileID: 159264598}
   - {fileID: 1722660186}
+  - {fileID: 287933476}
   - {fileID: 803905529}
   - {fileID: 1395471012}
   - {fileID: 311382538}
