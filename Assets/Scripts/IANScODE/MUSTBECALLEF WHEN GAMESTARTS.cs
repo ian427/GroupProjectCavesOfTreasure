@@ -8,7 +8,9 @@ public class MUSTBECALLEFWHENGAMESTARTS : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         data = (FurnitureData)Resources.Load("GameData");
+        data.Path = Application.dataPath;
         data.LoadGameData();
 
     }
