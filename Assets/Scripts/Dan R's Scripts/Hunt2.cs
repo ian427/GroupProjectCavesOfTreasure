@@ -18,14 +18,14 @@ public class Hunt2 : MonoBehaviour
     public TMP_Text diamondsText;
     public TMP_Text gemsText;
 
-    public int Gold;
-    public int Diamonds;
-    public int Gems;
+    [HideInInspector] public int Gold;
+    [HideInInspector] public int Diamonds;
+    [HideInInspector] public int Gems;
 
-    public int rewardGold;
-    public int rewardDiamonds;
-    public int rewardGems;
-    public int percentage;
+    [HideInInspector] public int rewardGold;
+    [HideInInspector] public int rewardDiamonds;
+    [HideInInspector] public int rewardGems;
+    [HideInInspector] public int percentage;
 
     public int reward1;
     public int reward2;
@@ -35,6 +35,13 @@ public class Hunt2 : MonoBehaviour
 
     public string reward1Name;
     public string reward2Name;
+
+    public GameObject goldImage1;
+    public GameObject goldImage2;
+    public GameObject diamondImage1;
+    public GameObject diamondImage2;
+    public GameObject gemsImage1;
+    public GameObject gemsImage2;
 
 
     private void Start()
@@ -51,6 +58,13 @@ public class Hunt2 : MonoBehaviour
         Gold = furnitureData.Gold ;//SETS furnitur date money as money
         Diamonds = furnitureData.Diamond ;//SETS furnitur date money as money
         Gems = furnitureData.Gem ;//SETS furnitur date money as money
+
+        goldImage1.SetActive(false);
+        goldImage2.SetActive(false);
+        diamondImage1.SetActive(false);
+        diamondImage2.SetActive(false);
+        gemsImage1.SetActive(false);
+        gemsImage2.SetActive(false);
     }
 
     private void Update()
@@ -127,6 +141,9 @@ public class Hunt2 : MonoBehaviour
             rewardGold = +Random.Range(1, 11);
             reward1 = rewardGold;
             reward1Name = "Gold";
+            goldImage1.SetActive(true);
+            diamondImage1.SetActive(false);
+            gemsImage1.SetActive(false);
             reward1Text.text = " " + reward1;
         }
 
@@ -135,6 +152,9 @@ public class Hunt2 : MonoBehaviour
             rewardDiamonds = +Random.Range(3, 7);
             reward1 = rewardDiamonds;
             reward1Name = "Diamonds";
+            goldImage1.SetActive(false);
+            diamondImage1.SetActive(true);
+            gemsImage1.SetActive(false);
             reward1Text.text = " " + reward1;
         }
 
@@ -143,6 +163,9 @@ public class Hunt2 : MonoBehaviour
             rewardGems = +Random.Range(1, 4);
             reward1 = rewardGems;
             reward1Name = "Gems";
+            goldImage1.SetActive(false);
+            diamondImage1.SetActive(false);
+            gemsImage1.SetActive(true);
             reward1Text.text = " " + reward1;
         }
     }
@@ -154,6 +177,9 @@ public class Hunt2 : MonoBehaviour
             rewardGold = +Random.Range(1, 11);
             reward2 = rewardGold;
             reward2Name = "Gold";
+            goldImage2.SetActive(true);
+            diamondImage2.SetActive(false);
+            gemsImage2.SetActive(false);
             reward2Text.text = " " + reward2;
         }
 
@@ -162,6 +188,9 @@ public class Hunt2 : MonoBehaviour
             rewardDiamonds = +Random.Range(3, 7);
             reward2 = rewardDiamonds;
             reward2Name = "Diamonds";
+            goldImage2.SetActive(false);
+            diamondImage2.SetActive(true);
+            gemsImage2.SetActive(false);
             reward2Text.text = " " + reward2;
         }
 
@@ -170,6 +199,9 @@ public class Hunt2 : MonoBehaviour
             rewardGems = +Random.Range(1, 4);
             reward2 = rewardGems;
             reward2Name = "Gems";
+            goldImage2.SetActive(false);
+            diamondImage2.SetActive(false);
+            gemsImage2.SetActive(true);
             reward2Text.text = " " + reward2;
         }
     }
