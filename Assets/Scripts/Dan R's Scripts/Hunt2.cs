@@ -48,7 +48,9 @@ public class Hunt2 : MonoBehaviour
         //percentage = Random.Range(0, 100);
 
         MonsterAnimation = GetComponent<Animator>();
-        //Money= furnitureData.Money ;//SETS furnitur date money as money
+        Gold = furnitureData.Gold ;//SETS furnitur date money as money
+        Diamonds = furnitureData.Diamond ;//SETS furnitur date money as money
+        Gems = furnitureData.Gem ;//SETS furnitur date money as money
     }
 
     private void Update()
@@ -93,6 +95,7 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Chest"))
         {
             Destroy(other.gameObject);
+            moveSpeed = 0;
             percentage = Random.Range(0, 100);
             RandomizeFirstRewards();
             percentage = Random.Range(0, 100);
@@ -187,6 +190,8 @@ public class Hunt2 : MonoBehaviour
         {
             Gems += reward1;
         }
+
+        moveSpeed = 5f;
     }
 
     public void SelectSecondRewards()
@@ -205,5 +210,7 @@ public class Hunt2 : MonoBehaviour
         {
             Gems += reward2;
         }
+
+        moveSpeed = 5f;
     }
 }
