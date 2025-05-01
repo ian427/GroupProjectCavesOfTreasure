@@ -6,7 +6,7 @@ public class ONGAMEQUIT : MonoBehaviour
 {
     FurnitureData data;
     // Start is called before the first frame update
-    void Start()
+    void OnApplicationQuit()
     {
         data = (FurnitureData)Resources.Load("GameData");
         data.SaveGameData();
