@@ -3,77 +3,100 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using Unity.PlasticSCM.Editor.WebApi;
+using Unity.VisualScripting;
+using System;
+using System.ComponentModel;
 
 
 public class ItemManager : MonoBehaviour
 {
-    public TextMeshProUGUI GoldNumber;
-    public TextMeshProUGUI DiamondsNumber;
-    public TextMeshProUGUI MysticGemsNumber;
-    public FurnitureData data;
-    public int goldAmount;
-    public int diamondsAmount;
-    public int mysticGemsAmount;
-   float timer = 0;
-    int days = 6;
-    int random;
-    public List<GameObject> Furniture;//needs to be shop variant
-    public int[] AmountOfFurniture;
-    public int TotalItiems;
+    [SerializeField] private TextMeshProUGUI GoldNumber;
+    [SerializeField] private TextMeshProUGUI DiamondsNumber;
+    [SerializeField] private TextMeshProUGUI MysticGemsNumber;
+     private FurnitureData data;
+     public int goldAmount;
+     public int diamondsAmount;
+     public int mysticGemsAmount;
+     private int random;
+    [SerializeField] private List<Sprite> Furniture;//needs to be shop variant
+    [SerializeField] public int[] AmountOfFurniture;
+     private int TotalItiems;
     public GameObject []ButtonsT1;
     public GameObject []ButtonsT2;
     public GameObject ButtonT3;
-        
-    /*
+    [SerializeField] private int IndexOfLastTier1;
+    [SerializeField] private int IndexOfLastTier2;
+    [SerializeField] private int IndexOfLastTier3;
+    [SerializeField] private List<Sprite> CurrentlyDisplayedT1;
+    [SerializeField] private List<Sprite> CurrentlyDisplayedT2;
+    [SerializeField] private Sprite currentlydisplayedT3;
+    private TimeSpan currentTimeAsTimeSpan;
+    private TimeSpan LastTimeStamp;
+    private bool Canupdate = false;
     void Start()
-    {
-        while (true)
-        {
-
-
+    { 
             data = (FurnitureData)Resources.Load("GameData");
-            goldAmount = data.Money[0];
-            diamondsAmount = data.Money[1];
-            mysticGemsAmount = data.Money[2];
+            goldAmount = data.Gold;
+            diamondsAmount = data.Diamond;
+            mysticGemsAmount = data.Gem;
            
             Furniture = data.Furniture;
             AmountOfFurniture = data.AmountOfFurniture;
-            TotalItiems = data.TotalShopItiems;
+        LastTimeStamp = data.LastDate;
+      
+        currentTimeAsTimeSpan = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
+        //Debug.Log(currentTimeAsTimeSpan);
+        CurrentlyDisplayedT1 = data.CurrentlyDisplayedT1;
+        CurrentlyDisplayedT2 = data.CurrentlyDisplayedT2;
+        currentlydisplayedT3 = data.currentlydisplayedT3;
+        if (currentTimeAsTimeSpan <= LastTimeStamp)
+        {
+            Canupdate = true;
+            data.LastDate = currentTimeAsTimeSpan + TimeSpan.FromDays(1);//when next shop update 
         }
+        //Tier 1
+        for (int i = 0; i < ButtonsT1.Length; i++)
+        {
+            ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT1[i];
+        }
+        //Tier 2
+        for (int i = 0; i < ButtonsT2.Length; i++)
+        {
+            ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT2[i];
+        }
+        //Tier 3
+        ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
     }
 
         private void Update()
         {
-            //Function to update items on sale
-            timer += Time.deltaTime;
-            if (timer > 1)
+            if (Canupdate)
             {
-                timer = 0;
-                days--;
+
                 //Tier 1
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < ButtonsT1.Length; i++)
                 {
                     //Generate random number
-                    random = Random.Range(0, 10);
-                    ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
+                    random = UnityEngine.Random.Range(0, IndexOfLastTier1);//index into furniture
+                    CurrentlyDisplayedT1[i] = Furniture[random];
+                    ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT1[i];
                 }
                 //Tier 2
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < ButtonsT2.Length; i++)
                 {
-                    random = Random.Range(10, 20);
-                    ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
+                random = UnityEngine.Random.Range(IndexOfLastTier1, IndexOfLastTier2);//index into furniture
+                CurrentlyDisplayedT2[i] = Furniture[random];
+                ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT2[i];
                 }
                 //Tier 3
-                if (days < 0)
-                {
-                    days = 6;
-                    random = Random.Range(20, 27);
-                    ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = Furniture[random];
-                }
+                random = UnityEngine.Random.Range(IndexOfLastTier1, IndexOfLastTier2);//index into furniture
+                currentlydisplayedT3 = Furniture[random];
+                ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
 
             }
         }
-    public int FindItem(GameObject Item)
+    public int FindItem(Sprite Item)
     {
         int answer = 0;
         for (int i = 0; i < Furniture.Count; i++)
@@ -86,10 +109,24 @@ public class ItemManager : MonoBehaviour
         }
         return answer;
     }
-    public void AddItem(GameObject Item)
+    public void AddItem(Sprite Item)
     {
         int temp = FindItem(Item);
         AmountOfFurniture[temp]++;
     }
-    */
+    public void updatedata()
+    {
+        data.Gold = goldAmount;
+        data.Diamond = diamondsAmount;
+        data.Gem = mysticGemsAmount;
+
+        data.Furniture = Furniture;
+        data.AmountOfFurniture = AmountOfFurniture;
+        data.LastDate = LastTimeStamp;
+        
+        data.CurrentlyDisplayedT1 = CurrentlyDisplayedT1;
+        data.CurrentlyDisplayedT2 = CurrentlyDisplayedT2;
+        data.currentlydisplayedT3 = currentlydisplayedT3;
+
+    }
 }

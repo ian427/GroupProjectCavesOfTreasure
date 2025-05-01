@@ -26,9 +26,9 @@ public class DragNDrop : MonoBehaviour
         //renderer.material.color = Color.red;
         if (Input.GetMouseButtonDown(0))
         {
-            if (controler.CheckFurniture(this.gameObject))//checking if we have more than zero of this item
+            if (controler.CheckFurniture(this.gameObject.GetComponent<SpriteRenderer>().sprite))//checking if we have more than zero of this item
             {
-                controler.RemoveItem(this.gameObject);
+                controler.RemoveItem(this.gameObject.GetComponent<SpriteRenderer>().sprite);
                 TempItem = GameObject.Instantiate(NonFunctionalDuplicate);
                 TempItem.transform.position = this.transform.position;//spawns bullet at position 
 
