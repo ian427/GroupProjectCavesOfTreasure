@@ -14,7 +14,9 @@ public class FurnitureData : ScriptableObject
     public int[] AmountOfFurniture;
     public int TotalItiems = 1;
     public int TotalShopItiems = 30;
-    public int[] Money = { 800, 800, 3 };
+    public int Gold = 0;
+    public int Diamond = 0;
+    public int Gem = 0;
     public string Path;
     
     // Start is called before the first frame update
