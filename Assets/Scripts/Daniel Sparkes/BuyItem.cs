@@ -14,13 +14,15 @@ public class BuyItem : MonoBehaviour
     int mysticGemsPrice = 0;
     int itemID;
     public GameObject CurrentlyDisplayedItem;
+    public GameObject Displaywindow;
     private ItemManager manager;
+    private SpriteRenderer rend;
 
     void Start()
     {
 
         manager = GameObject.Find("Canvas").GetComponent<ItemManager>();
-  
+        Displaywindow.GetComponent<SpriteRenderer>().sprite = CurrentlyDisplayedItem.GetComponent<SpriteRenderer>().sprite;
         if (buttonIndex < 3)
         {
             goldPrice = 200;
@@ -36,6 +38,7 @@ public class BuyItem : MonoBehaviour
             mysticGemsPrice = 2;
             diamondsPrice = 600;
         }
+       
     }
 
     public void Buy()

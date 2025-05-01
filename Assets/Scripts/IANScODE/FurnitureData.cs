@@ -11,16 +11,20 @@ using UnityEngine;
 public class FurnitureData : ScriptableObject
 {
     public List<GameObject> Furniture;//needs to be shop variant
-    public int[] AmountOfFurniture;
+    public int[] AmountOfFurniture;//furnitur index
     public int TotalItiems = 1;
     public int TotalShopItiems = 30;
     public int Gold = 0;
     public int Diamond = 0;
     public int Gem = 0;
+    public TimeSpan LastDate;
     public string Path;
-    
+    public List<GameObject> CurrentlyDisplayedT1;
+    public List<GameObject> CurrentlyDisplayedT2;
+    public GameObject currentlydisplayedT3;
+
     // Start is called before the first frame update
-  
+
     // Update is called once per frame
     void Update()
     {
