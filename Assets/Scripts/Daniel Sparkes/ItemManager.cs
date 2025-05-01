@@ -23,7 +23,8 @@ public class ItemManager : MonoBehaviour
     public GameObject []ButtonsT1;
     public GameObject []ButtonsT2;
     public GameObject ButtonT3;
-        public
+        
+    /*
     void Start()
     {
         while (true)
@@ -90,4 +91,5 @@ public class ItemManager : MonoBehaviour
         int temp = FindItem(Item);
         AmountOfFurniture[temp]++;
     }
+    */
 }

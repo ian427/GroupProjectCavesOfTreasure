@@ -6,6 +6,7 @@ using TMPro;
 
 public class BuyItem : MonoBehaviour
 {
+    /*
     public int buttonIndex;
     public TextMeshProUGUI Label;
     public GameObject Sprite;
@@ -49,4 +50,5 @@ public class BuyItem : MonoBehaviour
             GameObject.Find("Canvas").GetComponent<ItemManager>().AmountOfFurniture[itemID] += 1;
         }
     }
+    */
 }
