@@ -1,1 +1,1 @@
-{"Furniture":[{"instanceID":0}],"AmountOfFurniture":[5],"TotalItiems":0,"TotalShopItiems":30,"Money":[],"Path":"C:/Users/m_rud/Documents/Dan's Work Stuff/Unity/CavesOfTreasureGroupProject/GroupProjectCavesOfTreasure/Assets"}
+{"Furniture":[{"instanceID":0}],"AmountOfFurniture":[5],"TotalItiems":0,"TotalShopItiems":30,"Money":[],"Path":"D:/MGP-COT/GroupProjectCavesOfTreasure/Assets"}
