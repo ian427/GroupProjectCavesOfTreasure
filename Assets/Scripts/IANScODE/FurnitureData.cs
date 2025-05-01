@@ -10,18 +10,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="GameData",menuName ="newfurniture")]
 public class FurnitureData : ScriptableObject
 {
-    public List<GameObject> Furniture;//needs to be shop variant
+    public List<Sprite> Furniture;//needs to be shop variant
     public int[] AmountOfFurniture;//furnitur index
     public int TotalItiems = 1;
-    public int TotalShopItiems = 30;
+
     public int Gold = 0;
     public int Diamond = 0;
     public int Gem = 0;
     public TimeSpan LastDate;
     public string Path;
-    public List<GameObject> CurrentlyDisplayedT1;
-    public List<GameObject> CurrentlyDisplayedT2;
-    public GameObject currentlydisplayedT3;
+    public List<Sprite> CurrentlyDisplayedT1;
+    public List<Sprite> CurrentlyDisplayedT2;
+    public Sprite currentlydisplayedT3;
 
     // Start is called before the first frame update
 
@@ -40,6 +40,7 @@ public class FurnitureData : ScriptableObject
     public void SaveGameData()
     {
         Debug.Log(Path);
+        Path = Application.dataPath;
         var fd = (FurnitureData)Resources.Load("GameData");
         //saves data to player prefs
         string s = JsonUtility.ToJson(this);

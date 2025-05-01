@@ -6,15 +6,14 @@ using TMPro;
 
 public class BuyItem : MonoBehaviour
 {
-    /*
+    
     public int buttonIndex;
     public TextMeshProUGUI Label;
-    public GameObject Sprite;
     int goldPrice = 0;
     int diamondsPrice = 0;
     int mysticGemsPrice = 0;
     int itemID;
-    public GameObject CurrentlyDisplayedItem;
+    public Sprite CurrentlyDisplayedItem;
     public GameObject Displaywindow;
     private ItemManager manager;
     private SpriteRenderer rend;
@@ -23,13 +22,13 @@ public class BuyItem : MonoBehaviour
     {
 
         manager = GameObject.Find("Canvas").GetComponent<ItemManager>();
-        Displaywindow.GetComponent<SpriteRenderer>().sprite = CurrentlyDisplayedItem.GetComponent<SpriteRenderer>().sprite;
-        if (buttonIndex < 3)
+        Displaywindow.GetComponent<SpriteRenderer>().sprite = CurrentlyDisplayedItem;
+        if (buttonIndex == 1)
         {
             goldPrice = 200;
             diamondsPrice = 150;
         }
-        else if (buttonIndex < 5)
+        else if (buttonIndex == 2)
         {
             goldPrice = 600;
             diamondsPrice = 450;
@@ -53,5 +52,5 @@ public class BuyItem : MonoBehaviour
             GameObject.Find("Canvas").GetComponent<ItemManager>().AmountOfFurniture[itemID] += 1;
         }
     }
-    */
+    
 }

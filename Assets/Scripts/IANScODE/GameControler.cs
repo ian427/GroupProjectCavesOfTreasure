@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameControler : MonoBehaviour
 {
     [SerializeField] private FurnitureData furnitureData;
-    [SerializeField] private List<GameObject> FurnitureL;//needs to be shop variant
+    [SerializeField] private List<Sprite> FurnitureL;//needs to be shop variant
     [SerializeField] private int[] AmountOfFurnitureL;
     [SerializeField] public int TotalItems = 0;
     [SerializeField] private int ScaleFactor = 1;
@@ -43,7 +43,7 @@ public class GameControler : MonoBehaviour
     {
         
     }
-    private int FindItem(GameObject Item)
+    private int FindItem(Sprite Item)
     {
         int answer = 0;
         for (int i = 0; i < FurnitureL.Count; i++)
@@ -56,17 +56,17 @@ public class GameControler : MonoBehaviour
         }
         return answer;
     }
-    public void AddItem(GameObject Item)
+    public void AddItem(Sprite Item)
     {
         int temp = FindItem(Item);
         AmountOfFurnitureL[temp] ++;
     }
-    public void RemoveItem(GameObject Item)
+    public void RemoveItem(Sprite Item)
     {
         int temp = FindItem(Item);
         AmountOfFurnitureL[temp] --;
     }
-    public bool CheckFurniture(GameObject SearchTerm)
+    public bool CheckFurniture(Sprite SearchTerm)
     {
         bool answer = false;
         if (0 < AmountOfFurnitureL[FindItem(SearchTerm)])

@@ -19,7 +19,7 @@ public class ItemManager : MonoBehaviour
      public int diamondsAmount;
      public int mysticGemsAmount;
      private int random;
-    [SerializeField] private List<GameObject> Furniture;//needs to be shop variant
+    [SerializeField] private List<Sprite> Furniture;//needs to be shop variant
     [SerializeField] public int[] AmountOfFurniture;
      private int TotalItiems;
     public GameObject []ButtonsT1;
@@ -28,9 +28,9 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private int IndexOfLastTier1;
     [SerializeField] private int IndexOfLastTier2;
     [SerializeField] private int IndexOfLastTier3;
-    private List<GameObject> CurrentlyDisplayedT1;
-    private List<GameObject> CurrentlyDisplayedT2;
-    private GameObject currentlydisplayedT3;
+    [SerializeField] private List<Sprite> CurrentlyDisplayedT1;
+    [SerializeField] private List<Sprite> CurrentlyDisplayedT2;
+    [SerializeField] private Sprite currentlydisplayedT3;
     private TimeSpan currentTimeAsTimeSpan;
     private TimeSpan LastTimeStamp;
     private bool Canupdate = false;
@@ -44,7 +44,7 @@ public class ItemManager : MonoBehaviour
             Furniture = data.Furniture;
             AmountOfFurniture = data.AmountOfFurniture;
         LastTimeStamp = data.LastDate;
-        TotalItiems = data.Furniture.Count();
+      
         currentTimeAsTimeSpan = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
         //Debug.Log(currentTimeAsTimeSpan);
         CurrentlyDisplayedT1 = data.CurrentlyDisplayedT1;
@@ -56,12 +56,12 @@ public class ItemManager : MonoBehaviour
             data.LastDate = currentTimeAsTimeSpan + TimeSpan.FromDays(1);//when next shop update 
         }
         //Tier 1
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < ButtonsT1.Length; i++)
         {
             ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT1[i];
         }
         //Tier 2
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < ButtonsT2.Length; i++)
         {
             ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT2[i];
         }
@@ -71,15 +71,11 @@ public class ItemManager : MonoBehaviour
 
         private void Update()
         {
-       
-
-        //Function to update items on sale
-
             if (Canupdate)
             {
 
                 //Tier 1
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < ButtonsT1.Length; i++)
                 {
                     //Generate random number
                     random = UnityEngine.Random.Range(0, IndexOfLastTier1);//index into furniture
@@ -87,7 +83,7 @@ public class ItemManager : MonoBehaviour
                     ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT1[i];
                 }
                 //Tier 2
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < ButtonsT2.Length; i++)
                 {
                 random = UnityEngine.Random.Range(IndexOfLastTier1, IndexOfLastTier2);//index into furniture
                 CurrentlyDisplayedT2[i] = Furniture[random];
@@ -100,7 +96,7 @@ public class ItemManager : MonoBehaviour
 
             }
         }
-    public int FindItem(GameObject Item)
+    public int FindItem(Sprite Item)
     {
         int answer = 0;
         for (int i = 0; i < Furniture.Count; i++)
@@ -113,7 +109,7 @@ public class ItemManager : MonoBehaviour
         }
         return answer;
     }
-    public void AddItem(GameObject Item)
+    public void AddItem(Sprite Item)
     {
         int temp = FindItem(Item);
         AmountOfFurniture[temp]++;
@@ -123,7 +119,14 @@ public class ItemManager : MonoBehaviour
         data.Gold = goldAmount;
         data.Diamond = diamondsAmount;
         data.Gem = mysticGemsAmount;
+
+        data.Furniture = Furniture;
         data.AmountOfFurniture = AmountOfFurniture;
+        data.LastDate = LastTimeStamp;
+        
+        data.CurrentlyDisplayedT1 = CurrentlyDisplayedT1;
+        data.CurrentlyDisplayedT2 = CurrentlyDisplayedT2;
+        data.currentlydisplayedT3 = currentlydisplayedT3;
 
     }
 }
