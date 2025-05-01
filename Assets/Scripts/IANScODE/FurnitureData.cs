@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using Unity.Mathematics;
-using UnityEditor.Search;
-using UnityEditor.Tilemaps;
+//using UnityEditor.Search;
+//using UnityEditor.Tilemaps;
 using UnityEngine;
 [CreateAssetMenu(fileName ="GameData",menuName ="newfurniture")]
 public class FurnitureData : ScriptableObject

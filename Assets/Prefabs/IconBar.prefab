@@ -331,7 +331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.33, y: 0.5}
   m_AnchorMax: {x: 0.33, y: 0.5}
-  m_AnchoredPosition: {x: -1.6799927, y: 0}
+  m_AnchoredPosition: {x: -1.6799927, y: -24}
   m_SizeDelta: {x: 108.91, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &350738968258322791
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGoTO: 
+  SceneToGoTO: Settings
 --- !u!1 &8436114970597369496
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 7162305274381410081}
   - component: {fileID: 9094402809852925048}
   - component: {fileID: 1352937505825627152}
-  - component: {fileID: 2204176037535363859}
+  - component: {fileID: 7017027118614902053}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2204176037535363859}
+      - m_Target: {fileID: 7017027118614902053}
         m_TargetAssemblyTypeName: ButtonBasUniversalButtone, Assembly-CSharp
         m_MethodName: OnButtonPress
         m_Mode: 1
@@ -651,7 +651,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2204176037535363859
+--- !u!114 &7017027118614902053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGoTO: 
+  SceneToGoTO: MainMenu
 --- !u!1 &8856201721494301993
 GameObject:
   m_ObjectHideFlags: 0
