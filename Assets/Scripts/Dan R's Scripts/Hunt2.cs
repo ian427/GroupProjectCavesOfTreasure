@@ -13,6 +13,7 @@ public class Hunt2 : MonoBehaviour
 
     private FurnitureData furnitureData;
     public GameObject popUpMenu;
+    [SerializeField] private GameManager gameManager;
 
     public TMP_Text goldText;
     public TMP_Text diamondsText;
@@ -47,9 +48,7 @@ public class Hunt2 : MonoBehaviour
     private void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");
-        string m_Path = Application.dataPath;
-        furnitureData.Path = m_Path;
-        Debug.Log(m_Path);
+       
         furnitureData.LoadGameData();
         popUpMenu.SetActive(false);
         //percentage = Random.Range(0, 100);
@@ -128,7 +127,7 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Home"))
         {
 
-
+            SaveFurniture();
             SceneManager.LoadScene("ShopTest");
 
         }
@@ -244,5 +243,14 @@ public class Hunt2 : MonoBehaviour
         }
 
         moveSpeed = 5f;
+    }
+
+    public void SaveFurniture()
+    {
+        furnitureData.Gold += Gold;
+
+        furnitureData.Diamond += Diamonds;
+
+        furnitureData.Gem += Gems;
     }
 }

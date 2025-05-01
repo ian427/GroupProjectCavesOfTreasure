@@ -1892,6 +1892,7 @@ MonoBehaviour:
   Scene: 0
   moveInput: 0
   popUpMenu: {fileID: 2070426294}
+  gameManager: {fileID: 0}
   goldText: {fileID: 1332883978}
   diamondsText: {fileID: 1000164634}
   gemsText: {fileID: 510979727}
@@ -2192,6 +2193,7 @@ GameObject:
   - component: {fileID: 1722660185}
   - component: {fileID: 1722660184}
   - component: {fileID: 1722660187}
+  - component: {fileID: 1722660188}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2267,6 +2269,20 @@ MonoBehaviour:
   firstClickTime: 0
   isTimeCheckAllowed: 1
   clickNumber: 0
+--- !u!114 &1722660188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722660183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fd5ff1b2dee274384ebdfc1363edf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furnitureData: {fileID: 0}
+  h2: {fileID: 1407913349}
 --- !u!4 &1953580517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6766338167777887671, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
