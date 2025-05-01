@@ -32,14 +32,15 @@ public class FurnitureData : ScriptableObject
     }
     public void LoadGameData()
     {
-        
+        Debug.Log(Path);
+        Path = Application.dataPath;
         string s = (Path +"\\Scripts\\SaveGame.txt");
         string data = File.ReadAllText(s);
         JsonUtility.FromJsonOverwrite(data, this);
     }
     public void SaveGameData()
     {
-        Debug.Log(Path);
+        //Debug.Log(Path);
         Path = Application.dataPath;
         var fd = (FurnitureData)Resources.Load("GameData");
         //saves data to player prefs
