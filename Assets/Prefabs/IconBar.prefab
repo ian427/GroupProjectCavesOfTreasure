@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGoTO: NovaScene
+  SceneToGoTO: HuntScene
 --- !u!1 &4333217957589221368
 GameObject:
   m_ObjectHideFlags: 0
