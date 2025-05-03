@@ -49,14 +49,14 @@ public class Hunt2 : MonoBehaviour
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");
        
-        furnitureData.LoadGameData();
+        //furnitureData.LoadGameData();
         popUpMenu.SetActive(false);
         //percentage = Random.Range(0, 100);
 
         MonsterAnimation = GetComponent<Animator>();
-        Gold = furnitureData.Gold ;//SETS furnitur date money as money
-        Diamonds = furnitureData.Diamond ;//SETS furnitur date money as money
-        Gems = furnitureData.Gem ;//SETS furnitur date money as money
+        Gold = 0 ;//SETS furnitur date money as money
+        Diamonds = 0 ;//SETS furnitur date money as money
+        Gems = 0;//SETS furnitur date money as money
 
         goldImage1.SetActive(false);
         goldImage2.SetActive(false);
@@ -252,5 +252,16 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Diamond += Diamonds;
 
         furnitureData.Gem += Gems;
+
+        furnitureData.SaveGameData();
+    }
+
+    public void ResetMoneyForTestReasons()
+    {
+        furnitureData.Gold = 10;
+        furnitureData.Diamond = 5;
+        furnitureData.Gem = 2;
+
+        furnitureData.SaveGameData();
     }
 }

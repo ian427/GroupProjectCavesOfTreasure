@@ -37,6 +37,7 @@ public class ItemManager : MonoBehaviour
     void Start()
     { 
             data = (FurnitureData)Resources.Load("GameData");
+        data.LoadGameData();
             goldAmount = data.Gold;
             diamondsAmount = data.Diamond;
             mysticGemsAmount = data.Gem;
