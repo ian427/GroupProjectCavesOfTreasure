@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Nova/HuntScene.unity
     guid: 6f268aeedbe51714585fbba80ebe8d93
   - enabled: 1
-    path: Assets/Scenes/ShopScene.unity
-    guid: 4bfd67844d219fb428fa5783322e3878
-  - enabled: 1
     path: Assets/Scripts/Daniel Sparkes/ShopTest.unity
     guid: 1905e84f10e11164fba4cc1000535570
+  - enabled: 1
+    path: Assets/Scenes/ShopScene.unity
+    guid: 4bfd67844d219fb428fa5783322e3878
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 741e09157bbc05c46b5d51648f7f0754
