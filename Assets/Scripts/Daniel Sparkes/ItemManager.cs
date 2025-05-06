@@ -31,11 +31,14 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private List<Sprite> CurrentlyDisplayedT1;
     [SerializeField] private List<Sprite> CurrentlyDisplayedT2;
     [SerializeField] private Sprite currentlydisplayedT3;
-    private TimeSpan currentTimeAsTimeSpan;
+     private TimeSpan currentTimeAsTimeSpan;
     private TimeSpan LastTimeStamp;
+    
     private bool Canupdate = false;
-    void Start()
+    void Awake()
     { 
+        Debug.Log("current" + currentTimeAsTimeSpan);
+        Debug.Log("last" + LastTimeStamp);
             data = (FurnitureData)Resources.Load("GameData");
         data.LoadGameData();
             goldAmount = data.Gold;
