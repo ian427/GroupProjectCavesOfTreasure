@@ -127,8 +127,8 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Home"))
         {
 
-            SaveFurniture();
-            SceneManager.LoadScene("ShopTest");
+            //SaveFurniture();
+            SceneManager.LoadScene("ShopScene");
 
         }
     }
