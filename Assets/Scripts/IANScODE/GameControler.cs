@@ -21,7 +21,7 @@ public class GameControler : MonoBehaviour
         furnitureData.LoadGameData();
        // DontDestroyOnLoad(this.gameObject);
         FurnitureL = furnitureData.Furniture ;
-        AmountOfFurnitureL =furnitureData.AmountOfFurniture;
+        AmountOfFurnitureL = furnitureData.AmountOfFurniture;
         TotalItems = furnitureData.TotalItiems;
        
 

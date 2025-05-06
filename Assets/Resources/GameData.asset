@@ -12,8 +12,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef0c657b595dd54daeed820cbba8acd, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  Furniture: []
-  AmountOfFurniture: 
-  TotalItiems: 0
-  Money: 0
-  Path: 
+  Furniture:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  AmountOfFurniture: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  TotalItiems: 54
+  Gold: 10
+  Diamond: 5
+  Gem: 2
+  Path: C:/Users/m_rud/Documents/Dan's Work Stuff/Unity/CavesOfTreasureGroupProject/GroupProjectCavesOfTreasure/Assets
+  CurrentlyDisplayedT1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  CurrentlyDisplayedT2:
+  - {fileID: 0}
+  - {fileID: 0}
+  currentlydisplayedT3: {fileID: 0}

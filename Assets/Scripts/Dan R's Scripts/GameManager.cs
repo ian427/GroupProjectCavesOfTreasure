@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public int totalDiamonds;
     public int totalGems;
 
+
     void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");//include anywhere you use furniture date
+        furnitureData.LoadGameData();
+
         totalGold = furnitureData.Gold;
         totalDiamonds = furnitureData.Diamond;
         totalGems = furnitureData.Gem;

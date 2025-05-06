@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
-using Unity.PlasticSCM.Editor.WebApi;
+//using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using System;
 using System.ComponentModel;
@@ -37,6 +37,7 @@ public class ItemManager : MonoBehaviour
     void Start()
     { 
             data = (FurnitureData)Resources.Load("GameData");
+        data.LoadGameData();
             goldAmount = data.Gold;
             diamondsAmount = data.Diamond;
             mysticGemsAmount = data.Gem;

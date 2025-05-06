@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DisplayWindow2T2
       objectReference: {fileID: 0}
+    - target: {fileID: 495717880697139736, guid: aba5dae773034314d95db8f5cb3b117c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 605746983228941838, guid: aba5dae773034314d95db8f5cb3b117c, type: 3}
       propertyPath: m_Name
       value: DisplayWindow3T1
