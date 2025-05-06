@@ -1553,6 +1553,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 47.447876
       objectReference: {fileID: 0}
+    - target: {fileID: 3914967618245616632, guid: aba5dae773034314d95db8f5cb3b117c, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914967618245616632, guid: aba5dae773034314d95db8f5cb3b117c, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3914967618245616632, guid: aba5dae773034314d95db8f5cb3b117c, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 3921645771654287971, guid: aba5dae773034314d95db8f5cb3b117c, type: 3}
       propertyPath: m_Type
       value: 0
