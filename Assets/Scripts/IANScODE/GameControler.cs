@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,8 @@ public class GameControler : MonoBehaviour
     [SerializeField] private int[] AmountOfFurnitureL;
     [SerializeField] public int TotalItems = 0;
     [SerializeField] private int ScaleFactor = 1;
+    public int CurrentHuntsDone;
+    public TimeSpan lastHuntTime;
     // Start is called before the first frame update
     private void Start()
     {
@@ -23,8 +26,8 @@ public class GameControler : MonoBehaviour
         FurnitureL = furnitureData.Furniture ;
         AmountOfFurnitureL = furnitureData.AmountOfFurniture;
         TotalItems = furnitureData.TotalItiems;
-       
-
+        lastHuntTime = furnitureData.LastHuntTime;
+        CurrentHuntsDone = furnitureData.CurrentNumberOfHunts;
     }
     public void UpdateFurniturData()
     {
@@ -74,5 +77,14 @@ public class GameControler : MonoBehaviour
             answer = true;
         }
         return answer;
+    }
+    public void PushDataUpdate()
+    {
+       
+       // AmountOfFurnitureL = furnitureData.AmountOfFurniture=;
+       // TotalItems = furnitureData.TotalItiems = ;
+       // lastHuntTime = furnitureData.LastHuntTime = ;
+       // furnitureData.CurrentNumberOfHunts = CurrentHuntsDone;
+
     }
 }

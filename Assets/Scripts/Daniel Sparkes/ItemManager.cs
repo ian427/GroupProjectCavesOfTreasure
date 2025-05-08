@@ -58,6 +58,7 @@ public class ItemManager : MonoBehaviour
         {
             Canupdate = true;
             data.LastDate = currentTimeAsTimeSpan + TimeSpan.FromDays(1);//when next shop update 
+            Debug.Log("UpdatedShop");
         }
         //Tier 1
         for (int i = 0; i < ButtonsT1.Length; i++)
