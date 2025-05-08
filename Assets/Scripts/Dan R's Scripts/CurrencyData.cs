@@ -5,6 +5,8 @@ using TMPro;
 
 public class CurrencyData : MonoBehaviour
 {
+    [SerializeField] private FurnitureData furnitureData;
+
     private int goldTotal;
     private int diamondsTotal;
     private int gemsTotal;
@@ -15,13 +17,16 @@ public class CurrencyData : MonoBehaviour
     
     void Start()
     {
-        goldTotal = PlayerPrefs.GetInt("GoldAmount");
+        furnitureData = (FurnitureData)Resources.Load("GameData");//include anywhere you use furniture date
+        furnitureData.LoadGameData();
+
+        goldTotal = furnitureData.Gold;
         goldText.text = "Gold: " + goldTotal;
 
-        diamondsTotal = PlayerPrefs.GetInt("DiamondsAmount");
+        diamondsTotal = furnitureData.Diamond;
         diamondsText.text = "Diamonds: " + diamondsTotal;
 
-        gemsTotal = PlayerPrefs.GetInt("GemsAmount");
+        gemsTotal = furnitureData.Gem;
         gemsText.text = "Gems: " + gemsTotal;
 
     }
