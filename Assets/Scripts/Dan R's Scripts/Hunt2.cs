@@ -44,6 +44,7 @@ public class Hunt2 : MonoBehaviour
     public GameObject gemsImage1;
     public GameObject gemsImage2;
 
+    private Level level; 
 
     private void Start()
     {
@@ -64,6 +65,8 @@ public class Hunt2 : MonoBehaviour
         diamondImage2.SetActive(false);
         gemsImage1.SetActive(false);
         gemsImage2.SetActive(false);
+
+        level = GameObject.Find("").GetComponent<Level>();
     }
 
     private void Update()
@@ -113,6 +116,7 @@ public class Hunt2 : MonoBehaviour
             RandomizeFirstRewards();
             percentage = Random.Range(0, 100);
             RandomizeSecondRewards();
+            level.AddPoints();
 
             //Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
@@ -138,6 +142,10 @@ public class Hunt2 : MonoBehaviour
         if(percentage <= 64)
         {
             rewardGold = +Random.Range(1, 11);
+            if ((600 + (level.level * 200) - furnitureData.Gold) < rewardGold)
+            {
+                rewardGold = 800 - furnitureData.Gold;
+            }
             reward1 = rewardGold;
             reward1Name = "Gold";
             goldImage1.SetActive(true);
@@ -149,6 +157,10 @@ public class Hunt2 : MonoBehaviour
         if(percentage >= 65 && percentage < 98)
         {
             rewardDiamonds = +Random.Range(3, 7);
+            if ((600 + (level.level * 200) - furnitureData.Diamond) < rewardDiamonds)
+            {
+                rewardDiamonds = 800 - furnitureData.Diamond;
+            }
             reward1 = rewardDiamonds;
             reward1Name = "Diamonds";
             goldImage1.SetActive(false);
@@ -160,6 +172,10 @@ public class Hunt2 : MonoBehaviour
         if(percentage == 98 || percentage == 99 || percentage == 100)
         {
             rewardGems = +Random.Range(1, 4);
+            if ((1 + (level.level * 2) - furnitureData.Gem) < rewardGems)
+            {
+                rewardGems = 3 - furnitureData.Gem;
+            }
             reward1 = rewardGems;
             reward1Name = "Gems";
             goldImage1.SetActive(false);
