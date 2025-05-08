@@ -28,7 +28,7 @@ public class PopUpMenu : MonoBehaviour
         }
     }
 
-    private void OpenInventory()
+    public void OpenInventory()
     {
         inventory.SetActive(true);
         isInventoryOpen = true;

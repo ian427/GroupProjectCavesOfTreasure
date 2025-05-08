@@ -14,7 +14,7 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI GoldNumber;
     [SerializeField] private TextMeshProUGUI DiamondsNumber;
     [SerializeField] private TextMeshProUGUI MysticGemsNumber;
-     private FurnitureData data;
+     public FurnitureData data;
      public int goldAmount;
      public int diamondsAmount;
      public int mysticGemsAmount;
@@ -132,5 +132,6 @@ public class ItemManager : MonoBehaviour
         data.CurrentlyDisplayedT2 = CurrentlyDisplayedT2;
         data.currentlydisplayedT3 = currentlydisplayedT3;
 
+        data.SaveGameData();
     }
 }

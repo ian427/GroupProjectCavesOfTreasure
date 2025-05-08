@@ -118,8 +118,8 @@ public class Hunt2 : MonoBehaviour
             //furnitureData.Money = Money;//SETS furnitur date money as money
 
             popUpMenu.SetActive(true);
-            string m_Path = Application.dataPath;
-            furnitureData.Path = m_Path;
+            //string m_Path = Application.dataPath;
+            //furnitureData.Path = m_Path;
             furnitureData.SaveGameData();
 
         }
@@ -127,7 +127,7 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Home"))
         {
 
-            //SaveFurniture();
+            SaveFurniture();
             SceneManager.LoadScene("ShopScene");
 
         }
