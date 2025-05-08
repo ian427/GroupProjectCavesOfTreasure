@@ -48,7 +48,14 @@ public class ItemManager : MonoBehaviour
             Furniture = data.Furniture;
             AmountOfFurniture = data.AmountOfFurniture;
         LastTimeStamp = data.LastDate;
-      
+
+        data.Gold = goldAmount;
+        GoldNumber.text = "Gold: " + goldAmount;
+        data.Diamond = diamondsAmount;
+        DiamondsNumber.text = "Diamonds: " + diamondsAmount;
+        data.Gem = mysticGemsAmount;
+        MysticGemsNumber.text = "Gems: " + mysticGemsAmount;
+
         currentTimeAsTimeSpan = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
         //Debug.Log(currentTimeAsTimeSpan);
         CurrentlyDisplayedT1 = data.CurrentlyDisplayedT1;
@@ -97,8 +104,12 @@ public class ItemManager : MonoBehaviour
                 random = UnityEngine.Random.Range(IndexOfLastTier1, IndexOfLastTier2);//index into furniture
                 currentlydisplayedT3 = Furniture[random];
                 ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
+           
 
             }
+            GoldNumber.text = "Gold: " + goldAmount;
+            DiamondsNumber.text = "Diamonds: " + diamondsAmount;
+            MysticGemsNumber.text = "Gems: " + mysticGemsAmount;
         }
     public int FindItem(Sprite Item)
     {
@@ -121,8 +132,11 @@ public class ItemManager : MonoBehaviour
     public void updatedata()
     {
         data.Gold = goldAmount;
+        
         data.Diamond = diamondsAmount;
+        
         data.Gem = mysticGemsAmount;
+       
 
         data.Furniture = Furniture;
         data.AmountOfFurniture = AmountOfFurniture;
@@ -132,6 +146,6 @@ public class ItemManager : MonoBehaviour
         data.CurrentlyDisplayedT2 = CurrentlyDisplayedT2;
         data.currentlydisplayedT3 = currentlydisplayedT3;
 
-        data.SaveGameData();
+        //data.SaveGameData();
     }
 }

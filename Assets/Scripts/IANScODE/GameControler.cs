@@ -18,7 +18,7 @@ public class GameControler : MonoBehaviour
         string m_Path = Application.dataPath;
         furnitureData.Path = m_Path;
        // Debug.Log(m_Path);
-        furnitureData.LoadGameData();
+       // furnitureData.LoadGameData();
        // DontDestroyOnLoad(this.gameObject);
         FurnitureL = furnitureData.Furniture ;
         AmountOfFurnitureL = furnitureData.AmountOfFurniture;
