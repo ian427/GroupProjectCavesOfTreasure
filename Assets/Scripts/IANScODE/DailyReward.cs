@@ -16,31 +16,52 @@ public class DailyReward : MonoBehaviour
     public bool canGetReward = false;
     public int upperboundfortier2items =30;
     public TMP_Text timer;
+    public TMP_Text txtreward;
     private string datenextreward;
+    public GameObject canvastohide;
 
     // Start is called before the first frame update
     void Start()
     {
         data = (FurnitureData)Resources.Load("GameData");
-        if(data.LastRewardDate + TimeSpan.FromDays(1) <= TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks))
+        if(data.LastRewardDate + 86400 <= System.DateTime.UtcNow.Ticks)
         {
             canGetReward = true;
         }
+        if (canvastohide == null)
+        {
+            canvastohide = GameObject.Find("canvastohide");
+        }
+        canvastohide.SetActive(false);
         Furniture =data.Furniture;
         AmountOfFurniture = data.AmountOfFurniture;
-       
-        datenextreward =  data.LastRewardDate.DateTime + TimeSpan.FromDays(1).ToString();
-        //Debug.Log(date);
-        timer.text = datenextreward;
+
+        DateTime lastRewardDate = new DateTime(data.LastRewardDate, DateTimeKind.Utc);
+
+        // Add 1 day to get the next reward time
+        DateTime nextRewardDate = lastRewardDate.AddDays(1);
+
+        // Convert to local time if needed
+        DateTime localTime = nextRewardDate.ToLocalTime();
+
+        // Display
+        //Debug.Log("Next Reward Date: " + localTime);
+        timer.text = localTime.ToString("yyyy-MM-dd HH:mm:ss");
     }
     // Update is called once per frame
-    void GetReward()
+    public void GetReward()
     {
         if (canGetReward)
         {
-            
+
+            if (canvastohide == null)
+            {
+                canvastohide = GameObject.Find("canvastohide");
+            }
+            canvastohide.SetActive(true);
+
             //reset
-            data.LastRewardDate = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);
+            data.LastRewardDate = System.DateTime.UtcNow.Ticks;//todays  seconds
             
             //genreward
             int temp = UnityEngine.Random.Range(0, 100);
@@ -51,6 +72,7 @@ public class DailyReward : MonoBehaviour
                 Displaywindow.GetComponent<SpriteRenderer>().sprite = Furniture[newtemp];
                 AmountOfFurniture[newtemp]++;
                 AmmountToAwarded = 1;
+                txtreward.text = AmmountToAwarded.ToString();
                 canGetReward=false;
 
             }
@@ -60,6 +82,7 @@ public class DailyReward : MonoBehaviour
                 AmmountToAwarded = UnityEngine.Random.Range(10, 20);
                 Displaywindow.GetComponent<SpriteRenderer>().sprite = Diamond;
                 data.Diamond = data.Diamond + AmmountToAwarded;
+                txtreward.text = AmmountToAwarded.ToString();
                 canGetReward = false;   
 
 
@@ -70,6 +93,7 @@ public class DailyReward : MonoBehaviour
                 AmmountToAwarded = UnityEngine.Random.Range(20, 30);
                 Displaywindow.GetComponent<SpriteRenderer>().sprite = Diamond;
                 data.Gold = data.Gold + AmmountToAwarded;
+                txtreward.text = AmmountToAwarded.ToString();
                 canGetReward = false;
             }
             timer.text = datenextreward;
@@ -79,6 +103,11 @@ public class DailyReward : MonoBehaviour
     }
     public void ClaimReward()
     {
+       if (canvastohide == null)
+       {
+            canvastohide = GameObject.Find("canvastohide");
+       }
+        canvastohide.SetActive(false);
 
     }
 }

@@ -53,7 +53,7 @@ public class DefaultLoad : MonoBehaviour
         data.CurrentlyDisplayedT2 = DefaultCurrentlyDisplayedT2;
         data.currentlydisplayedT3 = DefaultcurrentlydisplayedT3;
         data.LastHuntTime = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
-        data.LastRewardDate = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
+        data.LastRewardDate = System.DateTime.UtcNow.Ticks;//time now
         data.CurrentNumberOfHunts = DefaultCurrentNumberOfHunts;
     }
 }

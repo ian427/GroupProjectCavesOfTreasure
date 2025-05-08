@@ -23,7 +23,7 @@ public class FurnitureData : ScriptableObject
     public List<Sprite> CurrentlyDisplayedT2;
     public Sprite currentlydisplayedT3;
     public TimeSpan LastHuntTime;
-    public TimeSpan LastRewardDate;
+    public long LastRewardDate;
     public int CurrentNumberOfHunts;
 
     // Start is called before the first frame update
