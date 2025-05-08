@@ -66,7 +66,7 @@ public class Hunt2 : MonoBehaviour
         gemsImage1.SetActive(false);
         gemsImage2.SetActive(false);
 
-        level = GameObject.Find("").GetComponent<Level>();
+        level = GameObject.Find("Monster").GetComponent<Level>();
     }
 
     private void Update()

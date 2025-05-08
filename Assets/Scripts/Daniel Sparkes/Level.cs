@@ -25,7 +25,7 @@ public class Level : MonoBehaviour
             goldMax = 600 + (level * 200);
             diamondMax = 600 + (level * 200);
             gemMax = 1 + (level * 2);
-            data.level = level;
+            //data.level = level;
         }
     }
 }
