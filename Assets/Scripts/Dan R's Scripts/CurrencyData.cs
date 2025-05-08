@@ -18,7 +18,7 @@ public class CurrencyData : MonoBehaviour
     void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");//include anywhere you use furniture date
-        furnitureData.LoadGameData();
+        //furnitureData.LoadGameData();
 
         goldTotal = furnitureData.Gold;
         goldText.text = "Gold: " + goldTotal;

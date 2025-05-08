@@ -40,7 +40,7 @@ public class ItemManager : MonoBehaviour
         Debug.Log("current" + currentTimeAsTimeSpan);
         Debug.Log("last" + LastTimeStamp);
             data = (FurnitureData)Resources.Load("GameData");
-        data.LoadGameData();
+        //data.LoadGameData();
             goldAmount = data.Gold;
             diamondsAmount = data.Diamond;
             mysticGemsAmount = data.Gem;
@@ -146,6 +146,6 @@ public class ItemManager : MonoBehaviour
         data.CurrentlyDisplayedT2 = CurrentlyDisplayedT2;
         data.currentlydisplayedT3 = currentlydisplayedT3;
 
-        //data.SaveGameData();
+       // data.SaveGameData();
     }
 }

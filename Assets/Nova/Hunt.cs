@@ -26,7 +26,7 @@ public class Hunt : MonoBehaviour
         string m_Path = Application.dataPath;
         furnitureData.Path = m_Path;
         Debug.Log(m_Path);
-        furnitureData.LoadGameData();
+        //furnitureData.LoadGameData();
 
         MonsterAnimation = GetComponent<Animator>();
         //Money= furnitureData.Money ;//SETS furnitur date money as money
