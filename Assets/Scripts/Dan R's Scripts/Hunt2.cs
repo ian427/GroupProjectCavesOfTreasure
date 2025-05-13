@@ -127,7 +127,7 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Home"))
         {
 
-            //SaveFurniture();
+            SaveData();
             SceneManager.LoadScene("ShopScene");
 
         }
@@ -245,15 +245,13 @@ public class Hunt2 : MonoBehaviour
         moveSpeed = 5f;
     }
 
-    public void SaveFurniture()
+    public void SaveData()
     {
         furnitureData.Gold += Gold;
 
         furnitureData.Diamond += Diamonds;
 
         furnitureData.Gem += Gems;
-
-        //furnitureData.SaveGameData();
     }
 
     public void ResetMoneyForTestReasons()
@@ -261,7 +259,5 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Gold = 10;
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
-
-        //furnitureData.SaveGameData();
     }
 }
