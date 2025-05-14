@@ -14,15 +14,17 @@ public class Chest : MonoBehaviour
     public GameObject ConcealObject;
     int level;
     int random;
+    Vector3 position; 
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(0);
+        position = GameObject.transform.position;
+        Debug.Log(position);
         level = GameObject.Find("Monster").GetComponent<Level>().level;
         if (level <= 3)
         {
-            random = UnityEngine.Random.Range(0, 5);
+            random = UnityEngine.Random.Range(4, 5);
             if (random == 4)
             {
                 Instantiate(ConcealObject, new Vector3(0, 0, 0), Quaternion.identity);
