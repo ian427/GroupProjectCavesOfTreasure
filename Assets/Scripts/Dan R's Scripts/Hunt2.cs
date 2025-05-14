@@ -44,6 +44,9 @@ public class Hunt2 : MonoBehaviour
     public GameObject gemsImage1;
     public GameObject gemsImage2;
 
+    //SFX
+    public AudioSource chestOpenSFX;
+    public AudioSource itemSelectSFX;
 
     private void Start()
     {
@@ -108,6 +111,7 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Chest"))
         {
             Destroy(other.gameObject);
+            chestOpenSFX.Play();
             moveSpeed = 0;
             percentage = Random.Range(0, 100);
             RandomizeFirstRewards();
@@ -222,6 +226,7 @@ public class Hunt2 : MonoBehaviour
             Gems += reward1;
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
     }
 
@@ -242,6 +247,7 @@ public class Hunt2 : MonoBehaviour
             Gems += reward2;
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
     }
 
