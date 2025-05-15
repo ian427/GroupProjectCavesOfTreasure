@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 7162305274381410081}
   - component: {fileID: 9094402809852925048}
   - component: {fileID: 1352937505825627152}
-  - component: {fileID: 3838621144465752691}
+  - component: {fileID: 3803120004740601956}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -643,9 +643,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3838621144465752691}
-        m_TargetAssemblyTypeName: ExitScene, Assembly-CSharp
-        m_MethodName: Exit
+      - m_Target: {fileID: 3803120004740601956}
+        m_TargetAssemblyTypeName: ONGAMEQUIT, Assembly-CSharp
+        m_MethodName: Tomenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -655,7 +655,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3838621144465752691
+--- !u!114 &3803120004740601956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -664,10 +664,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8436114970597369496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7db6f0129ba2a45836449c086cdfa5, type: 3}
+  m_Script: {fileID: 11500000, guid: cc0d791d5f1f5cb43bf8424029ce43ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: MainMenu
+  SGoTo: MainMenu
 --- !u!1 &8856201721494301993
 GameObject:
   m_ObjectHideFlags: 0

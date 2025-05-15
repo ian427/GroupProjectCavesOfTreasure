@@ -21,6 +21,7 @@ public class DefaultLoad : MonoBehaviour
     public Sprite DefaultcurrentlydisplayedT3;
 
     public int DefaultCurrentNumberOfHunts;
+    public List<GameObject> CurrentlyPlacedFurniture;
 
     FurnitureData data;
     // Start is called before the first frame update
@@ -55,5 +56,6 @@ public class DefaultLoad : MonoBehaviour
         data.LastHuntTime = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
         data.LastRewardDate = System.DateTime.UtcNow.Ticks;//time now
         data.CurrentNumberOfHunts = DefaultCurrentNumberOfHunts;
+        
     }
 }

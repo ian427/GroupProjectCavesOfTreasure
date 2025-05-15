@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class GameControler : MonoBehaviour
 {
-    [SerializeField] private FurnitureData furnitureData;
+    [SerializeField] public FurnitureData furnitureData;
     [SerializeField] private List<Sprite> FurnitureL;//needs to be shop variant
     [SerializeField] private int[] AmountOfFurnitureL;
     [SerializeField] public float TotalItems = 1;
     [SerializeField] private float ScaleFactor = 1;
+    [SerializeField] public List<GameObject> CurrentplacedFurnitureL;
     public int CurrentHuntsDone;
     public TimeSpan lastHuntTime;
     public float size;
@@ -29,6 +30,15 @@ public class GameControler : MonoBehaviour
         TotalItems = furnitureData.TotalItiems;
         lastHuntTime = furnitureData.LastHuntTime;
         CurrentHuntsDone = furnitureData.CurrentNumberOfHunts;
+        CurrentplacedFurnitureL = furnitureData.CurrentlyPlacedFurniture;
+        for (int i = 0; i < CurrentplacedFurnitureL.Count; i++)
+        {
+            GameObject Temp;
+            Temp = GameObject.Instantiate(CurrentplacedFurnitureL[i]);
+            Temp.GetComponent<FurnitureControler>().CanPlace = false;
+            Temp.GetComponent<FurnitureControler>().SetPosition();
+            
+        }
     }
     public void UpdateFurniturData()
     {
@@ -68,6 +78,7 @@ public class GameControler : MonoBehaviour
     {
         int temp = FindItem(Item);
         AmountOfFurnitureL[temp] ++;
+
     }
     public void RemoveItem(Sprite Item)
     {
@@ -86,10 +97,11 @@ public class GameControler : MonoBehaviour
     public void PushDataUpdate()
     {
        
-       // AmountOfFurnitureL = furnitureData.AmountOfFurniture=;
-       // TotalItems = furnitureData.TotalItiems = ;
-       // lastHuntTime = furnitureData.LastHuntTime = ;
-       // furnitureData.CurrentNumberOfHunts = CurrentHuntsDone;
+         furnitureData.AmountOfFurniture = AmountOfFurnitureL;
+        furnitureData.TotalItiems = TotalItems  ;
+         furnitureData.LastHuntTime = lastHuntTime ;
+        furnitureData.CurrentNumberOfHunts = CurrentHuntsDone;
+        furnitureData.CurrentlyPlacedFurniture = CurrentplacedFurnitureL;
 
     }
 }
