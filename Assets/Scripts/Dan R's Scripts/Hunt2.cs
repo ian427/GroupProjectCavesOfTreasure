@@ -44,6 +44,9 @@ public class Hunt2 : MonoBehaviour
     public GameObject gemsImage1;
     public GameObject gemsImage2;
 
+    //SFX
+    public AudioSource chestOpenSFX;
+    public AudioSource itemSelectSFX;
 
     private void Start()
     {
@@ -108,6 +111,7 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Chest"))
         {
             Destroy(other.gameObject);
+            chestOpenSFX.Play();
             moveSpeed = 0;
             percentage = Random.Range(0, 100);
             RandomizeFirstRewards();
@@ -127,7 +131,7 @@ public class Hunt2 : MonoBehaviour
         if (other.gameObject.CompareTag("Home"))
         {
 
-            //SaveFurniture();
+            SaveData();
             SceneManager.LoadScene("ShopScene");
 
         }
@@ -222,6 +226,7 @@ public class Hunt2 : MonoBehaviour
             Gems += reward1;
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
     }
 
@@ -242,18 +247,17 @@ public class Hunt2 : MonoBehaviour
             Gems += reward2;
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
     }
 
-    public void SaveFurniture()
+    public void SaveData()
     {
         furnitureData.Gold += Gold;
 
         furnitureData.Diamond += Diamonds;
 
         furnitureData.Gem += Gems;
-
-        //furnitureData.SaveGameData();
     }
 
     public void ResetMoneyForTestReasons()
@@ -261,7 +265,5 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Gold = 10;
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
-
-        //furnitureData.SaveGameData();
     }
 }

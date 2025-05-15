@@ -79,10 +79,9 @@ public class ItemManager : MonoBehaviour
         }
         //Tier 3
         ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
-    }
+    
 
-        private void Update()
-        {
+       
             if (Canupdate)
             {
 
@@ -111,7 +110,7 @@ public class ItemManager : MonoBehaviour
             GoldNumber.text = "Gold: " + goldAmount;
             DiamondsNumber.text = "Diamonds: " + diamondsAmount;
             MysticGemsNumber.text = "Gems: " + mysticGemsAmount;
-        }
+    }
     public int FindItem(Sprite Item)
     {
         int answer = 0;
