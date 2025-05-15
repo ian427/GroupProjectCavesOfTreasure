@@ -36,6 +36,7 @@ public class FurnitureData : ScriptableObject
 
     public void LoadGameData()
     {
+        string s;
         // add execute only in play mode vs build mode
         //Path = Application.persistentDataPath;
        // string s = Path + "\\SaveGame.txt";
