@@ -105,29 +105,27 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
+    public void OnClick()
+    {
+        
+        moveSpeed = 0;
+        percentage = Random.Range(0, 100);
+        RandomizeFirstRewards();
+        percentage = Random.Range(0, 100);
+        RandomizeSecondRewards();
+        level.AddPoints();
+
+        //Money = +Random.Range(1, 11);
+        //furnitureData.Money = Money;//SETS furnitur date money as money
+
+        popUpMenu.SetActive(true);
+        string m_Path = Application.dataPath;
+        furnitureData.Path = m_Path;
+        furnitureData.SaveGameData();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the other object has the "Collectible" tag
-        if (other.gameObject.CompareTag("Chest"))
-        {
-            Destroy(other.gameObject);
-            moveSpeed = 0;
-            percentage = Random.Range(0, 100);
-            RandomizeFirstRewards();
-            percentage = Random.Range(0, 100);
-            RandomizeSecondRewards();
-            level.AddPoints();
-
-            //Money = +Random.Range(1, 11);
-            //furnitureData.Money = Money;//SETS furnitur date money as money
-
-            popUpMenu.SetActive(true);
-            string m_Path = Application.dataPath;
-            furnitureData.Path = m_Path;
-            furnitureData.SaveGameData();
-
-        }
-
         if (other.gameObject.CompareTag("Home"))
         {
 
