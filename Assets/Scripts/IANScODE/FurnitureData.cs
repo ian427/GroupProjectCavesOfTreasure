@@ -38,11 +38,11 @@ public class FurnitureData : ScriptableObject
     {
         string s;
         // add execute only in play mode vs build mode
-       // Path = Application.persistentDataPath;
-      //   s = Path + "\\SaveGame.txt";
+        //Path = Application.persistentDataPath;
+       // string s = Path + "\\SaveGame.txt";
         //IF EDITOR 
        Path = Application.dataPath;
-        s = (Path +"\\Scripts\\SaveGame.txt");
+       string s = (Path +"\\Scripts\\SaveGame.txt");
        
 
         Debug.Log(Path);
