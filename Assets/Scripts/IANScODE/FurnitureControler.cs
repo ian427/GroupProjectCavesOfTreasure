@@ -35,9 +35,14 @@ public class FurnitureControler : MonoBehaviour
             Move = Camera.main.ScreenToWorldPoint(Input.mousePosition);//converts pixel cords to mouse pos
             Move.z = 0f;
             transform.position = Move;
+          
+            //goto mouse
+        }
+        else
+        { 
             X = this.transform.position.x; 
             Y = this.transform.position.y;
-            //goto mouse
+
         }
 
     }
@@ -77,6 +82,11 @@ public class FurnitureControler : MonoBehaviour
     {
         this.gameObject.transform.position = new Vector3(X,Y,0);
 
+    }
+    public void SavePosition()
+    {
+        X = this.transform.position.x;
+        Y = this.transform.position.y;
     }
 
 }

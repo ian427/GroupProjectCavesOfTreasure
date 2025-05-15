@@ -40,12 +40,7 @@ public class GameControler : MonoBehaviour
             
         }
     }
-    public void UpdateFurniturData()
-    {
-        furnitureData.Furniture = FurnitureL;
-        furnitureData.AmountOfFurniture = AmountOfFurnitureL;
-
-    }
+   
     public float GetMonsterScale()
     {
        // Debug.Log("scale");
@@ -101,6 +96,12 @@ public class GameControler : MonoBehaviour
         furnitureData.TotalItiems = TotalItems  ;
          furnitureData.LastHuntTime = lastHuntTime ;
         furnitureData.CurrentNumberOfHunts = CurrentHuntsDone;
+        for (int i = 0; i < CurrentplacedFurnitureL.Count; i++)
+        {
+
+            CurrentplacedFurnitureL[i].GetComponent<FurnitureControler>().SavePosition();
+            furnitureData.CurrentlyPlacedFurniture.Add(CurrentplacedFurnitureL[i]);
+        }
         furnitureData.CurrentlyPlacedFurniture = CurrentplacedFurnitureL;
 
     }
