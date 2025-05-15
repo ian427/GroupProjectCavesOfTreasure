@@ -22,6 +22,9 @@ public class FurnitureData : ScriptableObject
     public List<Sprite> CurrentlyDisplayedT1;
     public List<Sprite> CurrentlyDisplayedT2;
     public Sprite currentlydisplayedT3;
+    public TimeSpan LastHuntTime;
+    public long LastRewardDate;
+    public int CurrentNumberOfHunts;
 
     // Start is called before the first frame update
 
@@ -30,17 +33,26 @@ public class FurnitureData : ScriptableObject
     {
         
     }
+
     public void LoadGameData()
     {
+        string s;
+        // add execute only in play mode vs build mode
+        //Path = Application.persistentDataPath;
+       // string s = Path + "\\SaveGame.txt";
+        //IF EDITOR 
+       Path = Application.dataPath;
+       string s = (Path +"\\Scripts\\SaveGame.txt");
+       
+
         Debug.Log(Path);
-        Path = Application.dataPath;
-        string s = (Path +"\\Scripts\\SaveGame.txt");
+       
         string data = File.ReadAllText(s);
         JsonUtility.FromJsonOverwrite(data, this);
     }
     public void SaveGameData()
     {
-        //Debug.Log(Path);
+        Debug.Log(Path);
         Path = Application.dataPath;
         var fd = (FurnitureData)Resources.Load("GameData");
         //saves data to player prefs

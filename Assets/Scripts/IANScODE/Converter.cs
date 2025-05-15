@@ -8,22 +8,20 @@ public class Converter : MonoBehaviour
     private ItemManager manager;
     [SerializeField] private int Goldinrecipie;
     [SerializeField] private int Dimondsinrecipie;
-    private FurnitureData data;
-    int level;
-
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.Find("Canvas").GetComponent<ItemManager>();
-        //level = data.level;
+
     }
     public void ConvertToGems ()
     {
-        if((manager.goldAmount > Goldinrecipie )&&(manager.diamondsAmount>Dimondsinrecipie)&&((1 + (level * 2) - manager.mysticGemsAmount) >= 1))
+        if((0 <= (manager.goldAmount - Goldinrecipie)) &&(0<=(manager.diamondsAmount-Dimondsinrecipie)))
         {
-                manager.goldAmount = -Goldinrecipie;
-                manager.diamondsAmount = -Dimondsinrecipie;
+                manager.goldAmount -= Goldinrecipie;
+                manager.diamondsAmount -= Dimondsinrecipie;
                 manager.mysticGemsAmount++;
         }
+
     }
 }

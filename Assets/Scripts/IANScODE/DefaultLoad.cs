@@ -20,6 +20,8 @@ public class DefaultLoad : MonoBehaviour
     public List<Sprite> DefaultCurrentlyDisplayedT2;
     public Sprite DefaultcurrentlydisplayedT3;
 
+    public int DefaultCurrentNumberOfHunts;
+
     FurnitureData data;
     // Start is called before the first frame update
     void Start()
@@ -50,5 +52,8 @@ public class DefaultLoad : MonoBehaviour
         data.CurrentlyDisplayedT1 = DefaultCurrentlyDisplayedT1;
         data.CurrentlyDisplayedT2 = DefaultCurrentlyDisplayedT2;
         data.currentlydisplayedT3 = DefaultcurrentlydisplayedT3;
+        data.LastHuntTime = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
+        data.LastRewardDate = System.DateTime.UtcNow.Ticks;//time now
+        data.CurrentNumberOfHunts = DefaultCurrentNumberOfHunts;
     }
 }

@@ -51,6 +51,11 @@ public class BuyItem : MonoBehaviour
             itemID = manager.FindItem(CurrentlyDisplayedItem);
             GameObject.Find("Canvas").GetComponent<ItemManager>().AmountOfFurniture[itemID] += 1;
         }
+        Debug.Log("itemBrought");
     }
-    
+    public void Updatedisplay()
+    {
+        Displaywindow.GetComponent<SpriteRenderer>().sprite = CurrentlyDisplayedItem;
+    }
+
 }

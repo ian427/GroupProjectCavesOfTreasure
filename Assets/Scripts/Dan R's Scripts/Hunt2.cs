@@ -45,6 +45,9 @@ public class Hunt2 : MonoBehaviour
     public GameObject gemsImage2;
 
     private Level level; 
+    //SFX
+    public AudioSource chestOpenSFX;
+    public AudioSource itemSelectSFX;
 
     private void Start()
     {
@@ -126,10 +129,31 @@ public class Hunt2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Check if the other object has the "Collectible" tag
+        if (other.gameObject.CompareTag("Chest"))
+        {
+            Destroy(other.gameObject);
+            chestOpenSFX.Play();
+            moveSpeed = 0;
+            percentage = Random.Range(0, 100);
+            RandomizeFirstRewards();
+            percentage = Random.Range(0, 100);
+            RandomizeSecondRewards();
+
+            //Money = +Random.Range(1, 11);
+            //furnitureData.Money = Money;//SETS furnitur date money as money
+
+            popUpMenu.SetActive(true);
+            //string m_Path = Application.dataPath;
+            //furnitureData.Path = m_Path;
+            //furnitureData.SaveGameData();
+
+        }
+
         if (other.gameObject.CompareTag("Home"))
         {
 
-            //SaveFurniture();
+            SaveData();
             SceneManager.LoadScene("ShopScene");
 
         }
@@ -236,6 +260,7 @@ public class Hunt2 : MonoBehaviour
             Gems += reward1;
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
     }
 
@@ -256,18 +281,17 @@ public class Hunt2 : MonoBehaviour
             Gems += reward2;
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
     }
 
-    public void SaveFurniture()
+    public void SaveData()
     {
         furnitureData.Gold += Gold;
 
         furnitureData.Diamond += Diamonds;
 
         furnitureData.Gem += Gems;
-
-        furnitureData.SaveGameData();
     }
 
     public void ResetMoneyForTestReasons()
@@ -275,7 +299,5 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Gold = 10;
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
-
-        furnitureData.SaveGameData();
     }
 }

@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBasUniversalButtone : MonoBehaviour
 {
-    //public AudioSource click;
+    public AudioSource click;
     private bool canSwitch = false;
     [SerializeField]
     private string SceneToGoTO;
     public void OnButtonPress()
     {
         SceneManager.LoadScene(SceneToGoTO);//remove for sound
-        //click.Play();
+        click.Play();
 
         canSwitch = true;
 
