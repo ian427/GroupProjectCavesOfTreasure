@@ -19,8 +19,9 @@ public class FurnitureControler : MonoBehaviour
         monster = GameObject.Find("Player").GetComponent<MonsterGrow>();
         popup = GameObject.Find("EventSystem").GetComponent<PopUpFurniture>();
         CanPlace = true ;
-        monster.UpdateMonsterSize();
+        
         controler.TotalItems++;
+        monster.UpdateMonsterSize();
     }
 
     // Update is called once per frame

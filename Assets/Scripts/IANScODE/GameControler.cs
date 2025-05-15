@@ -9,10 +9,11 @@ public class GameControler : MonoBehaviour
     [SerializeField] private FurnitureData furnitureData;
     [SerializeField] private List<Sprite> FurnitureL;//needs to be shop variant
     [SerializeField] private int[] AmountOfFurnitureL;
-    [SerializeField] public int TotalItems = 0;
-    [SerializeField] private int ScaleFactor = 1;
+    [SerializeField] public float TotalItems = 1;
+    [SerializeField] private float ScaleFactor = 1;
     public int CurrentHuntsDone;
     public TimeSpan lastHuntTime;
+    public float size;
     // Start is called before the first frame update
     private void Start()
     {
@@ -35,15 +36,19 @@ public class GameControler : MonoBehaviour
         furnitureData.AmountOfFurniture = AmountOfFurnitureL;
 
     }
-    public int GetMonsterScale()
+    public float GetMonsterScale()
     {
-        int answer = TotalItems / ScaleFactor;
+       // Debug.Log("scale");
+        float answer = TotalItems / ScaleFactor;
+        Debug.Log("anser" + answer);
         return answer;
+        
         
     }
     // Update is called once per frame
     void Update()
     {
+       // size = GetMonsterScale();
         
     }
     private int FindItem(Sprite Item)
