@@ -2549,9 +2549,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5937376091040560031, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1407913349}
-    - targetCorrespondingSourceObject: {fileID: 5937376091040560031, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1407913350}
   m_SourcePrefab: {fileID: 100100000, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
 --- !u!1 &1407913348 stripped
 GameObject:
@@ -2597,8 +2594,6 @@ MonoBehaviour:
   diamondImage2: {fileID: 2070426297}
   gemsImage1: {fileID: 2070426296}
   gemsImage2: {fileID: 2070426295}
-  chestOpenSFX: {fileID: 1554324584}
-  itemSelectSFX: {fileID: 2137125994}
 --- !u!1 &1445100633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3219,6 +3214,7 @@ GameObject:
   - component: {fileID: 1722660184}
   - component: {fileID: 1722660187}
   - component: {fileID: 1722660188}
+  - component: {fileID: 1722660189}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3310,6 +3306,23 @@ MonoBehaviour:
   totalGold: 0
   totalDiamonds: 0
   totalGems: 0
+--- !u!114 &1722660189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722660183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4859a5975d272b84dba3b0ed3bb04f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  points: 0
+  goldMax: 800
+  diamondMax: 800
+  gemMax: 3
 --- !u!1 &1754159362
 GameObject:
   m_ObjectHideFlags: 0

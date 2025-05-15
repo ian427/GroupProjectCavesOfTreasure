@@ -25,6 +25,8 @@ public class FurnitureData : ScriptableObject
     public TimeSpan LastHuntTime;
     public long LastRewardDate;
     public int CurrentNumberOfHunts;
+    public int level = 1;
+    public int points = 0;
 
     // Start is called before the first frame update
 
@@ -42,7 +44,7 @@ public class FurnitureData : ScriptableObject
        // string s = Path + "\\SaveGame.txt";
         //IF EDITOR 
        Path = Application.dataPath;
-       string s = (Path +"\\Scripts\\SaveGame.txt");
+       s = (Path +"\\Scripts\\SaveGame.txt");
        
 
         Debug.Log(Path);

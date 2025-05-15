@@ -11,6 +11,12 @@ public class Level : MonoBehaviour
     public int gemMax = 3;
     private FurnitureData data;
 
+    private void Start()
+    {
+        data = (FurnitureData)Resources.Load("GameData");
+        level = data.level;
+        points = data.points;   
+    }
     public void AddPoints()
     {
         if (level < 10)
@@ -27,5 +33,10 @@ public class Level : MonoBehaviour
             gemMax = 1 + (level * 2);
             //data.level = level;
         }
+    }
+    public void PushData()
+    {
+        data.level = level;
+        data.points = points;
     }
 }
