@@ -11,6 +11,9 @@ public class Chest : MonoBehaviour
     private bool isTriggerEnabled = false;
     public GameObject Enviroment;
     public GameObject _Chest;
+
+    //VFX
+    public ParticleSystem openChestVFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +45,16 @@ public class Chest : MonoBehaviour
 
 
     }
-  
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            openChestVFX.Play();
+        }
+    }
+
+
 
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Hunt2 : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Hunt2 : MonoBehaviour
     public int Scene;
     private Animator MonsterAnimation;
     public float moveInput;
+    private bool hasOpenedChest;
 
     private FurnitureData furnitureData;
     public GameObject popUpMenu;
@@ -48,10 +50,17 @@ public class Hunt2 : MonoBehaviour
     public AudioSource chestOpenSFX;
     public AudioSource itemSelectSFX;
 
+    //VFX
+    public ParticleSystem goldVFX;
+    public ParticleSystem diamondVFX;
+    public ParticleSystem gemsVFX;
+
     private void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");
-       
+
+        hasOpenedChest = false;
+
         //furnitureData.LoadGameData();
         popUpMenu.SetActive(false);
         //percentage = Random.Range(0, 100);
@@ -110,7 +119,7 @@ public class Hunt2 : MonoBehaviour
         // Check if the other object has the "Collectible" tag
         if (other.gameObject.CompareTag("Chest"))
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             chestOpenSFX.Play();
             moveSpeed = 0;
             percentage = Random.Range(0, 100);
@@ -125,7 +134,6 @@ public class Hunt2 : MonoBehaviour
             //string m_Path = Application.dataPath;
             //furnitureData.Path = m_Path;
             //furnitureData.SaveGameData();
-
         }
 
         if (other.gameObject.CompareTag("Home"))
@@ -134,6 +142,16 @@ public class Hunt2 : MonoBehaviour
             SaveData();
             SceneManager.LoadScene("ShopScene");
 
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Chest"))
+        {
+            if (hasOpenedChest == true)
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 
@@ -214,20 +232,24 @@ public class Hunt2 : MonoBehaviour
         if(reward1Name == "Gold")
         {
             Gold += reward1;
+            goldVFX.Play();
         }
 
         if (reward1Name == "Diamonds")
         {
             Diamonds += reward1;
+            diamondVFX.Play();
         }
 
         if (reward1Name == "Gems")
         {
             Gems += reward1;
+            gemsVFX.Play();
         }
 
         itemSelectSFX.Play();
         moveSpeed = 5f;
+        hasOpenedChest = true;
     }
 
     public void SelectSecondRewards()
@@ -235,20 +257,24 @@ public class Hunt2 : MonoBehaviour
         if (reward2Name == "Gold")
         {
             Gold += reward2;
+            goldVFX.Play();
         }
 
         if (reward2Name == "Diamonds")
         {
             Diamonds += reward2;
+            diamondVFX.Play();
         }
 
         if (reward2Name == "Gems")
         {
             Gems += reward2;
+            gemsVFX.Play();
         }
 
         itemSelectSFX.Play();
         moveSpeed = 5f;
+        hasOpenedChest = true;
     }
 
     public void SaveData()

@@ -13,6 +13,8 @@ public class FurnitureControler : MonoBehaviour
     private PopUpFurniture popup;
     public float X, Y;
 
+    public ParticleSystem placeItemVFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,7 @@ public class FurnitureControler : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             popup.clickNumber += 1;
+            placeItemVFX.Play();
         }
         if (popup.clickNumber == 1 && popup.isTimeCheckAllowed)
         {
