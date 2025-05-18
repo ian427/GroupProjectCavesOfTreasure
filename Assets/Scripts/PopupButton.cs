@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 public class TutorialButton : MonoBehaviour
 {
-    [SerializeField] GameObject popup;
+    [SerializeField] GameObject popupbutton;
     public void ClosePopup()
     {
-        popup.SetActive(false);
+        popupbutton.SetActive(false);
     }
 }
