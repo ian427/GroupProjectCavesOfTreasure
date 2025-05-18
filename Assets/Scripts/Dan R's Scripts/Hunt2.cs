@@ -118,9 +118,9 @@ public class Hunt2 : MonoBehaviour
             //furnitureData.Money = Money;//SETS furnitur date money as money
 
             popUpMenu.SetActive(true);
-            string m_Path = Application.dataPath;
-            furnitureData.Path = m_Path;
-            furnitureData.SaveGameData();
+            //string m_Path = Application.dataPath;
+            //furnitureData.Path = m_Path;
+            //furnitureData.SaveGameData();
 
         }
 
@@ -253,7 +253,7 @@ public class Hunt2 : MonoBehaviour
 
         furnitureData.Gem += Gems;
 
-        furnitureData.SaveGameData();
+        //furnitureData.SaveGameData();
     }
 
     public void ResetMoneyForTestReasons()
@@ -262,6 +262,6 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
 
-        furnitureData.SaveGameData();
+        //furnitureData.SaveGameData();
     }
 }
