@@ -122,15 +122,11 @@ public class Hunt2 : MonoBehaviour
             //Destroy(other.gameObject);
             chestOpenSFX.Play();
             moveSpeed = 0;
-            percentage = Random.Range(0, 100);
-            RandomizeFirstRewards();
-            percentage = Random.Range(0, 100);
-            RandomizeSecondRewards();
 
+            StartCoroutine(openChest());
             //Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
 
-            popUpMenu.SetActive(true);
             //string m_Path = Application.dataPath;
             //furnitureData.Path = m_Path;
             //furnitureData.SaveGameData();
@@ -286,6 +282,15 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Gem += Gems;
     }
 
+    private IEnumerator openChest()
+    {
+        yield return new WaitForSeconds(2);
+        popUpMenu.SetActive(true);
+        percentage = Random.Range(0, 100);
+        RandomizeFirstRewards();
+        percentage = Random.Range(0, 100);
+        RandomizeSecondRewards();
+    }
     public void ResetMoneyForTestReasons()
     {
         furnitureData.Gold = 10;
