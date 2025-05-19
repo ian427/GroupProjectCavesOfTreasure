@@ -54,6 +54,7 @@ public class Hunt2 : MonoBehaviour
     public ParticleSystem goldVFX;
     public ParticleSystem diamondVFX;
     public ParticleSystem gemsVFX;
+    public GameObject walkVFX;
 
     private void Start()
     {
@@ -63,6 +64,7 @@ public class Hunt2 : MonoBehaviour
 
         //furnitureData.LoadGameData();
         popUpMenu.SetActive(false);
+        walkVFX.SetActive(false);
         //percentage = Random.Range(0, 100);
 
         MonsterAnimation = GetComponent<Animator>();
@@ -106,11 +108,13 @@ public class Hunt2 : MonoBehaviour
         if (moveInput != 0)
         {
             MonsterAnimation.SetBool("isWalking", true);
+            walkVFX.SetActive(true);
         }
         else
         {
             // If no movement input, stop the walking animation
             MonsterAnimation.SetBool("isWalking", false);
+            walkVFX.SetActive(false);
         }
     }
 
@@ -119,11 +123,11 @@ public class Hunt2 : MonoBehaviour
         // Check if the other object has the "Collectible" tag
         if (other.gameObject.CompareTag("Chest"))
         {
+            StartCoroutine(openChest());
             //Destroy(other.gameObject);
             chestOpenSFX.Play();
             moveSpeed = 0;
 
-            StartCoroutine(openChest());
             //Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
 
@@ -147,6 +151,7 @@ public class Hunt2 : MonoBehaviour
             if (hasOpenedChest == true)
             {
                 Destroy(collision.gameObject);
+                hasOpenedChest = false;
             }
         }
     }
