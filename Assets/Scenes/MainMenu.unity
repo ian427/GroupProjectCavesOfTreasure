@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   click: {fileID: 620593880}
-  SceneToGoTO: Dan R's Work
+  SceneToGoTO: CaveScene
 --- !u!1 &620593878
 GameObject:
   m_ObjectHideFlags: 0
