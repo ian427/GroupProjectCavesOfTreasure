@@ -7,6 +7,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using System;
 using System.ComponentModel;
+using UnityEngine.UIElements;
 
 
 public class ItemManager : MonoBehaviour
@@ -79,10 +80,9 @@ public class ItemManager : MonoBehaviour
         }
         //Tier 3
         ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
-    }
+    
 
-        private void Update()
-        {
+       
             if (Canupdate)
             {
 
@@ -102,16 +102,14 @@ public class ItemManager : MonoBehaviour
                 ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT2[i];
                 }
                 //Tier 3
-                random = UnityEngine.Random.Range(IndexOfLastTier1, IndexOfLastTier2);//index into furniture
+                random = UnityEngine.Random.Range(IndexOfLastTier1, Furniture.Count);//index into furniture
                 currentlydisplayedT3 = Furniture[random];
                 ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
            
 
             }
-            GoldNumber.text = "Gold: " + goldAmount;
-            DiamondsNumber.text = "Diamonds: " + diamondsAmount;
-            MysticGemsNumber.text = "Gems: " + mysticGemsAmount;
-        }
+            
+    }
     public int FindItem(Sprite Item)
     {
         int answer = 0;
@@ -149,4 +147,44 @@ public class ItemManager : MonoBehaviour
 
        // data.SaveGameData();
     }
+    void Update()
+    {
+        GoldNumber.text = "Gold: " + goldAmount;
+        DiamondsNumber.text = "Diamonds: " + diamondsAmount;
+        MysticGemsNumber.text = "Gems: " + mysticGemsAmount;
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            goldAmount += 500;
+            diamondsAmount += 100;
+            mysticGemsAmount += 10;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //Tier 1
+            for (int i = 0; i < ButtonsT1.Length; i++)
+            {
+                //Generate random number
+                random = UnityEngine.Random.Range(0, IndexOfLastTier1);//index into furniture
+                CurrentlyDisplayedT1[i] = Furniture[random];
+                ButtonsT1[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT1[i];
+                ButtonsT1[i].GetComponent<BuyItem>().Updatedisplay();
+            }
+            //Tier 2
+            for (int i = 0; i < ButtonsT2.Length; i++)
+            {
+                random = UnityEngine.Random.Range(IndexOfLastTier1, IndexOfLastTier2);//index into furniture
+                CurrentlyDisplayedT2[i] = Furniture[random];
+                ButtonsT2[i].GetComponent<BuyItem>().CurrentlyDisplayedItem = CurrentlyDisplayedT2[i];
+                ButtonsT2[i].GetComponent<BuyItem>().Updatedisplay();
+            }
+            //Tier 3
+            random = UnityEngine.Random.Range(IndexOfLastTier2, Furniture.Count);//index into furniture
+            currentlydisplayedT3 = Furniture[random];
+            ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
+            ButtonT3.GetComponent<BuyItem>().Updatedisplay();
+
+
+        }
+    }
+    
 }

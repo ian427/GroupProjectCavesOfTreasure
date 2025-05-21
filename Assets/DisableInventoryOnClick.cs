@@ -8,7 +8,6 @@ public class DisableInventoryOnClick : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log("Closed");
         if (Input.GetMouseButtonDown(0))
         {
             
