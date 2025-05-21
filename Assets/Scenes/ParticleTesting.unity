@@ -554,18 +554,6 @@ PrefabInstance:
       value: PlacingFurnitureVFX
       objectReference: {fileID: 0}
     - target: {fileID: 5747523537709492551, guid: 6c12434c0f967b543bbcc7c5eb8b615d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.47555998
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747523537709492551, guid: 6c12434c0f967b543bbcc7c5eb8b615d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.47555998
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747523537709492551, guid: 6c12434c0f967b543bbcc7c5eb8b615d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.47555998
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747523537709492551, guid: 6c12434c0f967b543bbcc7c5eb8b615d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}

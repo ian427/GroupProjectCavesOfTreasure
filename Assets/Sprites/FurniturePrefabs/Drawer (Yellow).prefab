@@ -116,7 +116,7 @@ MonoBehaviour:
   ClickTolarence: 0.25
   X: 0
   Y: 0
-  placeItemVFX: {fileID: 0}
+  placeItemVFX: {fileID: 7548852986657319305}
 --- !u!61 &-9172211252103551332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -222,5 +222,10 @@ PrefabInstance:
 --- !u!4 &5562881132912870160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5747523537709492551, guid: 6c12434c0f967b543bbcc7c5eb8b615d, type: 3}
+  m_PrefabInstance: {fileID: 211700922523347543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7548852986657319305 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7652448190468932574, guid: 6c12434c0f967b543bbcc7c5eb8b615d, type: 3}
   m_PrefabInstance: {fileID: 211700922523347543}
   m_PrefabAsset: {fileID: 0}
