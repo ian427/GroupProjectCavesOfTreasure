@@ -42,13 +42,13 @@ public class FurnitureData : ScriptableObject
        // string s = Path + "\\SaveGame.txt";
         //IF EDITOR 
        Path = Application.dataPath;
-       string s = (Path +"\\Scripts\\SaveGame.txt");
+       //string s = (Path +"\\Scripts\\SaveGame.txt");
        
 
         Debug.Log(Path);
        
-        string data = File.ReadAllText(s);
-        JsonUtility.FromJsonOverwrite(data, this);
+        //string data = File.ReadAllText(s);
+        //JsonUtility.FromJsonOverwrite(data, this);
     }
     public void SaveGameData()
     {
