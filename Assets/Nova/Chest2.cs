@@ -12,6 +12,7 @@ public class Chest2 : MonoBehaviour
     public GameObject Enviroment;
     public GameObject _Chest;
     public Animator animator;
+    public Hunt2 hunt2;
 
     //VFX
     public ParticleSystem openChestVFX;
@@ -29,6 +30,18 @@ public class Chest2 : MonoBehaviour
 
         chestFound();
     
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            openChestVFX.Play();
+            animator.SetBool("ChestOpen", true);
+            hunt2.ClickOnChest();
+
+            StartCoroutine(disableChest());
+        }
     }
 
     public void chestFound()
@@ -49,16 +62,10 @@ public class Chest2 : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private IEnumerator disableChest()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            openChestVFX.Play();
-            animator.SetBool("ChestOpen", true);
-        }
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
-
-
-
 }
 

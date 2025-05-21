@@ -123,10 +123,9 @@ public class Hunt2 : MonoBehaviour
         // Check if the other object has the "Collectible" tag
         if (other.gameObject.CompareTag("Chest"))
         {
-            StartCoroutine(openChest());
+            //StartCoroutine(openChest());
             //Destroy(other.gameObject);
-            chestOpenSFX.Play();
-            moveSpeed = 0;
+            
 
             //Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
@@ -150,8 +149,8 @@ public class Hunt2 : MonoBehaviour
         {
             if (hasOpenedChest == true)
             {
-                Destroy(collision.gameObject);
-                hasOpenedChest = false;
+                //Destroy(collision.gameObject);
+                //hasOpenedChest = false;
             }
         }
     }
@@ -286,8 +285,15 @@ public class Hunt2 : MonoBehaviour
 
         furnitureData.Gem += Gems;
     }
+    
+    public void ClickOnChest()
+    {
+        StartCoroutine(openChest());
+        chestOpenSFX.Play();
+        moveSpeed = 0;
+    }
 
-    private IEnumerator openChest()
+    public IEnumerator openChest()
     {
         yield return new WaitForSeconds(2);
         popUpMenu.SetActive(true);
