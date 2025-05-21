@@ -21,6 +21,9 @@ public class Hunt2 : MonoBehaviour
     public TMP_Text diamondsText;
     public TMP_Text gemsText;
 
+    public GameObject rewardTextImage;
+    public TMP_Text rewardText;
+
     [HideInInspector] public int Gold;
     [HideInInspector] public int Diamonds;
     [HideInInspector] public int Gems;
@@ -65,6 +68,8 @@ public class Hunt2 : MonoBehaviour
         //furnitureData.LoadGameData();
         popUpMenu.SetActive(false);
         walkVFX.SetActive(false);
+
+        rewardTextImage.SetActive(false);
         //percentage = Random.Range(0, 100);
 
         MonsterAnimation = GetComponent<Animator>();
@@ -231,18 +236,27 @@ public class Hunt2 : MonoBehaviour
     {
         if(reward1Name == "Gold")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gold obtained: " + reward1;
             Gold += reward1;
             goldVFX.Play();
         }
 
         if (reward1Name == "Diamonds")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Diamonds obtained: " + reward1;
             Diamonds += reward1;
             diamondVFX.Play();
         }
 
         if (reward1Name == "Gems")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gems obtained: " + reward1;
             Gems += reward1;
             gemsVFX.Play();
         }
@@ -256,18 +270,27 @@ public class Hunt2 : MonoBehaviour
     {
         if (reward2Name == "Gold")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gold obtained: " + reward2;
             Gold += reward2;
             goldVFX.Play();
         }
 
         if (reward2Name == "Diamonds")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Diamonds obtained: " + reward2;
             Diamonds += reward2;
             diamondVFX.Play();
         }
 
         if (reward2Name == "Gems")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gems obtained: " + reward2;
             Gems += reward2;
             gemsVFX.Play();
         }
@@ -307,5 +330,11 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Gold = 10;
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
+    }
+
+    private IEnumerator disableText()
+    {
+        yield return new WaitForSeconds(1);
+        rewardTextImage.SetActive(false);
     }
 }
