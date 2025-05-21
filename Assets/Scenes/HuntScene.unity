@@ -1017,6 +1017,7 @@ MonoBehaviour:
   Enviroment: {fileID: 0}
   _Chest: {fileID: 413220622}
   animator: {fileID: 413220624}
+  hunt2: {fileID: 1407913349}
   openChestVFX: {fileID: 537138138}
 --- !u!95 &413220624 stripped
 Animator:
@@ -1254,6 +1255,7 @@ MonoBehaviour:
   Enviroment: {fileID: 0}
   _Chest: {fileID: 561482506}
   animator: {fileID: 561482508}
+  hunt2: {fileID: 1407913349}
   openChestVFX: {fileID: 1229863538}
 --- !u!95 &561482508 stripped
 Animator:
@@ -3069,6 +3071,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6939220690250551558, guid: fb28ebab5e7af2b4393553b8d744d1ef, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939220690250551558, guid: fb28ebab5e7af2b4393553b8d744d1ef, type: 3}
       propertyPath: InheritVelocityModule.enabled
       value: 1
       objectReference: {fileID: 0}
@@ -3246,6 +3252,7 @@ MonoBehaviour:
   Enviroment: {fileID: 0}
   _Chest: {fileID: 1533755654}
   animator: {fileID: 1533755655}
+  hunt2: {fileID: 1407913349}
   openChestVFX: {fileID: 681171872}
 --- !u!1 &1552098196
 GameObject:
@@ -3471,6 +3478,7 @@ MonoBehaviour:
   Enviroment: {fileID: 0}
   _Chest: {fileID: 1598068730}
   animator: {fileID: 1598068732}
+  hunt2: {fileID: 1407913349}
   openChestVFX: {fileID: 93571950}
 --- !u!95 &1598068732 stripped
 Animator:
@@ -3838,6 +3846,7 @@ MonoBehaviour:
   Enviroment: {fileID: 0}
   _Chest: {fileID: 1895615646}
   animator: {fileID: 1895615648}
+  hunt2: {fileID: 1407913349}
   openChestVFX: {fileID: 473482802}
 --- !u!95 &1895615648 stripped
 Animator:
