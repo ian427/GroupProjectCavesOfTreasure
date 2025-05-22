@@ -566,7 +566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21900001, y: 0.80648136}
   m_AnchorMax: {x: 0.21900001, y: 0.80648136}
-  m_AnchoredPosition: {x: -176.00003, y: 60}
+  m_AnchoredPosition: {x: -176, y: 60}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362505321
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 391261268}
   - component: {fileID: 391261267}
   m_Layer: 5
-  m_Name: Visuals
+  m_Name: Tutorials
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VISUALS
+  m_text: TUTORIALS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffe625972885e71468e20040dfd283bb, type: 2}
   m_sharedMaterial: {fileID: 4902218320438129581, guid: ffe625972885e71468e20040dfd283bb, type: 2}
@@ -1504,6 +1504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 0216988fcb3752644af9e013c4ab7f36, type: 2}
   musicSlider: {fileID: 755659143}
+  SFXSlider: {fileID: 0}
 --- !u!1 &855806947
 GameObject:
   m_ObjectHideFlags: 0
