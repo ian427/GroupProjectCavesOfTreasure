@@ -10,15 +10,8 @@ public class TutorialButton : MonoBehaviour
     [SerializeField] GameObject popupbutton;
     [SerializeField] private List<GameObject> popupslist;
     public bool ShowTutorials = true;
-    
 
-    private void Awake()
-    {
-        //popupslist = new List<GameObject>();
-
-    }
-
-    private void Update()
+    private void Start()
     {
 
         if (ShowTutorials == false)
@@ -30,23 +23,27 @@ public class TutorialButton : MonoBehaviour
 
             }
         }
-        
+        else
+        {
+            foreach (GameObject popup in popupslist)
+
+            {
+                popup.SetActive(true);
+
+            }
+        }
     }
 
     public void ClosePopup()
     {
         popupbutton.SetActive(false);
     }
-
     public void DisableTutorials()
     {
         ShowTutorials = false;
     }
-
     public void EnableTutorials()
     {
         ShowTutorials = true;
     }
-
-   
 }
