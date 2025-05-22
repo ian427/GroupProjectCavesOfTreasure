@@ -1268,13 +1268,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413220622}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0904e1e570afa924e80a66a3b7f78232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 413220625}
-  Enviroment: {fileID: 0}
+  Enviroment: {fileID: 803905525}
   _Chest: {fileID: 413220622}
   animator: {fileID: 413220624}
   hunt2: {fileID: 1407913349}
@@ -1506,13 +1506,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561482506}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0904e1e570afa924e80a66a3b7f78232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 561482509}
-  Enviroment: {fileID: 0}
+  Enviroment: {fileID: 803905525}
   _Chest: {fileID: 561482506}
   animator: {fileID: 561482508}
   hunt2: {fileID: 1407913349}
@@ -3018,19 +3018,44 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5937376091040560031, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1407913350}
   m_SourcePrefab: {fileID: 100100000, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
+--- !u!1 &1407913348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5937376091040560031, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
+  m_PrefabInstance: {fileID: 1407913347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1407913349 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7318805260044544485, guid: 3516336f3c494d04a9b838e9a5c4dfcf, type: 3}
   m_PrefabInstance: {fileID: 1407913347}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1407913348}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 803e9553be918fd47b7e2ab54c0a2b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1407913350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407913348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad26fe61785e8a4cb6680274d14d6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  points: 0
+  goldMax: 800
+  diamondMax: 800
+  gemMax: 3
 --- !u!1 &1445100633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,13 +3421,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533755654}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0904e1e570afa924e80a66a3b7f78232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 1533755657}
-  Enviroment: {fileID: 0}
+  Enviroment: {fileID: 803905525}
   _Chest: {fileID: 1533755654}
   animator: {fileID: 1533755655}
   hunt2: {fileID: 1407913349}
@@ -3622,13 +3647,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598068730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0904e1e570afa924e80a66a3b7f78232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 1598068733}
-  Enviroment: {fileID: 0}
+  Enviroment: {fileID: 803905525}
   _Chest: {fileID: 1598068730}
   animator: {fileID: 1598068732}
   hunt2: {fileID: 1407913349}
@@ -3990,13 +4015,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895615646}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0904e1e570afa924e80a66a3b7f78232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 1895615649}
-  Enviroment: {fileID: 0}
+  Enviroment: {fileID: 803905525}
   _Chest: {fileID: 1895615646}
   animator: {fileID: 1895615648}
   hunt2: {fileID: 1407913349}

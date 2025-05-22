@@ -26,6 +26,8 @@ public class FurnitureData : ScriptableObject
     public long LastRewardDate;
     public int CurrentNumberOfHunts;
     public List<GameObject> CurrentlyPlacedFurniture;
+    public int level = 1;
+    public int points = 0;
 
     // Start is called before the first frame update
 

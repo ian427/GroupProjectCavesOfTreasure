@@ -13,6 +13,7 @@ public class Chest2 : MonoBehaviour
     public GameObject _Chest;
     public Animator animator;
     public Hunt2 hunt2;
+    private Level level;
 
     //VFX
     public ParticleSystem openChestVFX;
@@ -22,6 +23,7 @@ public class Chest2 : MonoBehaviour
         animator = GetComponent<Animator>();
 
         animator.SetBool("ChestOpen", false);
+        level = GameObject.Find("Monster").GetComponent<Level>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class Chest2 : MonoBehaviour
             openChestVFX.Play();
             animator.SetBool("ChestOpen", true);
             hunt2.ClickOnChest();
+            level.AddPoints();
 
             StartCoroutine(disableChest());
         }
