@@ -12,7 +12,7 @@ public class FurnitureData : ScriptableObject
 {
     public List<Sprite> Furniture;//needs to be shop variant
     public int[] AmountOfFurniture;//furnitur index
-    public int TotalItiems = 1;
+    public float TotalItiems = 1;
 
     public int Gold = 0;
     public int Diamond = 0;
@@ -25,6 +25,7 @@ public class FurnitureData : ScriptableObject
     public TimeSpan LastHuntTime;
     public long LastRewardDate;
     public int CurrentNumberOfHunts;
+    public List<GameObject> CurrentlyPlacedFurniture;
 
     // Start is called before the first frame update
 
@@ -42,13 +43,13 @@ public class FurnitureData : ScriptableObject
        // string s = Path + "\\SaveGame.txt";
         //IF EDITOR 
        Path = Application.dataPath;
-       //string s = (Path +"\\Scripts\\SaveGame.txt");
+       s = (Path +"\\Scripts\\SaveGame.txt");
        
 
         Debug.Log(Path);
        
-        //string data = File.ReadAllText(s);
-        //JsonUtility.FromJsonOverwrite(data, this);
+        string data = File.ReadAllText(s);
+        JsonUtility.FromJsonOverwrite(data, this);
     }
     public void SaveGameData()
     {

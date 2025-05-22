@@ -9,7 +9,7 @@ public class HuntMoveObject : MonoBehaviour
     [SerializeField] private bool CanPlace = false;
     [SerializeField] float ClickTolarence = 0.25f;
     private Vector3 Move;
-    private MonsterGrow monster;
+    //private MonsterGrow monster;
     // Start is called before the first frame update
     void Start()
     {
