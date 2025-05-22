@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Hunt2 : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Hunt2 : MonoBehaviour
     public int Scene;
     private Animator MonsterAnimation;
     public float moveInput;
+    private bool hasOpenedChest;
 
     private FurnitureData furnitureData;
     public GameObject popUpMenu;
@@ -18,6 +20,9 @@ public class Hunt2 : MonoBehaviour
     public TMP_Text goldText;
     public TMP_Text diamondsText;
     public TMP_Text gemsText;
+
+    public GameObject rewardTextImage;
+    public TMP_Text rewardText;
 
     [HideInInspector] public int Gold;
     [HideInInspector] public int Diamonds;
@@ -44,13 +49,27 @@ public class Hunt2 : MonoBehaviour
     public GameObject gemsImage1;
     public GameObject gemsImage2;
 
+    //SFX
+    public AudioSource chestOpenSFX;
+    public AudioSource itemSelectSFX;
+
+    //VFX
+    public ParticleSystem goldVFX;
+    public ParticleSystem diamondVFX;
+    public ParticleSystem gemsVFX;
+    public GameObject walkVFX;
 
     private void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");
-       
+
+        hasOpenedChest = false;
+
         //furnitureData.LoadGameData();
         popUpMenu.SetActive(false);
+        walkVFX.SetActive(false);
+
+        rewardTextImage.SetActive(false);
         //percentage = Random.Range(0, 100);
 
         MonsterAnimation = GetComponent<Animator>();
@@ -94,11 +113,13 @@ public class Hunt2 : MonoBehaviour
         if (moveInput != 0)
         {
             MonsterAnimation.SetBool("isWalking", true);
+            walkVFX.SetActive(true);
         }
         else
         {
             // If no movement input, stop the walking animation
             MonsterAnimation.SetBool("isWalking", false);
+            walkVFX.SetActive(false);
         }
     }
 
@@ -107,29 +128,35 @@ public class Hunt2 : MonoBehaviour
         // Check if the other object has the "Collectible" tag
         if (other.gameObject.CompareTag("Chest"))
         {
-            Destroy(other.gameObject);
-            moveSpeed = 0;
-            percentage = Random.Range(0, 100);
-            RandomizeFirstRewards();
-            percentage = Random.Range(0, 100);
-            RandomizeSecondRewards();
+            //StartCoroutine(openChest());
+            //Destroy(other.gameObject);
+            
 
             //Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
 
-            popUpMenu.SetActive(true);
-            string m_Path = Application.dataPath;
-            furnitureData.Path = m_Path;
-            furnitureData.SaveGameData();
-
+            //string m_Path = Application.dataPath;
+            //furnitureData.Path = m_Path;
+            //furnitureData.SaveGameData();
         }
 
         if (other.gameObject.CompareTag("Home"))
         {
 
-            //SaveFurniture();
+            SaveData();
             SceneManager.LoadScene("ShopScene");
 
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Chest"))
+        {
+            if (hasOpenedChest == true)
+            {
+                //Destroy(collision.gameObject);
+                //hasOpenedChest = false;
+            }
         }
     }
 
@@ -209,59 +236,105 @@ public class Hunt2 : MonoBehaviour
     {
         if(reward1Name == "Gold")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gold obtained: " + reward1;
             Gold += reward1;
+            goldVFX.Play();
         }
 
         if (reward1Name == "Diamonds")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Diamonds obtained: " + reward1;
             Diamonds += reward1;
+            diamondVFX.Play();
         }
 
         if (reward1Name == "Gems")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gems obtained: " + reward1;
             Gems += reward1;
+            gemsVFX.Play();
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
+        hasOpenedChest = true;
     }
 
     public void SelectSecondRewards()
     {
         if (reward2Name == "Gold")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gold obtained: " + reward2;
             Gold += reward2;
+            goldVFX.Play();
         }
 
         if (reward2Name == "Diamonds")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Diamonds obtained: " + reward2;
             Diamonds += reward2;
+            diamondVFX.Play();
         }
 
         if (reward2Name == "Gems")
         {
+            rewardTextImage.SetActive(true);
+            StartCoroutine(disableText());
+            rewardText.text = "Gems obtained: " + reward2;
             Gems += reward2;
+            gemsVFX.Play();
         }
 
+        itemSelectSFX.Play();
         moveSpeed = 5f;
+        hasOpenedChest = true;
     }
 
-    public void SaveFurniture()
+    public void SaveData()
     {
         furnitureData.Gold += Gold;
 
         furnitureData.Diamond += Diamonds;
 
         furnitureData.Gem += Gems;
-
-        furnitureData.SaveGameData();
+    }
+    
+    public void ClickOnChest()
+    {
+        StartCoroutine(openChest());
+        chestOpenSFX.Play();
+        moveSpeed = 0;
     }
 
+    public IEnumerator openChest()
+    {
+        yield return new WaitForSeconds(2);
+        popUpMenu.SetActive(true);
+        percentage = Random.Range(0, 100);
+        RandomizeFirstRewards();
+        percentage = Random.Range(0, 100);
+        RandomizeSecondRewards();
+    }
     public void ResetMoneyForTestReasons()
     {
         furnitureData.Gold = 10;
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
+    }
 
-        furnitureData.SaveGameData();
+    private IEnumerator disableText()
+    {
+        yield return new WaitForSeconds(1);
+        rewardTextImage.SetActive(false);
     }
 }

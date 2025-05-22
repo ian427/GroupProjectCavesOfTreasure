@@ -133,6 +133,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameControler, Assembly-CSharp
+        m_MethodName: UpdateFurniturData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8421268576071193842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  click: {fileID: 1286548737094025600}
   SceneToGoTO: ShopScene
 --- !u!1 &3879058178134650750
 GameObject:
@@ -267,6 +280,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameControler, Assembly-CSharp
+        m_MethodName: UpdateFurniturData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4574226509377619371}
         m_TargetAssemblyTypeName: ButtonBasUniversalButtone, Assembly-CSharp
         m_MethodName: OnButtonPress
@@ -291,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  click: {fileID: 1286548737094025600}
   SceneToGoTO: HuntScene
 --- !u!1 &4333217957589221368
 GameObject:
@@ -327,6 +353,7 @@ RectTransform:
   - {fileID: 7226957343847387797}
   - {fileID: 2463232905070062901}
   - {fileID: 5032205661028854606}
+  - {fileID: 8511054285451981456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.33, y: 0.5}
@@ -505,6 +532,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameControler, Assembly-CSharp
+        m_MethodName: UpdateFurniturData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5233462853493562515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  click: {fileID: 1286548737094025600}
   SceneToGoTO: Settings
 --- !u!1 &8436114970597369496
 GameObject:
@@ -530,7 +570,7 @@ GameObject:
   - component: {fileID: 7162305274381410081}
   - component: {fileID: 9094402809852925048}
   - component: {fileID: 1352937505825627152}
-  - component: {fileID: 7017027118614902053}
+  - component: {fileID: 3803120004740601956}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -639,9 +679,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7017027118614902053}
-        m_TargetAssemblyTypeName: ButtonBasUniversalButtone, Assembly-CSharp
-        m_MethodName: OnButtonPress
+      - m_Target: {fileID: 3803120004740601956}
+        m_TargetAssemblyTypeName: ONGAMEQUIT, Assembly-CSharp
+        m_MethodName: Tomenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -651,7 +691,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7017027118614902053
+--- !u!114 &3803120004740601956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -660,10 +700,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8436114970597369496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
+  m_Script: {fileID: 11500000, guid: cc0d791d5f1f5cb43bf8424029ce43ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGoTO: MainMenu
+  SGoTo: MainMenu
 --- !u!1 &8856201721494301993
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,4 +849,133 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd44a3179e0866145a386721ff859001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGoTO: Dan R's Work
+  click: {fileID: 1286548737094025600}
+  SceneToGoTO: CaveScene
+--- !u!1 &9120748361387963959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8511054285451981456}
+  - component: {fileID: 1286548737094025600}
+  m_Layer: 0
+  m_Name: ButtonClick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8511054285451981456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120748361387963959}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 46.332447, y: 4.832578, z: -1038.6212}
+  m_LocalScale: {x: 10.390077, y: 10.390077, z: 10.390077}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1856592959125048519}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1286548737094025600
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120748361387963959}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 9043479121555563835, guid: 0216988fcb3752644af9e013c4ab7f36, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 91822bb1e6af56446b00cd30329fe335, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

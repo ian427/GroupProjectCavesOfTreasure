@@ -16,10 +16,10 @@ public class Converter : MonoBehaviour
     }
     public void ConvertToGems ()
     {
-        if((manager.goldAmount > Goldinrecipie )&&(manager.diamondsAmount>Dimondsinrecipie))
+        if((0 <= (manager.goldAmount - Goldinrecipie)) &&(0<=(manager.diamondsAmount-Dimondsinrecipie)))
         {
-                manager.goldAmount = -Goldinrecipie;
-                manager.diamondsAmount = -Dimondsinrecipie;
+                manager.goldAmount -= Goldinrecipie;
+                manager.diamondsAmount -= Dimondsinrecipie;
                 manager.mysticGemsAmount++;
         }
 

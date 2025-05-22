@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,11 +6,15 @@ using UnityEngine;
 
 public class GameControler : MonoBehaviour
 {
-    [SerializeField] private FurnitureData furnitureData;
+    [SerializeField] public FurnitureData furnitureData;
     [SerializeField] private List<Sprite> FurnitureL;//needs to be shop variant
     [SerializeField] private int[] AmountOfFurnitureL;
-    [SerializeField] public int TotalItems = 0;
-    [SerializeField] private int ScaleFactor = 1;
+    [SerializeField] public float TotalItems = 1;
+    [SerializeField] private float ScaleFactor = 1;
+    [SerializeField] public List<GameObject> CurrentplacedFurnitureL;
+    public int CurrentHuntsDone;
+    public TimeSpan lastHuntTime;
+    public float size;
     // Start is called before the first frame update
     private void Start()
     {
@@ -18,29 +23,37 @@ public class GameControler : MonoBehaviour
         string m_Path = Application.dataPath;
         furnitureData.Path = m_Path;
        // Debug.Log(m_Path);
-        furnitureData.LoadGameData();
+       // furnitureData.LoadGameData();
        // DontDestroyOnLoad(this.gameObject);
         FurnitureL = furnitureData.Furniture ;
         AmountOfFurnitureL = furnitureData.AmountOfFurniture;
         TotalItems = furnitureData.TotalItiems;
-       
-
+        lastHuntTime = furnitureData.LastHuntTime;
+        CurrentHuntsDone = furnitureData.CurrentNumberOfHunts;
+        CurrentplacedFurnitureL = furnitureData.CurrentlyPlacedFurniture;
+        for (int i = 0; i < CurrentplacedFurnitureL.Count; i++)
+        {
+            GameObject Temp;
+            Temp = GameObject.Instantiate(CurrentplacedFurnitureL[i]);
+            Temp.GetComponent<FurnitureControler>().CanPlace = false;
+            Temp.GetComponent<FurnitureControler>().SetPosition();
+            
+        }
     }
-    public void UpdateFurniturData()
+   
+    public float GetMonsterScale()
     {
-        furnitureData.Furniture = FurnitureL;
-        furnitureData.AmountOfFurniture = AmountOfFurnitureL;
-
-    }
-    public int GetMonsterScale()
-    {
-        int answer = TotalItems / ScaleFactor;
+       // Debug.Log("scale");
+        float answer = TotalItems / ScaleFactor;
+        Debug.Log("anser" + answer);
         return answer;
+        
         
     }
     // Update is called once per frame
     void Update()
     {
+       // size = GetMonsterScale();
         
     }
     private int FindItem(Sprite Item)
@@ -60,6 +73,7 @@ public class GameControler : MonoBehaviour
     {
         int temp = FindItem(Item);
         AmountOfFurnitureL[temp] ++;
+
     }
     public void RemoveItem(Sprite Item)
     {
@@ -74,5 +88,21 @@ public class GameControler : MonoBehaviour
             answer = true;
         }
         return answer;
+    }
+    public void PushDataUpdate()
+    {
+       
+         furnitureData.AmountOfFurniture = AmountOfFurnitureL;
+        furnitureData.TotalItiems = TotalItems  ;
+         furnitureData.LastHuntTime = lastHuntTime ;
+        furnitureData.CurrentNumberOfHunts = CurrentHuntsDone;
+        for (int i = 0; i < CurrentplacedFurnitureL.Count; i++)
+        {
+
+            CurrentplacedFurnitureL[i].GetComponent<FurnitureControler>().SavePosition();
+            furnitureData.CurrentlyPlacedFurniture.Add(CurrentplacedFurnitureL[i]);
+        }
+        furnitureData.CurrentlyPlacedFurniture = CurrentplacedFurnitureL;
+
     }
 }

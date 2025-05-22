@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9ede5f63e521a9443a8bd8fea35a1176
   - enabled: 1
-    path: Assets/Scenes/Dan R's Work.unity
+    path: Assets/Scenes/CaveScene.unity
     guid: a7afec6522538d3489197d2046409d15
   - enabled: 1
-    path: Assets/Nova/HuntScene.unity
+    path: Assets/Scenes/HuntScene.unity
     guid: 6f268aeedbe51714585fbba80ebe8d93
   - enabled: 1
     path: Assets/Scripts/Daniel Sparkes/ShopTest.unity
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShopScene.unity
     guid: 4bfd67844d219fb428fa5783322e3878
+  - enabled: 1
+    path: Assets/Scenes/RewardControl.unity
+    guid: 554ba885aa0e2724e832b38af118b274
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 741e09157bbc05c46b5d51648f7f0754
