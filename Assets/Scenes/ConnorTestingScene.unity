@@ -1828,7 +1828,7 @@ MonoBehaviour:
   - {fileID: 486520550}
   - {fileID: 1628330321}
   - {fileID: 2026972711}
-  ShowTutorials: 0
+  ShowTutorials: 1
 --- !u!1 &1340324272
 GameObject:
   m_ObjectHideFlags: 0
