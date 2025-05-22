@@ -81,6 +81,7 @@ public class Hunt2 : MonoBehaviour
         goldImage2.SetActive(false);
         diamondImage1.SetActive(false);
         diamondImage2.SetActive(false);
+
         gemsImage1.SetActive(false);
         gemsImage2.SetActive(false);
     }
