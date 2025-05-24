@@ -10,13 +10,13 @@ public class PlayerMoveInCave : MonoBehaviour
 
     Vector2 waypoint;
 
-    // Start is called before the first frame update
+    //Sets the new destination for the player to move to at the start
     void Start()
     {
         SetNewDestination();
     }
 
-    // Update is called once per frame
+    //If a set destination is met, a new one is selected
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, waypoint, speed * Time.deltaTime);
@@ -26,6 +26,7 @@ public class PlayerMoveInCave : MonoBehaviour
         }
     }
 
+    //Selects a new destination between a random position between the positions from the maxDistance
     void SetNewDestination()
     {
         waypoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));

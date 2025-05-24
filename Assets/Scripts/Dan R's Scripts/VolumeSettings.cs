@@ -10,6 +10,7 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
 
+    //Gets the saved values of the sound's saved settings
     private void Start()
     {
         if (PlayerPrefs.HasKey("MusicVolume"))
@@ -24,6 +25,7 @@ public class VolumeSettings : MonoBehaviour
         }
     }
 
+    //Sets and saves the value of the music
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
@@ -31,6 +33,7 @@ public class VolumeSettings : MonoBehaviour
         PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
+    //Sets and saves the value of the sound effects
     public void SetSFXVolume()
     {
         float volume = SFXSlider.value;

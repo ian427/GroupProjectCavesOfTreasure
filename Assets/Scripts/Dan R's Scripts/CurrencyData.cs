@@ -18,6 +18,7 @@ public class CurrencyData : MonoBehaviour
     public TMP_Text[] furnitureText;
     private int[] furnitureValues;
     
+    //Updates the ints and texts to represent the amount of resources the player has
     void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");//include anywhere you use furniture date
@@ -36,6 +37,7 @@ public class CurrencyData : MonoBehaviour
 
     }
 
+    //Text displayed in the game's inventory will update with the amount of the corresponding items, data contained in FurnitureData
     private void Update()
     {
         furnitureText[0].text = "" + furnitureData.AmountOfFurniture[0];

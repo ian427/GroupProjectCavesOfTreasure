@@ -69,7 +69,7 @@ public class Hunt2 : MonoBehaviour
     public GameObject walkVFX;
     public ParticleSystem jumpVFX;
 
-    private void Start()
+    private void Start()  //Lines 74-89 made by Nova, lines 91-97 made by Dan R
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");
 
@@ -97,7 +97,7 @@ public class Hunt2 : MonoBehaviour
         gemsImage2.SetActive(false);
     }
 
-    private void Update()
+    private void Update() //Lines 109-135 made by Nova, lines 137-158 made by Dan R
     {
         goldText.text = "Gold " + Gold + "";
         diamondsText.text = "Diamonds " + Diamonds + "";
@@ -158,7 +158,7 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) //Made by Dan R
     {
         if (collision.gameObject.name == "Floor")
         {
@@ -166,7 +166,7 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) //Made by Nova
     {
         // Check if the other object has the "Collectible" tag
         if (other.gameObject.CompareTag("Chest"))
@@ -191,7 +191,7 @@ public class Hunt2 : MonoBehaviour
 
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision) //Made by Nova
     {
         if (collision.gameObject.CompareTag("Chest"))
         {
@@ -203,7 +203,7 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    public void RandomizeFirstRewards()
+    public void RandomizeFirstRewards() //Made by Dan R
     {
         if(percentage <= 64)
         {
@@ -239,7 +239,7 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    public void RandomizeSecondRewards()
+    public void RandomizeSecondRewards() //Made by Dan R
     {
         if (percentage <= 64)
         {
@@ -275,7 +275,7 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    public void SelectFirstRewards()
+    public void SelectFirstRewards() //Made by Dan R
     {
         if(reward1Name == "Gold")
         {
@@ -309,7 +309,7 @@ public class Hunt2 : MonoBehaviour
         hasOpenedChest = true;
     }
 
-    public void SelectSecondRewards()
+    public void SelectSecondRewards() //Made by Dan R
     {
         if (reward2Name == "Gold")
         {
@@ -343,7 +343,7 @@ public class Hunt2 : MonoBehaviour
         hasOpenedChest = true;
     }
 
-    public void SaveData()
+    public void SaveData() //Made by Dan R
     {
         furnitureData.Gold += Gold;
 
@@ -352,14 +352,14 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Gem += Gems;
     }
     
-    public void ClickOnChest()
+    public void ClickOnChest() //Made by Dan R
     {
         StartCoroutine(openChest());
         chestOpenSFX.Play();
         moveSpeed = 0;
     }
 
-    public IEnumerator openChest()
+    public IEnumerator openChest() //Made by Dan R
     {
         yield return new WaitForSeconds(2);
         popUpMenu.SetActive(true);
@@ -368,14 +368,14 @@ public class Hunt2 : MonoBehaviour
         percentage = Random.Range(0, 100);
         RandomizeSecondRewards();
     }
-    public void ResetMoneyForTestReasons()
+    public void ResetMoneyForTestReasons() //Made by Dan R
     {
         furnitureData.Gold = 10;
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
     }
 
-    private IEnumerator disableText()
+    private IEnumerator disableText() //Made by Dan R
     {
         yield return new WaitForSeconds(1);
         rewardTextImage.SetActive(false);

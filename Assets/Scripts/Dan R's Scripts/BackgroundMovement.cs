@@ -10,11 +10,13 @@ public class BackgroundMovement : MonoBehaviour
     [Range(0f, 0.5f)]
     public float speed = 0.2f;
 
+    //Gets and assigns the renderer component
     void Start()
     {
         material = GetComponent<Renderer>().material;
     }
 
+    //Depending on the direction moved, the background will scroll in that direction
     void Update()
     {
         distance += Time.deltaTime * speed;

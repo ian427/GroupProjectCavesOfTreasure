@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int totalDiamonds;
     public int totalGems;
 
-
+    //Starts by loading the amount of saved resources that the player has
     void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");//include anywhere you use furniture date

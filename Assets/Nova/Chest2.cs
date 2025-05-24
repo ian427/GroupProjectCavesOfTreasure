@@ -15,10 +15,9 @@ public class Chest2 : MonoBehaviour
     public Hunt2 hunt2;
     private bool chestOpen;
 
-    //VFX
     public ParticleSystem openChestVFX;
-    // Start is called before the first frame update
-    void Start()
+    
+    void Start()  //Made by Dan R, assigns the animator and prepares the chest for its initial animation state
     {
         animator = GetComponent<Animator>();
 
@@ -27,7 +26,7 @@ public class Chest2 : MonoBehaviour
         chestOpen = false;
     }
 
-    // Update is called once per frame
+    //Triggers the chestFound function
     void Update()
     {
 
@@ -51,7 +50,7 @@ public class Chest2 : MonoBehaviour
         }
     }
 
-    public void chestFound()
+    public void chestFound() //Made by Nova
     {
 
         if (Enviroment.transform.position.y == _Chest.transform.position.y)
@@ -69,6 +68,7 @@ public class Chest2 : MonoBehaviour
 
     }
 
+    //Waits 2 seconds and then destroys the chest
     private IEnumerator disableChest()
     {
         yield return new WaitForSeconds(2);

@@ -8,6 +8,7 @@ public class CameraFollowPlayer : MonoBehaviour
     public float yOffset = 0f;
     public Transform player;
 
+    //The camera will follow the designated assigned transform of a game object frequently
     void Update()
     {
         Vector3 newpos = new Vector3(player.position.x, player.position.y + yOffset, -10f);
