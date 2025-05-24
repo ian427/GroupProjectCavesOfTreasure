@@ -9,6 +9,7 @@ public class Hunt2 : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed at which the object moves
     public int Scene;
+    private Rigidbody2D rb;
     private Animator MonsterAnimation;
     public float moveInput;
     private bool hasOpenedChest;
@@ -16,6 +17,14 @@ public class Hunt2 : MonoBehaviour
     private FurnitureData furnitureData;
     public GameObject popUpMenu;
     [SerializeField] private GameManager gameManager;
+
+    private float jumpPower = 7;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform feetPos;
+    private float groundDistance = 0.3f;
+    private float jumpTime = 0.3f;
+    private bool isGrounded = false;
+    private bool isJumping = false;
 
     public TMP_Text goldText;
     public TMP_Text diamondsText;
@@ -58,6 +67,7 @@ public class Hunt2 : MonoBehaviour
     public ParticleSystem diamondVFX;
     public ParticleSystem gemsVFX;
     public GameObject walkVFX;
+    public ParticleSystem jumpVFX;
 
     private void Start()
     {
@@ -72,6 +82,7 @@ public class Hunt2 : MonoBehaviour
         rewardTextImage.SetActive(false);
         //percentage = Random.Range(0, 100);
 
+        rb = GetComponent<Rigidbody2D>();
         MonsterAnimation = GetComponent<Animator>();
         Gold = 0 ;//SETS furnitur date money as money
         Diamonds = 0 ;//SETS furnitur date money as money
@@ -121,6 +132,37 @@ public class Hunt2 : MonoBehaviour
             // If no movement input, stop the walking animation
             MonsterAnimation.SetBool("isWalking", false);
             walkVFX.SetActive(false);
+        }
+
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            jumpVFX.Play();
+            MonsterAnimation.SetBool("isJumping", true);
+            isJumping = true;
+            rb.velocity = Vector2.up * jumpPower;
+            isGrounded = false;
+        }
+
+        if (isGrounded == true)
+        {
+            isJumping = false;
+            MonsterAnimation.SetBool("isJumping", false);
+        }
+
+        if(isGrounded == false)
+        {
+            MonsterAnimation.SetBool("isWalking", false);
+            walkVFX.SetActive(false);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Floor")
+        {
+            isGrounded = true;
         }
     }
 
