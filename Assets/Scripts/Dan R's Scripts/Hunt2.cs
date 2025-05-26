@@ -25,6 +25,7 @@ public class Hunt2 : MonoBehaviour
     private float jumpTime = 0.3f;
     private bool isGrounded = false;
     private bool isJumping = false;
+    private string moveDirection;
 
     public TMP_Text goldText;
     public TMP_Text diamondsText;
@@ -103,37 +104,6 @@ public class Hunt2 : MonoBehaviour
         diamondsText.text = "Diamonds " + Diamonds + "";
         gemsText.text = "Mystic Gems " + Gems + "";
 
-        // Get horizontal input (left and right arrow keys, A/D, etc.)
-        float moveInput = Input.GetAxis("Horizontal");
-
-        // Move the GameObject left and right
-        transform.Translate(Vector3.right * moveInput * moveSpeed * Time.deltaTime);
-
-        // Flip the GameObject when moving left or right
-        if (moveInput > 0) // Moving right
-        {
-            // Set the localScale's x to positive to face right
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else if (moveInput < 0) // Moving left
-        {
-            // Set the localScale's x to negative to face left
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-
-        // If the player is moving, play the walking animation
-        if (moveInput != 0)
-        {
-            MonsterAnimation.SetBool("isWalking", true);
-            walkVFX.SetActive(true);
-        }
-        else
-        {
-            // If no movement input, stop the walking animation
-            MonsterAnimation.SetBool("isWalking", false);
-            walkVFX.SetActive(false);
-        }
-
         isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -156,6 +126,54 @@ public class Hunt2 : MonoBehaviour
             MonsterAnimation.SetBool("isWalking", false);
             walkVFX.SetActive(false);
         }
+
+        if(moveDirection == "Left")
+        {
+            MoveLeft();
+        }
+
+        if (moveDirection == "Right")
+        {
+            MoveRight();
+        }
+    }
+
+    public void MoveLeft()
+    {
+        moveDirection = "Left";
+        moveSpeed = 5f;
+        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.localScale = new Vector3(-1f, 1f, 1f);
+        MonsterAnimation.SetBool("isWalking", true);
+        walkVFX.SetActive(true);
+
+        if (moveInput < 0) // Moving left
+        {
+            // Set the localScale's x to negative to face left
+        }
+    }
+
+    public void MoveRight()
+    {
+        moveDirection = "Right";
+        moveSpeed = 5f;
+        transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        transform.localScale = new Vector3(1f, 1f, 1f);
+        MonsterAnimation.SetBool("isWalking", true);
+        walkVFX.SetActive(true);
+
+        if (moveInput > 0) // Moving right
+        {
+            // Set the localScale's x to positive to face right
+        }
+    }
+
+    public void StopMoving()
+    {
+        moveDirection = "Null";
+        rb.velocity = Vector2.zero;
+        MonsterAnimation.SetBool("isWalking", false);
+        walkVFX.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) //Made by Dan R
