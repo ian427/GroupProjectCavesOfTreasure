@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   click: {fileID: 620593880}
-  SceneToGoTO: Dan R's Work
+  SceneToGoTO: Settings
 --- !u!114 &244510834
 MonoBehaviour:
   m_ObjectHideFlags: 0

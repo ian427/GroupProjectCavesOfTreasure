@@ -297,29 +297,29 @@ public class Hunt2 : MonoBehaviour
     {
         if(reward1Name == "Gold")
         {
+            goldVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gold obtained: " + reward1;
             Gold += reward1;
-            goldVFX.Play();
         }
 
         if (reward1Name == "Diamonds")
         {
+            diamondVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Diamonds obtained: " + reward1;
             Diamonds += reward1;
-            diamondVFX.Play();
         }
 
         if (reward1Name == "Gems")
         {
+            gemsVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gems obtained: " + reward1;
             Gems += reward1;
-            gemsVFX.Play();
         }
 
         itemSelectSFX.Play();
@@ -331,29 +331,29 @@ public class Hunt2 : MonoBehaviour
     {
         if (reward2Name == "Gold")
         {
+            goldVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gold obtained: " + reward2;
             Gold += reward2;
-            goldVFX.Play();
         }
 
         if (reward2Name == "Diamonds")
         {
+            diamondVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Diamonds obtained: " + reward2;
             Diamonds += reward2;
-            diamondVFX.Play();
         }
 
         if (reward2Name == "Gems")
         {
+            gemsVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gems obtained: " + reward2;
             Gems += reward2;
-            gemsVFX.Play();
         }
 
         itemSelectSFX.Play();
