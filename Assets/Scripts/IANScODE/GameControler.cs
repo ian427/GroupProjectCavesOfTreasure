@@ -20,7 +20,7 @@ public class GameControler : MonoBehaviour
     {
 
         furnitureData = (FurnitureData)Resources.Load("GameData");//include anywhere you use furniture date
-        string m_Path = Application.dataPath;
+        string m_Path = Application.persistentDataPath;
         furnitureData.Path = m_Path;
        // Debug.Log(m_Path);
        // furnitureData.LoadGameData();

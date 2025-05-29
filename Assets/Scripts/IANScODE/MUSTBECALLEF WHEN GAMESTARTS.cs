@@ -8,8 +8,10 @@ public class MUSTBECALLEFWHENGAMESTARTS : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
         data = (FurnitureData)Resources.Load("GameData");
-        data.Path = Application.dataPath;
+        data.Path = Application.persistentDataPath; //Application.persistentDataPath
+        data.filecheck();
         data.LoadGameData();
 
     }
