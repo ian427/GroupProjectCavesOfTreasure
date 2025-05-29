@@ -9,7 +9,7 @@ public class ToutolialsControler : MonoBehaviour
     [SerializeField] private List<GameObject> popupslist;// all the toutorials
     private void Start()
     {
-        controler = GameObject.Find("ToutorialHolder").GetComponent<TutorialButton>();
+        controler = GameObject.Find("ToutorialControler").GetComponent<TutorialButton>();
 
         if (controler.ShowTutorials)
         {
@@ -19,7 +19,7 @@ public class ToutolialsControler : MonoBehaviour
 
             }
         }
-        else
+        if (!controler.ShowTutorials)
         {
             foreach (GameObject popup in popupslist)
             {
