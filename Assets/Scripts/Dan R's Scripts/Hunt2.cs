@@ -197,7 +197,7 @@ public class Hunt2 : MonoBehaviour
             //Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
 
-            //string m_Path = Application.dataPath;
+            //string m_Path = Application.persistentDataPath;
             //furnitureData.Path = m_Path;
             //furnitureData.SaveGameData();
         }

@@ -49,7 +49,7 @@ public class DefaultLoad : MonoBehaviour
         data.Diamond = DefaultDiamond;
         data.Gem = DefaultGem;
         data.LastDate = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
-        data.Path = Application.dataPath;
+        data.Path = Application.persistentDataPath;
         data.CurrentlyDisplayedT1 = DefaultCurrentlyDisplayedT1;
         data.CurrentlyDisplayedT2 = DefaultCurrentlyDisplayedT2;
         data.currentlydisplayedT3 = DefaultcurrentlydisplayedT3;
