@@ -12,22 +12,6 @@ public class PopUpMenu : MonoBehaviour
         inventory.SetActive(false);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if(isInventoryOpen)
-            {
-                CloseInventory();
-            }
-
-            else
-            {
-                OpenInventory();
-            }
-        }
-    }
-
     public void OpenInventory()
     {
         inventory.SetActive(true);
