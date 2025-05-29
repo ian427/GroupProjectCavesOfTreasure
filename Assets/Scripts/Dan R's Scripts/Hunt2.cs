@@ -9,6 +9,7 @@ public class Hunt2 : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed at which the object moves
     public int Scene;
+    private Rigidbody2D rb;
     private Animator MonsterAnimation;
     public float moveInput;
     private bool hasOpenedChest;
@@ -16,6 +17,15 @@ public class Hunt2 : MonoBehaviour
     private FurnitureData furnitureData;
     public GameObject popUpMenu;
     [SerializeField] private GameManager gameManager;
+
+    private float jumpPower = 7;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform feetPos;
+    private float groundDistance = 0.3f;
+    private float jumpTime = 0.3f;
+    private bool isGrounded = false;
+    private bool isJumping = false;
+    private string moveDirection;
 
     public TMP_Text goldText;
     public TMP_Text diamondsText;
@@ -58,8 +68,9 @@ public class Hunt2 : MonoBehaviour
     public ParticleSystem diamondVFX;
     public ParticleSystem gemsVFX;
     public GameObject walkVFX;
+    public ParticleSystem jumpVFX;
 
-    private void Start()
+    private void Start()  //Lines 74-89 made by Nova, lines 91-97 made by Dan R
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");
 
@@ -72,9 +83,10 @@ public class Hunt2 : MonoBehaviour
         rewardTextImage.SetActive(false);
         //percentage = Random.Range(0, 100);
 
+        rb = GetComponent<Rigidbody2D>();
         MonsterAnimation = GetComponent<Animator>();
-        Gold = 0 ;//SETS furnitur date money as money
-        Diamonds = 0 ;//SETS furnitur date money as money
+        Gold = 0;//SETS furnitur date money as money
+        Diamonds = 0;//SETS furnitur date money as money
         Gems = 0;//SETS furnitur date money as money
 
         goldImage1.SetActive(false);
@@ -86,52 +98,101 @@ public class Hunt2 : MonoBehaviour
         gemsImage2.SetActive(false);
     }
 
-    private void Update()
+    private void Update() //Lines 109-135 made by Nova, lines 137-158 made by Dan R
     {
         goldText.text = "Gold " + Gold + "";
         diamondsText.text = "Diamonds " + Diamonds + "";
         gemsText.text = "Mystic Gems " + Gems + "";
 
-        // Get horizontal input (left and right arrow keys, A/D, etc.)
-        float moveInput = Input.GetAxis("Horizontal");
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
 
-        // Move the GameObject left and right
-        transform.Translate(Vector3.right * moveInput * moveSpeed * Time.deltaTime);
-
-        // Flip the GameObject when moving left or right
-        if (moveInput > 0) // Moving right
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            // Set the localScale's x to positive to face right
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else if (moveInput < 0) // Moving left
-        {
-            // Set the localScale's x to negative to face left
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            jumpVFX.Play();
+            MonsterAnimation.SetBool("isJumping", true);
+            isJumping = true;
+            rb.velocity = Vector2.up * jumpPower;
+            isGrounded = false;
         }
 
-        // If the player is moving, play the walking animation
-        if (moveInput != 0)
+        if (isGrounded == true)
         {
-            MonsterAnimation.SetBool("isWalking", true);
-            walkVFX.SetActive(true);
+            isJumping = false;
+            MonsterAnimation.SetBool("isJumping", false);
         }
-        else
+
+        if (isGrounded == false)
         {
-            // If no movement input, stop the walking animation
             MonsterAnimation.SetBool("isWalking", false);
             walkVFX.SetActive(false);
+            MonsterAnimation.SetBool("isJumping", true);
+        }
+
+        if (moveDirection == "Left")
+        {
+            MoveLeft();
+        }
+
+        if (moveDirection == "Right")
+        {
+            MoveRight();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void MoveLeft()
+    {
+        moveDirection = "Left";
+        moveSpeed = 5f;
+        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.localScale = new Vector3(-1f, 1f, 1f);
+        MonsterAnimation.SetBool("isWalking", true);
+        walkVFX.SetActive(true);
+
+        if (moveInput < 0) // Moving left
+        {
+            // Set the localScale's x to negative to face left
+        }
+    }
+
+    public void MoveRight()
+    {
+        moveDirection = "Right";
+        moveSpeed = 5f;
+        transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        transform.localScale = new Vector3(1f, 1f, 1f);
+        MonsterAnimation.SetBool("isWalking", true);
+        walkVFX.SetActive(true);
+
+        if (moveInput > 0) // Moving right
+        {
+            // Set the localScale's x to positive to face right
+        }
+    }
+
+    public void StopMoving()
+    {
+        moveDirection = "Null";
+        rb.velocity = Vector2.zero;
+        MonsterAnimation.SetBool("isWalking", false);
+        walkVFX.SetActive(false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) //Made by Dan R
+    {
+        if (collision.gameObject.name == "Floor")
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) //Made by Nova
     {
         // Check if the other object has the "Collectible" tag
         if (other.gameObject.CompareTag("Chest"))
         {
             //StartCoroutine(openChest());
             //Destroy(other.gameObject);
-            
+
 
             //Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
@@ -149,7 +210,7 @@ public class Hunt2 : MonoBehaviour
 
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision) //Made by Nova
     {
         if (collision.gameObject.CompareTag("Chest"))
         {
@@ -161,9 +222,9 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    public void RandomizeFirstRewards()
+    public void RandomizeFirstRewards() //Made by Dan R
     {
-        if(percentage <= 64)
+        if (percentage <= 64)
         {
             rewardGold = +Random.Range(1, 11);
             reward1 = rewardGold;
@@ -174,7 +235,7 @@ public class Hunt2 : MonoBehaviour
             reward1Text.text = " " + reward1;
         }
 
-        if(percentage >= 65 && percentage < 98)
+        if (percentage >= 65 && percentage < 98)
         {
             rewardDiamonds = +Random.Range(3, 7);
             reward1 = rewardDiamonds;
@@ -185,7 +246,7 @@ public class Hunt2 : MonoBehaviour
             reward1Text.text = " " + reward1;
         }
 
-        if(percentage == 98 || percentage == 99 || percentage == 100)
+        if (percentage == 98 || percentage == 99 || percentage == 100)
         {
             rewardGems = +Random.Range(1, 4);
             reward1 = rewardGems;
@@ -197,7 +258,7 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    public void RandomizeSecondRewards()
+    public void RandomizeSecondRewards() //Made by Dan R
     {
         if (percentage <= 64)
         {
@@ -233,33 +294,33 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
-    public void SelectFirstRewards()
+    public void SelectFirstRewards() //Made by Dan R
     {
-        if(reward1Name == "Gold")
+        if (reward1Name == "Gold")
         {
+            goldVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gold obtained: " + reward1;
             Gold += reward1;
-            goldVFX.Play();
         }
 
         if (reward1Name == "Diamonds")
         {
+            diamondVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Diamonds obtained: " + reward1;
             Diamonds += reward1;
-            diamondVFX.Play();
         }
 
         if (reward1Name == "Gems")
         {
+            gemsVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gems obtained: " + reward1;
             Gems += reward1;
-            gemsVFX.Play();
         }
 
         itemSelectSFX.Play();
@@ -267,33 +328,33 @@ public class Hunt2 : MonoBehaviour
         hasOpenedChest = true;
     }
 
-    public void SelectSecondRewards()
+    public void SelectSecondRewards() //Made by Dan R
     {
         if (reward2Name == "Gold")
         {
+            goldVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gold obtained: " + reward2;
             Gold += reward2;
-            goldVFX.Play();
         }
 
         if (reward2Name == "Diamonds")
         {
+            diamondVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Diamonds obtained: " + reward2;
             Diamonds += reward2;
-            diamondVFX.Play();
         }
 
         if (reward2Name == "Gems")
         {
+            gemsVFX.Play();
             rewardTextImage.SetActive(true);
             StartCoroutine(disableText());
             rewardText.text = "Gems obtained: " + reward2;
             Gems += reward2;
-            gemsVFX.Play();
         }
 
         itemSelectSFX.Play();
@@ -301,7 +362,7 @@ public class Hunt2 : MonoBehaviour
         hasOpenedChest = true;
     }
 
-    public void SaveData()
+    public void SaveData() //Made by Dan R
     {
         furnitureData.Gold += Gold;
 
@@ -309,15 +370,15 @@ public class Hunt2 : MonoBehaviour
 
         furnitureData.Gem += Gems;
     }
-    
-    public void ClickOnChest()
+
+    public void ClickOnChest() //Made by Dan R
     {
         StartCoroutine(openChest());
         chestOpenSFX.Play();
         moveSpeed = 0;
     }
 
-    public IEnumerator openChest()
+    public IEnumerator openChest() //Made by Dan R
     {
         yield return new WaitForSeconds(2);
         popUpMenu.SetActive(true);
@@ -326,16 +387,17 @@ public class Hunt2 : MonoBehaviour
         percentage = Random.Range(0, 100);
         RandomizeSecondRewards();
     }
-    public void ResetMoneyForTestReasons()
+    public void ResetMoneyForTestReasons() //Made by Dan R
     {
         furnitureData.Gold = 10;
         furnitureData.Diamond = 5;
         furnitureData.Gem = 2;
     }
 
-    private IEnumerator disableText()
+    private IEnumerator disableText() //Made by Dan R
     {
         yield return new WaitForSeconds(1);
         rewardTextImage.SetActive(false);
     }
 }
+
