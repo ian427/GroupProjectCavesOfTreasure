@@ -12,6 +12,7 @@ public class Level : MonoBehaviour
     private void Start()
     {
         data = (FurnitureData)Resources.Load("GameData");
+        Debug.Log(data.points);
     }
     public void AddPoints()
     {
@@ -24,9 +25,6 @@ public class Level : MonoBehaviour
                 data.points -= data.level * 200;
                 data.level += 1;
             }
-            goldMax = 600 + (data.level * 200);
-            diamondMax = 600 + (data.level * 200);
-            gemMax = 1 + (data.level * 2);
         }
     }
 }

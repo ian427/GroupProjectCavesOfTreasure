@@ -15,6 +15,7 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI GoldNumber;
     [SerializeField] private TextMeshProUGUI DiamondsNumber;
     [SerializeField] private TextMeshProUGUI MysticGemsNumber;
+    [SerializeField] private TextMeshProUGUI Level;
      public FurnitureData data;
      public int goldAmount;
      public int diamondsAmount;
@@ -37,11 +38,12 @@ public class ItemManager : MonoBehaviour
     
     private bool Canupdate = false;
     void Awake()
-    { 
+    {
         Debug.Log("current" + currentTimeAsTimeSpan);
         Debug.Log("last" + LastTimeStamp);
             data = (FurnitureData)Resources.Load("GameData");
         //data.LoadGameData();
+        Debug.Log(data.points);
             goldAmount = data.Gold;
             diamondsAmount = data.Diamond;
             mysticGemsAmount = data.Gem;
@@ -51,11 +53,8 @@ public class ItemManager : MonoBehaviour
         LastTimeStamp = data.LastDate;
 
         data.Gold = goldAmount;
-        GoldNumber.text = "Gold: " + goldAmount;
         data.Diamond = diamondsAmount;
-        DiamondsNumber.text = "Diamonds: " + diamondsAmount;
         data.Gem = mysticGemsAmount;
-        MysticGemsNumber.text = "Gems: " + mysticGemsAmount;
 
         currentTimeAsTimeSpan = TimeSpan.FromTicks(System.DateTime.UtcNow.Ticks);//time now
         //Debug.Log(currentTimeAsTimeSpan);
@@ -145,13 +144,14 @@ public class ItemManager : MonoBehaviour
         data.CurrentlyDisplayedT2 = CurrentlyDisplayedT2;
         data.currentlydisplayedT3 = currentlydisplayedT3;
 
-       // data.SaveGameData();
+        data.SaveGameData();
     }
     void Update()
     {
-        GoldNumber.text = "Gold: " + goldAmount;
-        DiamondsNumber.text = "Diamonds: " + diamondsAmount;
-        MysticGemsNumber.text = "Gems: " + mysticGemsAmount;
+        GoldNumber.text = "Gold: " + goldAmount + "/" + (600 + (data.level * 200));
+        DiamondsNumber.text = "Diamonds: " + diamondsAmount + "/" + (600 + (data.level * 200));
+        MysticGemsNumber.text = "Gems: " + mysticGemsAmount + "/" + (1 + (data.level * 2));
+        Level.text = "Level: " + data.level;
         if (Input.GetKeyDown(KeyCode.M))
         {
             goldAmount += 500;
@@ -182,8 +182,6 @@ public class ItemManager : MonoBehaviour
             currentlydisplayedT3 = Furniture[random];
             ButtonT3.GetComponent<BuyItem>().CurrentlyDisplayedItem = currentlydisplayedT3;
             ButtonT3.GetComponent<BuyItem>().Updatedisplay();
-
-
         }
     }
     
