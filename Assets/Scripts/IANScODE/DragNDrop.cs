@@ -32,7 +32,7 @@ public class DragNDrop : MonoBehaviour
                 controler.RemoveItem(this.gameObject.GetComponent<SpriteRenderer>().sprite);
                 TempItem = GameObject.Instantiate(NonFunctionalDuplicate);
                 TempItem.transform.position = this.transform.position;//spawns bullet at position 
-                controler.CurrentplacedFurnitureL.Add(TempItem);
+                controler.furnitureData.CurrentlyPlacedFurniture.Add(TempItem);
                // controler.furnitureData.CurrentlyPlacedFurniture.Add(TempItem);
 
             }

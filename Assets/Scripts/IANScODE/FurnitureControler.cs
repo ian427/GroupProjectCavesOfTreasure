@@ -73,7 +73,7 @@ public class FurnitureControler : MonoBehaviour
        
         controler.TotalItems--;
         controler.AddItem(this.gameObject.GetComponent<SpriteRenderer>().sprite);
-        controler.CurrentplacedFurnitureL.Remove(this.gameObject);
+        controler.furnitureData.CurrentlyPlacedFurniture.Remove(this.gameObject);
         monster.UpdateMonsterSize();
         Destroy(this.gameObject);
     }
