@@ -51,11 +51,6 @@ public class TutorialButton : MonoBehaviour
         
     }
 
-   
-    public void ClosePopup()
-    {
-        popupbutton.SetActive(false);
-    }
     public void DisableTutorials()
     {
         controler.ShowTutorials = false;
