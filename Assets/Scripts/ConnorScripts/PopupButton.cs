@@ -7,8 +7,6 @@ using UnityEngine;
 using UnityEditor.UIElements;
 public class TutorialButton : MonoBehaviour
 {
-    [SerializeField] GameObject popupbutton;
-    
     [SerializeField] GameObject tutorialoffbutton;
     [SerializeField] GameObject tutorialonbutton;
     [SerializeField] GameObject tutorialofftext;

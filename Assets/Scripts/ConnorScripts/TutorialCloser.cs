@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class TutorialCloser : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject popupbutton;
+    public void ClosePopup()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        popupbutton.SetActive(false);
     }
 }
