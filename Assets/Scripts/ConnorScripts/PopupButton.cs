@@ -8,23 +8,33 @@ using UnityEditor.UIElements;
 public class TutorialButton : MonoBehaviour
 {
     [SerializeField] GameObject popupbutton;
-    [SerializeField] private List<GameObject> popupslist;
+    
     [SerializeField] GameObject tutorialoffbutton;
     [SerializeField] GameObject tutorialonbutton;
     [SerializeField] GameObject tutorialofftext;
     [SerializeField] GameObject tutorialontext;
     public bool ShowTutorials = true;
-    private string Test;
+    [SerializeField]private bool dontdestroy = false;
+    [SerializeField]private TutorialButton controler;
 
-    private void Start()
+    private void Awake()
     {
-        if (PlayerPrefs.HasKey("ShowTutorialsBool"))
+        if(dontdestroy)
         {
-            Test = PlayerPrefs.GetString("ShowTutorialsBool");
+            
+            DontDestroyOnLoad(this.gameObject);
 
-            if (Test == "true")
+        }
+        else
+        {
+            controler = GameObject.Find("ToutorialControler").GetComponent<TutorialButton>();
+  
+        }
+       
+            if (controler.ShowTutorials)
             {
-                ShowTutorials = true;
+            controler.ShowTutorials = true;
+                //settings
                 tutorialoffbutton.SetActive(true);
                 tutorialonbutton.SetActive(false);
                 tutorialofftext.SetActive(true);
@@ -32,42 +42,24 @@ public class TutorialButton : MonoBehaviour
             }
             else
             {
-                ShowTutorials = false;
+            controler.ShowTutorials = false;
                 tutorialoffbutton.SetActive(false);
                 tutorialonbutton.SetActive(true);
                 tutorialofftext.SetActive(false);
                 tutorialontext.SetActive(true);
             }
-        }
-
-        if (ShowTutorials == false)
-        {
-            foreach (GameObject popup in popupslist)
-
-            {
-                popup.SetActive(false);
-
-            }
-        }
-        else
-        {
-            foreach (GameObject popup in popupslist)
-
-            {
-                popup.SetActive(true);
-
-            }
-        }
+        
     }
 
+   
     public void ClosePopup()
     {
         popupbutton.SetActive(false);
     }
     public void DisableTutorials()
     {
-        ShowTutorials = false;
-        PlayerPrefs.SetString("ShowTutorialsBool", "false");
+        controler.ShowTutorials = false;
+       
         tutorialoffbutton.SetActive(false);
         tutorialonbutton.SetActive(true);
         tutorialofftext.SetActive(false);
@@ -75,8 +67,8 @@ public class TutorialButton : MonoBehaviour
     }
     public void EnableTutorials()
     {
-        ShowTutorials = true;
-        PlayerPrefs.SetString("ShowTutorialsBool", "true");
+        controler.ShowTutorials = true;
+      
         tutorialoffbutton.SetActive(true);
         tutorialonbutton.SetActive(false);
         tutorialofftext.SetActive(true);

@@ -10,13 +10,11 @@ public class ButtonhoverText : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData eventData)
     {
         hovertext.SetActive(true);
-        Debug.Log("mouse enter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         hovertext.SetActive(false);
-        Debug.Log("mouse exit");
     }
 
 }
