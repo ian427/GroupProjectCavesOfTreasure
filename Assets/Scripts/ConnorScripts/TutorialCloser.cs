@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEngine.Serialization;
-using UnityEngine.SceneManagement;
 using UnityEngine;
-public class TutorialButton : MonoBehaviour
+
+public class TutorialCloser : MonoBehaviour
 {
     [SerializeField] GameObject popupbutton;
     public void ClosePopup()
