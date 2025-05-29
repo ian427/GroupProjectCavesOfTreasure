@@ -23,7 +23,7 @@ public class Hunt : MonoBehaviour
     void Start()
     {
         furnitureData = (FurnitureData)Resources.Load("GameData");
-        string m_Path = Application.persistentDataPath;
+        string m_Path = Application.dataPath;
         furnitureData.Path = m_Path;
         Debug.Log(m_Path);
         //furnitureData.LoadGameData();
@@ -79,7 +79,7 @@ public class Hunt : MonoBehaviour
             Destroy(other.gameObject);
             Money = +Random.Range(1, 11);
             //furnitureData.Money = Money;//SETS furnitur date money as money
-            string m_Path = Application.persistentDataPath;
+            string m_Path = Application.dataPath;
             furnitureData.Path = m_Path;
             furnitureData.SaveGameData();
 

@@ -30,32 +30,22 @@ public class FurnitureData : ScriptableObject
     // Start is called before the first frame update
 
     // Update is called once per frame
-    public void filecheck()
+    void Update()
     {
-            string s;
-            // add execute only in play mode vs build mode
-            Path = Application.persistentDataPath;
-            s = Path + "\\SaveGame.txt";
-        if(!File.Exists (s))
-        {
-            using (StreamWriter sw = File.CreateText(s))
-            {
-                Debug.Log("created");
-            }
-        }
+        
     }
 
     public void LoadGameData()
     {
         string s;
         // add execute only in play mode vs build mode
-       Path = Application.persistentDataPath;
-        s = Path + "\\SaveGame.txt";
+        //Path = Application.persistentDataPath;
+       // string s = Path + "\\SaveGame.txt";
         //IF EDITOR 
-       //Path = Application.dataPath;
-       //s = (Path +"\\Scripts\\SaveGame.txt");
+       Path = Application.dataPath;
+       s = (Path +"\\Scripts\\SaveGame.txt");
        
-        // check if file doesn't exist, if it doesn't create a save file and save default files to it
+
         Debug.Log(Path);
        
         string data = File.ReadAllText(s);
@@ -63,20 +53,12 @@ public class FurnitureData : ScriptableObject
     }
     public void SaveGameData()
     {
-        string p;
-        // add execute only in play mode vs build mode
-        Path = Application.persistentDataPath;
-        p = Path + "\\SaveGame.txt";
-        //IF EDITOR 
-        //Path = Application.dataPath;
-        //s = (Path +"\\Scripts\\SaveGame.txt");
         Debug.Log(Path);
-       // Path = Application.dataPath;
+        Path = Application.dataPath;
         var fd = (FurnitureData)Resources.Load("GameData");
         //saves data to player prefs
         string s = JsonUtility.ToJson(this);
-        //File.WriteAllText((Path + p), s);
-        File.WriteAllText(p, s);
+        File.WriteAllText((Path +"\\Scripts\\SaveGame.txt"), s);
     }
 
 }

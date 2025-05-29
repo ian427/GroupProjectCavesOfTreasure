@@ -18,7 +18,6 @@ public class ONGAMEQUIT : MonoBehaviour
     {
         data = (FurnitureData)Resources.Load("GameData");
         data.SaveGameData();
-        SceneManager.LoadScene(0);
-        //SceneManager.LoadScene(SGoTo);
+        SceneManager.LoadScene(SGoTo);
     }
 }

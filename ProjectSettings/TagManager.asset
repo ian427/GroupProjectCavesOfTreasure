@@ -7,7 +7,6 @@ TagManager:
   - Home
   - Chest
   - Enviroment
-  - Ground
   layers:
   - Default
   - TransparentFX
@@ -17,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - 
   - PostProcessing
   - 
   - 

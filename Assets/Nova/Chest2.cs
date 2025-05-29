@@ -13,7 +13,6 @@ public class Chest2 : MonoBehaviour
     public GameObject _Chest;
     public Animator animator;
     public Hunt2 hunt2;
-    private bool chestOpen;
 
     //VFX
     public ParticleSystem openChestVFX;
@@ -23,8 +22,6 @@ public class Chest2 : MonoBehaviour
         animator = GetComponent<Animator>();
 
         animator.SetBool("ChestOpen", false);
-
-        chestOpen = false;
     }
 
     // Update is called once per frame
@@ -39,15 +36,11 @@ public class Chest2 : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(chestOpen == false)
-            {
-                openChestVFX.Play();
-                animator.SetBool("ChestOpen", true);
-                hunt2.ClickOnChest();
-                chestOpen = true;
+            openChestVFX.Play();
+            animator.SetBool("ChestOpen", true);
+            hunt2.ClickOnChest();
 
-                StartCoroutine(disableChest());
-            }
+            StartCoroutine(disableChest());
         }
     }
 

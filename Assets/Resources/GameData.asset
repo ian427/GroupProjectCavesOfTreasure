@@ -72,7 +72,7 @@ MonoBehaviour:
   Gold: 10
   Diamond: 5
   Gem: 2
-  Path: C:/Users/Games/AppData/LocalLow/DefaultCompany/GroupProjectCavesOfTreasure
+  Path: C:/Users/Games/Documents/GitHub/GroupProjectCavesOfTreasure/Assets
   CurrentlyDisplayedT1:
   - {fileID: 21300000, guid: 9812730b4bce9ef4cb48cfcdf8eea770, type: 3}
   - {fileID: 21300000, guid: 85b0b85b8541c6648a318a403f55cba9, type: 3}
@@ -83,4 +83,11 @@ MonoBehaviour:
   currentlydisplayedT3: {fileID: 21300000, guid: 5c6384d2daaecb040b973bbd0c3219d0, type: 3}
   LastRewardDate: 638833341719636170
   CurrentNumberOfHunts: 0
-  CurrentlyPlacedFurniture: []
+  CurrentlyPlacedFurniture:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
