@@ -457,8 +457,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ffe625972885e71468e20040dfd283bb, type: 2}
+  m_sharedMaterial: {fileID: 4902218320438129581, guid: ffe625972885e71468e20040dfd283bb, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -592,8 +592,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SETTINGS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ffe625972885e71468e20040dfd283bb, type: 2}
+  m_sharedMaterial: {fileID: 4902218320438129581, guid: ffe625972885e71468e20040dfd283bb, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -618,8 +618,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -802,8 +802,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: VISUALS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ffe625972885e71468e20040dfd283bb, type: 2}
+  m_sharedMaterial: {fileID: 4902218320438129581, guid: ffe625972885e71468e20040dfd283bb, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -1009,8 +1009,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SFX
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ffe625972885e71468e20040dfd283bb, type: 2}
+  m_sharedMaterial: {fileID: 4902218320438129581, guid: ffe625972885e71468e20040dfd283bb, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
@@ -2160,7 +2160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856592959125048519, guid: 0c480e5f2f876be4f9a5052ca87c790a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 108.91
+      value: 137.18
       objectReference: {fileID: 0}
     - target: {fileID: 1856592959125048519, guid: 0c480e5f2f876be4f9a5052ca87c790a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2196,7 +2196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856592959125048519, guid: 0c480e5f2f876be4f9a5052ca87c790a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.6799927
+      value: 79.34
       objectReference: {fileID: 0}
     - target: {fileID: 1856592959125048519, guid: 0c480e5f2f876be4f9a5052ca87c790a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2219,7 +2219,8 @@ PrefabInstance:
       value: IconBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3879058178134650750, guid: 0c480e5f2f876be4f9a5052ca87c790a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c480e5f2f876be4f9a5052ca87c790a, type: 3}
