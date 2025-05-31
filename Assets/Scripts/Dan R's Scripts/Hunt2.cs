@@ -100,12 +100,14 @@ public class Hunt2 : MonoBehaviour
 
     private void Update() //Lines 109-135 made by Nova, lines 137-158 made by Dan R
     {
+        //Constantlty checks for a change in the currency values
         goldText.text = "Gold " + Gold + "";
         diamondsText.text = "Diamonds " + Diamonds + "";
         gemsText.text = "Mystic Gems " + Gems + "";
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
 
+        //When space is pressed while on the ground, the player will jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             jumpVFX.Play();
@@ -115,6 +117,7 @@ public class Hunt2 : MonoBehaviour
             isGrounded = false;
         }
 
+        //The bool of isGrounded will set the right animations if true or false
         if (isGrounded == true)
         {
             isJumping = false;
@@ -139,6 +142,8 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
+    //Moves the player left when holding the left button down
+    //Lines 150 to 153 made by Nova
     public void MoveLeft()
     {
         moveDirection = "Left";
@@ -154,6 +159,8 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
+    //Moves the player right when holding the right button down
+    //Lines 167 to 170 made by Nova
     public void MoveRight()
     {
         moveDirection = "Right";
@@ -169,6 +176,7 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
+    //Stops moving when the button is up
     public void StopMoving()
     {
         moveDirection = "Null";
@@ -177,6 +185,7 @@ public class Hunt2 : MonoBehaviour
         walkVFX.SetActive(false);
     }
 
+    //Sets the grounded bool to be true when the player is colliding with the ground
     private void OnCollisionEnter2D(Collision2D collision) //Made by Dan R
     {
         if (collision.gameObject.name == "Floor")
@@ -222,8 +231,10 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
+    //Checks the percentage generated and assigns the appropriate rewards, images and text depending on that choice
     public void RandomizeFirstRewards() //Made by Dan R
     {
+        //If gold is selected, this section will be called
         if (percentage <= 64)
         {
             rewardGold = +Random.Range(1, 11);
@@ -235,6 +246,7 @@ public class Hunt2 : MonoBehaviour
             reward1Text.text = " " + reward1;
         }
 
+        //If diamonds is selected, this section will be called
         if (percentage >= 65 && percentage < 98)
         {
             rewardDiamonds = +Random.Range(3, 7);
@@ -246,6 +258,7 @@ public class Hunt2 : MonoBehaviour
             reward1Text.text = " " + reward1;
         }
 
+        //If gems is selected, this section will be called
         if (percentage == 98 || percentage == 99 || percentage == 100)
         {
             rewardGems = +Random.Range(1, 4);
@@ -258,8 +271,10 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
+    //The second instance of rewards being generated since there are 2 choices
     public void RandomizeSecondRewards() //Made by Dan R
     {
+        //If gold is selected, this section will be called
         if (percentage <= 64)
         {
             rewardGold = +Random.Range(1, 11);
@@ -271,6 +286,7 @@ public class Hunt2 : MonoBehaviour
             reward2Text.text = " " + reward2;
         }
 
+        //If diamonds is selected, this section will be called
         if (percentage >= 65 && percentage < 98)
         {
             rewardDiamonds = +Random.Range(3, 7);
@@ -282,6 +298,7 @@ public class Hunt2 : MonoBehaviour
             reward2Text.text = " " + reward2;
         }
 
+        //If gems is selected, this section will be called
         if (percentage == 98 || percentage == 99 || percentage == 100)
         {
             rewardGems = +Random.Range(1, 4);
@@ -294,8 +311,10 @@ public class Hunt2 : MonoBehaviour
         }
     }
 
+    //Depending on what was generated, this function will add the amount of reward to the total
     public void SelectFirstRewards() //Made by Dan R
     {
+        //The case for if gold was selected
         if (reward1Name == "Gold")
         {
             goldVFX.Play();
@@ -305,6 +324,7 @@ public class Hunt2 : MonoBehaviour
             Gold += reward1;
         }
 
+        //The case for if diamonds were selected
         if (reward1Name == "Diamonds")
         {
             diamondVFX.Play();
@@ -314,6 +334,7 @@ public class Hunt2 : MonoBehaviour
             Diamonds += reward1;
         }
 
+        //The case for if gems were selected
         if (reward1Name == "Gems")
         {
             gemsVFX.Play();
@@ -328,8 +349,10 @@ public class Hunt2 : MonoBehaviour
         hasOpenedChest = true;
     }
 
+    //Second instance of rewards being added to the count
     public void SelectSecondRewards() //Made by Dan R
     {
+        //The case for if gold was selected
         if (reward2Name == "Gold")
         {
             goldVFX.Play();
@@ -339,6 +362,7 @@ public class Hunt2 : MonoBehaviour
             Gold += reward2;
         }
 
+        //The case for if diamonds were selected
         if (reward2Name == "Diamonds")
         {
             diamondVFX.Play();
@@ -348,6 +372,7 @@ public class Hunt2 : MonoBehaviour
             Diamonds += reward2;
         }
 
+        //The case for if gems were selected
         if (reward2Name == "Gems")
         {
             gemsVFX.Play();
@@ -362,6 +387,7 @@ public class Hunt2 : MonoBehaviour
         hasOpenedChest = true;
     }
 
+    //Called at the end of the hunt, adds what was gathered to the total amount
     public void SaveData() //Made by Dan R
     {
         furnitureData.Gold += Gold;
@@ -371,6 +397,7 @@ public class Hunt2 : MonoBehaviour
         furnitureData.Gem += Gems;
     }
 
+    //Connects to the chest scripts, is called when the chest is clicked on
     public void ClickOnChest() //Made by Dan R
     {
         StartCoroutine(openChest());
@@ -378,6 +405,7 @@ public class Hunt2 : MonoBehaviour
         moveSpeed = 0;
     }
 
+    //Waits for 2 seconds before the reward functions are called
     public IEnumerator openChest() //Made by Dan R
     {
         yield return new WaitForSeconds(2);
@@ -387,13 +415,8 @@ public class Hunt2 : MonoBehaviour
         percentage = Random.Range(0, 100);
         RandomizeSecondRewards();
     }
-    public void ResetMoneyForTestReasons() //Made by Dan R
-    {
-        furnitureData.Gold = 10;
-        furnitureData.Diamond = 5;
-        furnitureData.Gem = 2;
-    }
 
+    //Disables an animated reward text after the reward is gathered
     private IEnumerator disableText() //Made by Dan R
     {
         yield return new WaitForSeconds(1);

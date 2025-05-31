@@ -20,8 +20,9 @@ public class PopUpFurniture : MonoBehaviour
         button = GameObject.Find("Confirm").GetComponent<DeleateThisObj>();
         popUpMenu.SetActive(false);
     }
-   
-   
+
+    //Detects the double clicking from the mouse
+    //Displays the popup menu if the clicks are equal to 2
     public IEnumerator DetectDoubleClick()
     {
         isTimeCheckAllowed = false;

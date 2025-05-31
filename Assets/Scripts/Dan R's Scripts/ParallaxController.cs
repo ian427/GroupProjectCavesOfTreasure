@@ -16,6 +16,7 @@ public class ParallaxController : MonoBehaviour
     [Range(0.01f, 1.5f)]
     public float parallaxMovementSpeed;
 
+    //Starts by setting the camera to the right position, where the player is
     void Start()
     {
         camera = Camera.main.transform;
@@ -35,6 +36,7 @@ public class ParallaxController : MonoBehaviour
         BackSpeedCalc(backCount);
     }
 
+    //Calculates the distance apart in the Z order that the background frames are in
     void BackSpeedCalc(int backCount)
     {
         for(int i = 0; i < backCount; i++)
@@ -51,6 +53,7 @@ public class ParallaxController : MonoBehaviour
         }
     }
 
+    //As the player moves, the frames will move with them and create the illusion of an endless background
     private void LateUpdate()
     {
         distance = camera.position.x - cameraStartPos.x;
