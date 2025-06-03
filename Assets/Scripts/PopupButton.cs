@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-public class TutorialButton : MonoBehaviour
+public class PopupButton : MonoBehaviour
 {
     [SerializeField] GameObject popupbutton;
     public void ClosePopup()
